@@ -4,4 +4,4 @@ count = 0
 
 while(count < len(listNumber)):
     print(f'Absen ke {count + 1} : {listNumber[count]}')
-    count += 1
+    count += 1 # count = count + 1
