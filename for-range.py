@@ -1,4 +1,4 @@
 mapel = ['Matematika', 'Fisika', 'Kimia']
 
-for i in mapel:
-    print(f'Saya suka {i}')
+for i in range(len(mapel)):
+    print(f'Saya suka {mapel[i]}')
