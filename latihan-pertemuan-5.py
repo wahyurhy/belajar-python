@@ -1,4 +1,6 @@
 import format_rupiah
+import integer_error_handling
+import string_error_handling
 
 borderLine = "-----------------------------------------------------------------------------"
 titleApp = "Grobak Fried Chicken"
@@ -19,14 +21,7 @@ jenisPotongYangDibeli = []
 banyakYangDibeli = []
 jumlahHarga = []
 
-isTrue = True
-while isTrue:
-    try:
-        banyakJenis = int(input('Banyak Jenis:'))
-        isTrue = False
-    except:
-        print('Hanya Boleh diinputkan dengan angka!')
-        isTrue = True
+banyakJenis = integer_error_handling.handling('Banyak Jenis:')
 
 for i in range(banyakJenis):
     print('{:<25} {:^10} {:>10}'.format('', titleApp.upper(), ''))
@@ -38,8 +33,8 @@ for i in range(banyakJenis):
     print(borderLine + '\n\n')
     print(f'Banyak Jenis: {banyakJenis}')
     print(f'Jenis Ke-{i + 1}')
-    potonganYangDipilih = str(input('Kode Potongan [D/P/S]: ').capitalize())
-    jumlahYangDibeli = int(input('Banyak Potong: '))
+    potonganYangDipilih = string_error_handling.handling('Kode Potongan [D/P/S]: ', 'D', 'P', 'S')
+    jumlahYangDibeli = integer_error_handling.handling('Banyak Potong: ')
 
     jenisPotongYangDibeli.append(potonganYangDipilih)
     banyakYangDibeli.append(jumlahYangDibeli)
