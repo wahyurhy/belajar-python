@@ -1,4 +1,4 @@
-borderLine = "-----------------------------------------------------------------"
+borderLine = "-----------------------------------------------------------------------------"
 titleApp = "Grobak Fried Chicken"
 
 produk = {
@@ -20,7 +20,7 @@ jumlahHarga = []
 banyakJenis = int(input('Banyak Jenis:'))
 
 for i in range(banyakJenis):
-    print('{:<20} {:^10} {:>10}'.format('', titleApp.upper(), ''))
+    print('{:<25} {:^10} {:>10}'.format('', titleApp.upper(), ''))
     print(borderLine)
     print('{:<10} {:^10} {:>10}'.format('Kode', 'Jenis Potongan', 'Harga'))
     print('{:<10} {:^14} {:>10}'.format(' D', 'Dada', str(produk['D'])))
@@ -36,18 +36,18 @@ for i in range(banyakJenis):
     banyakYangDibeli.append(jumlahYangDibeli)
     jumlahHarga.append(jumlahYangDibeli * produk[potonganYangDipilih])
 
-print('{:<20} {:^10} {:>10}'.format('', titleApp.upper(), ''))
+print('{:<25} {:^10} {:>10}'.format('', titleApp.upper(), ''))
 print(borderLine)
-print(f'No.     Jenis Potong    Harga Satuan   Banyak Beli   Jumlah Harga')
+print('No. {:^2} Jenis Potong  {:^5}  Harga Satuan {:^5} Banyak Beli {:^5} Jumlah Harga'.format('','','',''))
 print(borderLine)
 for i in range(len(banyakYangDibeli)):
-    print(f'{i + 1}          {namaProduk[jenisPotongYangDibeli[i]]}              {produk[jenisPotongYangDibeli[i]]}          {banyakYangDibeli[i]}           Rp{jumlahHarga[i]}')
+    print('{} {:^20} {:^20} {:^17} {:<5} Rp{}'.format(i + 1, namaProduk[jenisPotongYangDibeli[i]], produk[jenisPotongYangDibeli[i]], banyakYangDibeli[i], '', jumlahHarga[i]))
 
 print(borderLine)
 
-print(f'                                        Jumlah Bayar Rp{sum(jumlahHarga)}')
+print('{:<55}Jumlah Bayar Rp{}'.format('', sum(jumlahHarga)))
 
 pajak = (10/100) * sum(jumlahHarga)
 totalBayar = sum(jumlahHarga) - pajak
-print(f'                                        Pajak 10%    Rp{pajak}')
-print(f'                                        Total Bayar  Rp{totalBayar}')
+print('{:<55}Pajak 10%    Rp{}'.format('', pajak))
+print('{:<55}Total Bayar  Rp{}'.format('', totalBayar))
