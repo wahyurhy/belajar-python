@@ -8,13 +8,15 @@ titleApp = "Grobak Fried Chicken"
 produk = {
     'D': 2500,
     'P': 1500,
-    'S': 1000
+    'S': 1000,
+    'K': 500
 }
 
 namaProduk = {
     'D': 'Dada',
     'P': 'Paha',
-    'S': 'Sayap'
+    'S': 'Sayap',
+    'K': 'Kepala'
 }
 
 jenisPotongYangDibeli = []
@@ -30,10 +32,11 @@ for i in range(banyakJenis):
     print('{:<10} {:^14} {:>10}'.format(' D', str(namaProduk['D']), str(produk['D'])))
     print('{:<10} {:^14} {:>10}'.format(' P', str(namaProduk['P']), str(produk['P'])))
     print('{:<10} {:^14} {:>10}'.format(' S', str(namaProduk['S']), str(produk['S'])))
+    print('{:<10} {:^14} {:>10}'.format(' K', str(namaProduk['K']), str(produk['K'])))
     print(borderLine + '\n\n')
     print(f'Banyak Jenis: {banyakJenis}')
     print(f'Jenis Ke-{i + 1}')
-    potonganYangDipilih = string_error_handling.handling('Kode Potongan [D/P/S]: ', 'D', 'P', 'S')
+    potonganYangDipilih = string_error_handling.handling('Kode Potongan [D/P/S/K]: ', 'D', 'P', 'S', 'K')
     jumlahYangDibeli = integer_error_handling.handling('Banyak Potong: ')
 
     jenisPotongYangDibeli.append(potonganYangDipilih)
