@@ -1,9 +1,13 @@
+#  pip install aiohttp
+
 import os
-import requests
+import asyncio
+import aiohttp
+from aiohttp import ClientSession
 from bs4 import BeautifulSoup
 
 # Baca file HTML
-file_path = r"E:\日本語\Genshin\Bennett\Bennett_Voice-Overs_Japanese _ Genshin Impact Wiki _ Fandom.html"
+file_path = r"E:\日本語\Genshin\Belum di upload ke telegram\Yun Jin\Yun Jin_Voice-Overs_Japanese _ Genshin Impact Wiki _ Fandom.html"
 
 with open(file_path, 'r', encoding='utf-8') as file:
     html_content = file.read()
@@ -36,26 +40,34 @@ def sanitize_filename(filename):
         filename = filename.replace(char, '_')
     return filename
 
-# Mendownload setiap file audio dari href
-for href_link in href_links:
-    print(f"Mendownload: {href_link}")
+# Fungsi asynchronous untuk mendownload file
+async def download_file(session: ClientSession, href_link: str):
     try:
         # Mengambil nama file dari URL sebelum "/revision"
         file_name = href_link.split('/')[-3]  # Ambil nama file sebelum "/revision"
         file_name = sanitize_filename(file_name)  # Bersihkan nama file
         file_path = os.path.join(output_folder, file_name)
 
-        # Mendownload file audio
-        response = requests.get(href_link, stream=True)
-        response.raise_for_status()  # Memastikan tidak ada error
-
-        # Menulis konten file audio
-        with open(file_path, 'wb') as file:
-            for chunk in response.iter_content(chunk_size=8192):
-                file.write(chunk)
+        print(f"Mendownload: {href_link}")
+        async with session.get(href_link) as response:
+            response.raise_for_status()  # Memastikan tidak ada error
+            with open(file_path, 'wb') as file:
+                while True:
+                    chunk = await response.content.read(8192)
+                    if not chunk:
+                        break
+                    file.write(chunk)
         print(f"Berhasil mendownload: {file_name}")
-
     except Exception as e:
         print(f"Gagal mendownload {href_link}: {e}")
+
+# Fungsi utama untuk menjalankan semua download secara concurrent
+async def main():
+    async with aiohttp.ClientSession() as session:
+        tasks = [download_file(session, href_link) for href_link in href_links]
+        await asyncio.gather(*tasks)
+
+# Menjalankan event loop untuk memulai download
+asyncio.run(main())
 
 print(f"Semua file audio telah disimpan di folder: {output_folder}")
