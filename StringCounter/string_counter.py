@@ -1,5 +1,5 @@
 # pip install pyinstaller
-# pip install prettytable
+# pip install prettytable openpyxl
 # pyinstaller --onefile count_words.py
 
 import xml.etree.ElementTree as ET
@@ -7,6 +7,7 @@ from collections import Counter
 import re
 from tkinter import Tk, filedialog
 from prettytable import PrettyTable  # For tabular display
+import openpyxl  # For Excel file creation
 
 def select_file_with_file_manager():
     """Open a file dialog to select strings.xml."""
@@ -19,6 +20,39 @@ def select_file_with_file_manager():
     )
     root.destroy()
     return file_path
+
+def save_summary_to_excel(summary_data):
+    """Save the summary data to an Excel file."""
+    # Open a file dialog to select where to save the Excel file
+    root = Tk()
+    root.withdraw()
+    root.attributes("-topmost", True)
+    save_path = filedialog.asksaveasfilename(
+        defaultextension=".xlsx",
+        filetypes=[("Excel files", "*.xlsx")],
+        title="Save Summary Table as Excel"
+    )
+    root.destroy()
+
+    if save_path:  # If a valid save location was selected
+        # Create an Excel workbook and sheet
+        workbook = openpyxl.Workbook()
+        sheet = workbook.active
+        sheet.title = "Summary Table"
+        
+        # Add headers
+        headers = ["File Name", "Total Words", "Total Price (¥)"]
+        sheet.append(headers)
+        
+        # Add data
+        for data in summary_data:
+            sheet.append([data["file_name"], data["total_words"], f"{data['total_price']:.2f}"])
+        
+        # Save the file
+        workbook.save(save_path)
+        print(f"Summary table saved to: {save_path}")
+    else:
+        print("Save operation cancelled.")
 
 def count_words_and_list_in_strings_xml(file_path):
     try:
@@ -87,6 +121,7 @@ if __name__ == "__main__":
             "invalid_file": "The file is not a valid XML file.",
             "error_occurred": "An error occurred:",
             "process_another": "Do you want to process another file? (yes/no): ",
+            "save_summary": "Do you want to save the summary table to Excel? (yes/no): ",
             "goodbye": "Goodbye!"
         },
         "jp": {
@@ -103,6 +138,7 @@ if __name__ == "__main__":
             "invalid_file": "ファイルは有効なXMLファイルではありません。",
             "error_occurred": "エラーが発生しました: ",
             "process_another": "別のファイルを処理しますか？ (yes/no): ",
+            "save_summary": "要約表をExcelに保存しますか？ (yes/no): ",
             "goodbye": "さようなら！"
         }
     }
@@ -170,5 +206,9 @@ if __name__ == "__main__":
         # Ask if user wants to process another file
         process_another = input(messages["process_another"]).strip().lower()
         if process_another != "yes":
+            # Ask if user wants to save summary
+            save_summary = input(messages["save_summary"]).strip().lower()
+            if save_summary == "yes":
+                save_summary_to_excel(summary_data)
             print(messages["goodbye"])
             break
