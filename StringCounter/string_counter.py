@@ -1,10 +1,12 @@
 # pip install pyinstaller
+# pip install prettytable
 # pyinstaller --onefile count_words.py
 
 import xml.etree.ElementTree as ET
 from collections import Counter
 import re
 from tkinter import Tk, filedialog
+from prettytable import PrettyTable  # For tabular display
 
 def select_file_with_file_manager():
     """Open a file dialog to select strings.xml."""
@@ -50,6 +52,14 @@ def count_words_and_list_in_strings_xml(file_path):
         print(messages["invalid_file"])
     except Exception as e:
         print(f"{messages['error_occurred']} {e}")
+
+def display_table(word_count):
+    """Display the word count in a tabular format."""
+    table = PrettyTable()
+    table.field_names = ["Word", "Count"]  # Column headers
+    for word, count in word_count.items():
+        table.add_row([word, count])
+    print(table)
 
 if __name__ == "__main__":
     # Language selection
@@ -128,8 +138,7 @@ if __name__ == "__main__":
         if result:
             total_words, word_count = result
             print(f"\n{messages['word_list']}")
-            for word, count in word_count.items():
-                print(f"{word}: {count}")
+            display_table(word_count)  # Display results in a table
             
             total_price = total_words * price_per_word
             print(f"\n{messages['total_words']} {total_words}")
