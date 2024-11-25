@@ -4,6 +4,19 @@
 import xml.etree.ElementTree as ET
 from collections import Counter
 import re
+from tkinter import Tk, filedialog
+
+def select_file_with_file_manager():
+    """Open a file dialog to select strings.xml."""
+    root = Tk()
+    root.withdraw()  # Hide the main Tkinter window
+    root.attributes("-topmost", True)  # Bring the dialog to the front
+    file_path = filedialog.askopenfilename(
+        title="Select strings.xml file",
+        filetypes=[("XML files", "*.xml"), ("All files", "*.*")]
+    )
+    root.destroy()
+    return file_path
 
 def count_words_and_list_in_strings_xml(file_path):
     try:
@@ -43,6 +56,7 @@ if __name__ == "__main__":
     languages = {
         "en": {
             "welcome": "=== Word Count Program ===",
+            "manual_or_file": "Choose an option:\n1. Manual path input\n2. Use file manager",
             "input_file": "Enter the path to your strings.xml file (or type 'exit' to quit): ",
             "input_price": "Enter the price per word (in yen): ¥",
             "invalid_price": "Price per word must be greater than 0. Please try again.",
@@ -57,6 +71,7 @@ if __name__ == "__main__":
         },
         "jp": {
             "welcome": "=== 単語カウントプログラム ===",
+            "manual_or_file": "オプションを選択してください:\n1. 手動でパスを入力\n2. ファイルマネージャーを使用",
             "input_file": "strings.xmlファイルのパスを入力してください（終了するには 'exit' と入力してください）: ",
             "input_price": "1単語あたりの価格を入力してください（円）: ¥",
             "invalid_price": "1単語あたりの価格は0より大きくする必要があります。もう一度お試しください。",
@@ -80,7 +95,19 @@ if __name__ == "__main__":
 
     while True:
         print(f"\n{messages['welcome']}")
-        file_path = input(messages["input_file"]).strip()
+        print(messages["manual_or_file"])
+        option = input("Your choice: ").strip()
+        
+        if option == "1":
+            file_path = input(messages["input_file"]).strip()
+        elif option == "2":
+            file_path = select_file_with_file_manager()
+            if not file_path:  # No file selected
+                print(messages["file_not_found"])
+                continue
+        else:
+            print("Invalid option. Please choose 1 or 2.")
+            continue
         
         if file_path.lower() == 'exit':
             print(messages["goodbye"])
