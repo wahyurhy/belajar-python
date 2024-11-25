@@ -61,6 +61,15 @@ def display_table(word_count):
         table.add_row([word, count])
     print(table)
 
+def display_summary(summary_data):
+    """Display the summary of all processed files."""
+    summary_table = PrettyTable()
+    summary_table.field_names = ["File Name", "Total Words", "Total Price (¥)"]  # Column headers
+    for data in summary_data:
+        summary_table.add_row([data["file_name"], data["total_words"], f"¥{data['total_price']:.2f}"])
+    print("\n=== Summary Table ===")
+    print(summary_table)
+
 if __name__ == "__main__":
     # Language selection
     languages = {
@@ -77,6 +86,7 @@ if __name__ == "__main__":
             "file_not_found": "The file was not found. Please check the path and try again.",
             "invalid_file": "The file is not a valid XML file.",
             "error_occurred": "An error occurred:",
+            "process_another": "Do you want to process another file? (yes/no): ",
             "goodbye": "Goodbye!"
         },
         "jp": {
@@ -92,6 +102,7 @@ if __name__ == "__main__":
             "file_not_found": "ファイルが見つかりませんでした。パスを確認して、もう一度お試しください。",
             "invalid_file": "ファイルは有効なXMLファイルではありません。",
             "error_occurred": "エラーが発生しました: ",
+            "process_another": "別のファイルを処理しますか？ (yes/no): ",
             "goodbye": "さようなら！"
         }
     }
@@ -102,6 +113,8 @@ if __name__ == "__main__":
     lang_choice = input("Your choice / 選択: ").strip()
     lang_code = "jp" if lang_choice == "2" else "en"
     messages = languages[lang_code]
+
+    summary_data = []  # To store summary of all processed files
 
     while True:
         print(f"\n{messages['welcome']}")
@@ -143,3 +156,19 @@ if __name__ == "__main__":
             total_price = total_words * price_per_word
             print(f"\n{messages['total_words']} {total_words}")
             print(f"{messages['total_price']} ¥{total_price:.2f}")
+            
+            # Append to summary data
+            summary_data.append({
+                "file_name": file_path.split("/")[-1],  # Get the file name from the path
+                "total_words": total_words,
+                "total_price": total_price
+            })
+        
+        # Display summary table
+        display_summary(summary_data)
+
+        # Ask if user wants to process another file
+        process_another = input(messages["process_another"]).strip().lower()
+        if process_another != "yes":
+            print(messages["goodbye"])
+            break
