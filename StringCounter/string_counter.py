@@ -13,7 +13,7 @@ def count_words_and_list_in_strings_xml(file_path):
         
         # Ensure the XML is valid and contains resources
         if root.tag != 'resources':
-            raise ValueError("File does not contain valid 'resources' root element")
+            raise ValueError("Invalid XML file with no 'resources' root element.")
         
         # Extract all text values and collect valid words
         word_list = []
@@ -21,8 +21,10 @@ def count_words_and_list_in_strings_xml(file_path):
         
         for string_element in root.findall('string'):
             if string_element.text:  # If the string has text
-                words = word_pattern.findall(string_element.text)  # Extract valid words
-                word_list.extend(words)
+                words = word_pattern.findall(string_element.text.lower())  # Convert to lowercase
+                # Filter out single-character words (letters and numbers)
+                filtered_words = [word for word in words if len(word) > 1]
+                word_list.extend(filtered_words)
         
         # Count total words and create a frequency dictionary
         total_words = len(word_list)
@@ -30,39 +32,78 @@ def count_words_and_list_in_strings_xml(file_path):
         
         return total_words, word_count
     except FileNotFoundError:
-        print("The file was not found. Please check the path and try again.")
+        print(messages["file_not_found"])
     except ET.ParseError:
-        print("The file is not a valid XML file.")
+        print(messages["invalid_file"])
     except Exception as e:
-        print(f"An error occurred: {e}")
+        print(f"{messages['error_occurred']} {e}")
 
 if __name__ == "__main__":
+    # Language selection
+    languages = {
+        "en": {
+            "welcome": "=== Word Count Program ===",
+            "input_file": "Enter the path to your strings.xml file (or type 'exit' to quit): ",
+            "input_price": "Enter the price per word (in yen): ¥",
+            "invalid_price": "Price per word must be greater than 0. Please try again.",
+            "invalid_input": "Invalid input. Please enter a valid number for the price per word.",
+            "word_list": "Word frequency list:",
+            "total_words": "The total number of valid words in the strings.xml file is: ",
+            "total_price": "The total price is: ",
+            "file_not_found": "The file was not found. Please check the path and try again.",
+            "invalid_file": "The file is not a valid XML file.",
+            "error_occurred": "An error occurred:",
+            "goodbye": "Goodbye!"
+        },
+        "jp": {
+            "welcome": "=== 単語カウントプログラム ===",
+            "input_file": "strings.xmlファイルのパスを入力してください（終了するには 'exit' と入力してください）: ",
+            "input_price": "1単語あたりの価格を入力してください（円）: ¥",
+            "invalid_price": "1単語あたりの価格は0より大きくする必要があります。もう一度お試しください。",
+            "invalid_input": "無効な入力です。有効な数字を入力してください。",
+            "word_list": "単語頻度リスト:",
+            "total_words": "strings.xmlファイルの有効な単語の総数: ",
+            "total_price": "総価格: ",
+            "file_not_found": "ファイルが見つかりませんでした。パスを確認して、もう一度お試しください。",
+            "invalid_file": "ファイルは有効なXMLファイルではありません。",
+            "error_occurred": "エラーが発生しました: ",
+            "goodbye": "さようなら！"
+        }
+    }
+
+    print("Select language / 言語を選択してください:")
+    print("1. English")
+    print("2. 日本語")
+    lang_choice = input("Your choice / 選択: ").strip()
+    lang_code = "jp" if lang_choice == "2" else "en"
+    messages = languages[lang_code]
+
     while True:
-        print("\n=== Word Count Program ===")
-        file_path = input("Enter the path to your strings.xml file (or type 'exit' to quit): ").strip()
+        print(f"\n{messages['welcome']}")
+        file_path = input(messages["input_file"]).strip()
         
         if file_path.lower() == 'exit':
-            print("Goodbye!")
+            print(messages["goodbye"])
             break
         
         try:
             # Get word price
-            price_per_word = float(input("Masukkan harga per kata : ¥"))
+            price_per_word = float(input(messages["input_price"]))
             if price_per_word <= 0:
-                print("Harga per kata harus lebih besar dari 0. Silakan coba lagi.")
+                print(messages["invalid_price"])
                 continue
         except ValueError:
-            print("Input tidak valid. Masukkan angka yang valid untuk harga per kata.")
+            print(messages["invalid_input"])
             continue
         
         result = count_words_and_list_in_strings_xml(file_path)
         
         if result:
             total_words, word_count = result
-            print("\nWord frequency list:")
+            print(f"\n{messages['word_list']}")
             for word, count in word_count.items():
                 print(f"{word}: {count}")
             
             total_price = total_words * price_per_word
-            print(f"\nThe total number of valid words in the strings.xml file is: {total_words}")
-            print(f"The total price is: ¥{total_price:.2f}")
+            print(f"\n{messages['total_words']} {total_words}")
+            print(f"{messages['total_price']} ¥{total_price:.2f}")
