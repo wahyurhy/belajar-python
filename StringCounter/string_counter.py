@@ -1,5 +1,5 @@
 # pip install pyinstaller
-# pip install prettytable openpyxl
+# pip install prettytable openpyxl langdetect
 # pyinstaller --onefile count_words.py
 
 import xml.etree.ElementTree as ET

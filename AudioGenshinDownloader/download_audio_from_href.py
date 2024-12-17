@@ -7,7 +7,7 @@ from aiohttp import ClientSession
 from bs4 import BeautifulSoup
 
 # Baca file HTML
-file_path = r"E:\日本語\Genshin\Belum di upload ke telegram\Yun Jin\Yun Jin_Voice-Overs_Japanese _ Genshin Impact Wiki _ Fandom.html"
+file_path = r"E:\日本語\HSR\Firefly\Firefly's Japanese Voice-Overs _ Honkai_ Star Rail Wiki _ Fandom.html"
 
 with open(file_path, 'r', encoding='utf-8') as file:
     html_content = file.read()
