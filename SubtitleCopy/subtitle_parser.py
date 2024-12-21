@@ -55,8 +55,14 @@ def monitor_keyboard(player):
     Fungsi untuk menangkap input keyboard untuk kontrol video.
     """
     is_paused = False
+    last_press_time = None
+    jump_duration = 5  # Default lompat 5 detik
+
     try:
         while True:
+            current_time = time.time()
+
+            # Pause/Resume dengan SPACE
             if keyboard.is_pressed("space"):
                 if is_paused:
                     player.play()
@@ -67,18 +73,30 @@ def monitor_keyboard(player):
                 is_paused = not is_paused
                 time.sleep(0.3)  # Hindari deteksi ganda
 
-            # Lompat 5 detik ke depan
+            # Lompat 5 atau 10 detik ke depan
             if keyboard.is_pressed("right"):
-                current_time = player.get_time()  # Waktu saat ini dalam ms
-                player.set_time(current_time + 5000)  # Tambahkan 5000 ms
-                print("Skipped forward 5 seconds")
+                if last_press_time and current_time - last_press_time < 1:  # Tekan dalam waktu <1 detik
+                    jump_duration = 10
+                else:
+                    jump_duration = 5
+
+                current_time_ms = player.get_time()
+                player.set_time(current_time_ms + jump_duration * 1000)  # Tambahkan dalam ms
+                print(f"Skipped forward {jump_duration} seconds")
+                last_press_time = current_time
                 time.sleep(0.3)  # Hindari deteksi ganda
 
-            # Lompat 5 detik ke belakang
+            # Lompat 5 atau 10 detik ke belakang
             if keyboard.is_pressed("left"):
-                current_time = player.get_time()  # Waktu saat ini dalam ms
-                player.set_time(max(0, current_time - 5000))  # Kurangi 5000 ms
-                print("Skipped backward 5 seconds")
+                if last_press_time and current_time - last_press_time < 1:  # Tekan dalam waktu <1 detik
+                    jump_duration = 10
+                else:
+                    jump_duration = 5
+
+                current_time_ms = player.get_time()
+                player.set_time(max(0, current_time_ms - jump_duration * 1000))  # Kurangi dalam ms
+                print(f"Skipped backward {jump_duration} seconds")
+                last_press_time = current_time
                 time.sleep(0.3)  # Hindari deteksi ganda
     except KeyboardInterrupt:
         print("\nKeyboard monitoring stopped.")
