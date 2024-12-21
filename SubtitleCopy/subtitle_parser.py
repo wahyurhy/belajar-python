@@ -55,6 +55,7 @@ def monitor_keyboard(player):
     Fungsi untuk menangkap input keyboard untuk kontrol video.
     """
     is_paused = False
+    is_subtitle_enabled = True  # Status subtitle, default diaktifkan
     last_press_time = None
     jump_duration = 5  # Default lompat 5 detik
 
@@ -97,6 +98,17 @@ def monitor_keyboard(player):
                 player.set_time(max(0, current_time_ms - jump_duration * 1000))  # Kurangi dalam ms
                 print(f"Skipped backward {jump_duration} seconds")
                 last_press_time = current_time
+                time.sleep(0.3)  # Hindari deteksi ganda
+
+            # Enable/Disable subtitle dengan tombol C
+            if keyboard.is_pressed("c"):
+                if is_subtitle_enabled:
+                    player.video_set_spu(-1)  # Disable subtitle
+                    print("Subtitles Disabled")
+                else:
+                    player.video_set_spu(0)  # Enable subtitle (0 adalah default track)
+                    print("Subtitles Enabled")
+                is_subtitle_enabled = not is_subtitle_enabled
                 time.sleep(0.3)  # Hindari deteksi ganda
     except KeyboardInterrupt:
         print("\nKeyboard monitoring stopped.")
