@@ -3,7 +3,7 @@ import time
 import pyperclip
 import vlc
 from tkinter import Tk, filedialog
-from datetime import datetime, timedelta
+from datetime import timedelta
 import threading
 import sys
 import keyboard  # Untuk menangkap input keyboard
@@ -33,13 +33,17 @@ def get_current_subtitle(subtitles, current_time):
             return subtitle.text
     return None
 
-def monitor_subtitles(subtitles, player):
+def monitor_subtitles(subtitles, player, is_subtitle_enabled):
     """
     Fungsi untuk memonitor posisi video dan menyalin subtitle ke clipboard.
     """
     last_text = None
     try:
         while True:
+            if not is_subtitle_enabled[0]:  # Jika subtitle dinonaktifkan
+                time.sleep(0.1)
+                continue
+
             current_time = timedelta(seconds=player.get_time() / 1000)  # Waktu dalam detik
             current_text = get_current_subtitle(subtitles, current_time)
             if current_text and current_text != last_text:
@@ -50,12 +54,11 @@ def monitor_subtitles(subtitles, player):
     except KeyboardInterrupt:
         print("\nStopped.")
 
-def monitor_keyboard(player):
+def monitor_keyboard(player, subtitles, is_subtitle_enabled):
     """
     Fungsi untuk menangkap input keyboard untuk kontrol video.
     """
     is_paused = False
-    is_subtitle_enabled = True  # Status subtitle, default diaktifkan
     last_press_time = None
     jump_duration = 5  # Default lompat 5 detik
 
@@ -102,13 +105,17 @@ def monitor_keyboard(player):
 
             # Enable/Disable subtitle dengan tombol C
             if keyboard.is_pressed("c"):
-                if is_subtitle_enabled:
+                if is_subtitle_enabled[0]:
                     player.video_set_spu(-1)  # Disable subtitle
                     print("Subtitles Disabled")
                 else:
-                    player.video_set_spu(0)  # Enable subtitle (0 adalah default track)
+                    player.video_set_spu(0)  # Enable subtitle
                     print("Subtitles Enabled")
-                is_subtitle_enabled = not is_subtitle_enabled
+
+                    # Pastikan subtitle langsung muncul saat diaktifkan
+                    current_time_ms = player.get_time()  # Dapatkan waktu saat ini dalam ms
+                    player.set_time(current_time_ms)  # Reset ke waktu saat ini untuk menyinkronkan ulang subtitle
+                is_subtitle_enabled[0] = not is_subtitle_enabled[0]
                 time.sleep(0.3)  # Hindari deteksi ganda
     except KeyboardInterrupt:
         print("\nKeyboard monitoring stopped.")
@@ -130,15 +137,17 @@ def play_video_with_subtitles(video_path, subtitle_path):
     # Mainkan video
     player.play()
     time.sleep(1)
-    print("Video started. Press SPACE to play/pause, ARROW RIGHT to skip forward, ARROW LEFT to skip backward. Subtitles will be copied to clipboard...")
+    print("Video started. Press SPACE to play/pause, ARROW RIGHT to skip forward, ARROW LEFT to skip backward, C to enable/disable subtitles. Subtitles will be copied to clipboard...")
+
+    is_subtitle_enabled = [True]  # Gunakan list agar mutable dalam thread
 
     # Jalankan thread untuk memonitor subtitle
-    subtitle_thread = threading.Thread(target=monitor_subtitles, args=(subtitles, player))
+    subtitle_thread = threading.Thread(target=monitor_subtitles, args=(subtitles, player, is_subtitle_enabled))
     subtitle_thread.daemon = True
     subtitle_thread.start()
 
     # Jalankan thread untuk memonitor keyboard
-    keyboard_thread = threading.Thread(target=monitor_keyboard, args=(player,))
+    keyboard_thread = threading.Thread(target=monitor_keyboard, args=(player, subtitles, is_subtitle_enabled))
     keyboard_thread.daemon = True
     keyboard_thread.start()
 
