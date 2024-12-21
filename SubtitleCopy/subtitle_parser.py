@@ -66,6 +66,20 @@ def monitor_keyboard(player):
                     print("Video Paused")
                 is_paused = not is_paused
                 time.sleep(0.3)  # Hindari deteksi ganda
+
+            # Lompat 5 detik ke depan
+            if keyboard.is_pressed("right"):
+                current_time = player.get_time()  # Waktu saat ini dalam ms
+                player.set_time(current_time + 5000)  # Tambahkan 5000 ms
+                print("Skipped forward 5 seconds")
+                time.sleep(0.3)  # Hindari deteksi ganda
+
+            # Lompat 5 detik ke belakang
+            if keyboard.is_pressed("left"):
+                current_time = player.get_time()  # Waktu saat ini dalam ms
+                player.set_time(max(0, current_time - 5000))  # Kurangi 5000 ms
+                print("Skipped backward 5 seconds")
+                time.sleep(0.3)  # Hindari deteksi ganda
     except KeyboardInterrupt:
         print("\nKeyboard monitoring stopped.")
 
@@ -86,7 +100,7 @@ def play_video_with_subtitles(video_path, subtitle_path):
     # Mainkan video
     player.play()
     time.sleep(1)
-    print("Video started. Press SPACE to play/pause. Subtitles will be copied to clipboard...")
+    print("Video started. Press SPACE to play/pause, ARROW RIGHT to skip forward, ARROW LEFT to skip backward. Subtitles will be copied to clipboard...")
 
     # Jalankan thread untuk memonitor subtitle
     subtitle_thread = threading.Thread(target=monitor_subtitles, args=(subtitles, player))
