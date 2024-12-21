@@ -4,7 +4,9 @@ import pyperclip
 import vlc
 from tkinter import Tk, filedialog
 from datetime import datetime, timedelta
+import threading
 import sys
+import keyboard  # Untuk menangkap input keyboard
 
 # Pastikan encoding terminal UTF-8
 sys.stdout.reconfigure(encoding='utf-8')
@@ -31,36 +33,79 @@ def get_current_subtitle(subtitles, current_time):
             return subtitle.text
     return None
 
+def monitor_subtitles(subtitles, player):
+    """
+    Fungsi untuk memonitor posisi video dan menyalin subtitle ke clipboard.
+    """
+    last_text = None
+    try:
+        while True:
+            current_time = timedelta(seconds=player.get_time() / 1000)  # Waktu dalam detik
+            current_text = get_current_subtitle(subtitles, current_time)
+            if current_text and current_text != last_text:
+                pyperclip.copy(current_text)
+                print(f"Subtitle copied to clipboard: {current_text}")
+                last_text = current_text
+            time.sleep(0.1)  # Periksa setiap 0.1 detik
+    except KeyboardInterrupt:
+        print("\nStopped.")
+
+def monitor_keyboard(player):
+    """
+    Fungsi untuk menangkap input keyboard untuk kontrol video.
+    """
+    is_paused = False
+    try:
+        while True:
+            if keyboard.is_pressed("space"):
+                if is_paused:
+                    player.play()
+                    print("Video Resumed")
+                else:
+                    player.pause()
+                    print("Video Paused")
+                is_paused = not is_paused
+                time.sleep(0.3)  # Hindari deteksi ganda
+    except KeyboardInterrupt:
+        print("\nKeyboard monitoring stopped.")
+
 def play_video_with_subtitles(video_path, subtitle_path):
+    """
+    Memutar video dengan kontrol keyboard dan membaca subtitle di latar belakang.
+    """
     subtitles = parse_srt_file(subtitle_path)
     if not subtitles:
         return
 
+    # Instance VLC
     instance = vlc.Instance()
     player = instance.media_player_new()
     media = instance.media_new(video_path)
     player.set_media(media)
 
+    # Mainkan video
     player.play()
     time.sleep(1)
-    print("Video started. Subtitles will be copied to clipboard...")
+    print("Video started. Press SPACE to play/pause. Subtitles will be copied to clipboard...")
 
-    start_time = datetime.now()
-    last_text = None
+    # Jalankan thread untuk memonitor subtitle
+    subtitle_thread = threading.Thread(target=monitor_subtitles, args=(subtitles, player))
+    subtitle_thread.daemon = True
+    subtitle_thread.start()
+
+    # Jalankan thread untuk memonitor keyboard
+    keyboard_thread = threading.Thread(target=monitor_keyboard, args=(player,))
+    keyboard_thread.daemon = True
+    keyboard_thread.start()
 
     try:
         while True:
-            elapsed_time = datetime.now() - start_time
-            current_text = get_current_subtitle(subtitles, elapsed_time)
-            if current_text and current_text != last_text:
-                pyperclip.copy(current_text)
-                print(f"Subtitle copied to clipboard: {current_text}")
-                last_text = current_text
-            time.sleep(0.1)
+            time.sleep(1)  # Program utama tetap berjalan
     except KeyboardInterrupt:
-        print("\nStopped.")
+        print("\nExiting program...")
         player.stop()
 
+# Pilih file video dan subtitle
 print("Select your video file:")
 video_file = select_file([("Video files", "*.mp4 *.mkv *.avi")])
 if not video_file:
@@ -73,4 +118,5 @@ if not subtitle_file:
     print("No subtitle file selected. Exiting...")
     exit()
 
+# Mainkan video dengan subtitle
 play_video_with_subtitles(video_file, subtitle_file)
