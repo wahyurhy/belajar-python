@@ -40,10 +40,6 @@ def monitor_subtitles(subtitles, player, is_subtitle_enabled):
     last_text = None
     try:
         while True:
-            if not is_subtitle_enabled[0]:  # Jika subtitle dinonaktifkan
-                time.sleep(0.1)
-                continue
-
             current_time = timedelta(seconds=player.get_time() / 1000)  # Waktu dalam detik
             current_text = get_current_subtitle(subtitles, current_time)
             if current_text and current_text != last_text:
