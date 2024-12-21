@@ -25,5 +25,5 @@ def extract_japanese_text_from_srt(input_srt_path):
     print(f"Proses selesai. File disimpan di: {output_txt_path}")
 
 # Ganti path file SRT di sini
-input_srt_path = r"E:\Anime\kitsunekko-mirror\subtitles\K-ON!\[Tsundere] K-On! - 01 [BDRip h264 1920x1080 FLAC][9CCE52EA].ja.srt"
+input_srt_path = r"E:\Anime\kitsunekko-mirror\subtitles\K-ON!\extra\K-ON! S1E02.jp.srt"
 extract_japanese_text_from_srt(input_srt_path)
