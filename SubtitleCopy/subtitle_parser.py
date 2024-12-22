@@ -10,6 +10,7 @@ import keyboard  # Untuk menangkap input keyboard
 from pathlib import Path
 import requests
 from telegram_config import my_bot_token, my_chat_id
+import subprocess
 
 # Pastikan encoding terminal UTF-8
 sys.stdout.reconfigure(encoding='utf-8')
@@ -36,22 +37,34 @@ def get_current_subtitle(subtitles, current_time):
             return subtitle.text
     return None
 
-def monitor_subtitles(subtitles, player, is_subtitle_enabled, bot_token, chat_id):
+def monitor_subtitles(subtitles, extracted_subtitles, player, is_subtitle_enabled, bot_token, chat_id):
     """
     Fungsi untuk memonitor posisi video dan menyalin subtitle ke clipboard.
     """
     last_text = None
+    last_extracted_text = None
     try:
         while True:
             current_time = timedelta(seconds=player.get_time() / 1000)  # Waktu dalam detik
+            
+            # Subtitle dari file yang dipilih
             current_text = get_current_subtitle(subtitles, current_time)
             if current_text and current_text != last_text:
                 pyperclip.copy(current_text)
-                print(f"Subtitle copied to clipboard: {current_text}")
+                print(f"Subtitle (selected file) copied to clipboard: {current_text}")
                 last_text = current_text
 
                 # Kirim pesan ke grup Telegram
                 send_telegram_message(bot_token, chat_id, current_text)
+
+            # Subtitle dari file yang diekstrak
+            extracted_text = get_current_subtitle(extracted_subtitles, current_time)
+            if extracted_text and extracted_text != last_extracted_text:
+                print(f"Subtitle (extracted) detected: {extracted_text}")
+                last_extracted_text = extracted_text
+
+                # Kirim pesan ke grup Telegram
+                send_telegram_message(bot_token, chat_id, extracted_text)
 
             time.sleep(0.1)  # Periksa setiap 0.1 detik
     except KeyboardInterrupt:
@@ -138,12 +151,66 @@ def monitor_keyboard(player, subtitle, is_subtitle_enabled, is_using_external_su
     except KeyboardInterrupt:
         print("\nKeyboard monitoring stopped.")
 
-def play_video_with_subtitles(video_path, subtitle_path):
+def extract_subtitle(video_path):
+    """
+    Ekstrak subtitle internal dari video menggunakan FFmpeg dan konversi ke format SRT.
+    """
+    try:
+        # Buat nama file subtitle berdasarkan nama file video
+        video_file = Path(video_path)
+        output_subtitle_path = video_file.with_suffix('.srt')  # Mengganti ekstensi menjadi .srt
+
+        # Ganti dengan jalur lengkap ke ffmpeg.exe
+        ffmpeg_path = r"C:\ffmpeg\bin\ffmpeg.exe"
+
+        subprocess.run(
+            [ffmpeg_path, "-i", video_path, "-map", "0:s:0", "-c:s", "srt", str(output_subtitle_path)],
+            check=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE
+        )
+        print(f"Subtitle extracted to {output_subtitle_path}")
+        return output_subtitle_path
+    except FileNotFoundError:
+        print("Error: ffmpeg executable not found. Check your installation and ffmpeg_path.")
+        return None
+    except subprocess.CalledProcessError as e:
+        print(f"Failed to extract subtitle: {e.stderr.decode('utf-8')}")
+        return None
+    
+def validate_subtitle_file(file_path):
+    """
+    Memeriksa apakah file subtitle valid (tidak kosong).
+    """
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            content = file.read().strip()
+            if content:
+                return True
+            else:
+                print("Subtitle file is empty.")
+                return False
+    except Exception as e:
+        print(f"Failed to validate subtitle file: {e}")
+        return False
+
+def play_video_with_subtitles(video_path, subtitle_path=None):
     """
     Memutar video dengan kontrol keyboard dan membaca subtitle di latar belakang.
     """
+    extracted_subtitle_path = extract_subtitle(video_path)
+    if not extracted_subtitle_path or not validate_subtitle_file(extracted_subtitle_path):
+        print("Failed to validate extracted subtitle. Exiting...")
+        return
+
+    extracted_subtitles = parse_srt_file(extracted_subtitle_path)
+    if not extracted_subtitles:
+        print("Failed to parse extracted subtitles. Exiting...")
+        return
+
     subtitles = parse_srt_file(subtitle_path)
     if not subtitles:
+        print("Failed to parse selected subtitles. Exiting...")
         return
 
     # Tambahkan token dan chat ID Telegram di sini
@@ -159,12 +226,12 @@ def play_video_with_subtitles(video_path, subtitle_path):
     # Mainkan video
     player.play()
     time.sleep(1)
-    print("Video started. Press SPACE to play/pause, ARROW RIGHT to skip forward, ARROW LEFT to skip backward, C to enable/disable subtitles, X to switch subtitles. Subtitles will be copied to clipboard...")
+    print("Video started. Subtitles will be copied to clipboard and sent to Telegram...")
 
     is_subtitle_enabled = [True]  # Gunakan list agar mutable dalam thread
 
     # Jalankan thread untuk memonitor subtitle
-    subtitle_thread = threading.Thread(target=monitor_subtitles, args=(subtitles, player, is_subtitle_enabled, bot_token, chat_id))
+    subtitle_thread = threading.Thread(target=monitor_subtitles, args=(subtitles, extracted_subtitles, player, is_subtitle_enabled, bot_token, chat_id))
     subtitle_thread.daemon = True
     subtitle_thread.start()
     is_using_external_subtitle = [False]  # Status apakah menggunakan subtitle eksternal
