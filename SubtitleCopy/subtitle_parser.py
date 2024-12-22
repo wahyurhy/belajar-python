@@ -7,6 +7,7 @@ from datetime import timedelta
 import threading
 import sys
 import keyboard  # Untuk menangkap input keyboard
+from pathlib import Path
 
 # Pastikan encoding terminal UTF-8
 sys.stdout.reconfigure(encoding='utf-8')
@@ -50,7 +51,7 @@ def monitor_subtitles(subtitles, player, is_subtitle_enabled):
     except KeyboardInterrupt:
         print("\nStopped.")
 
-def monitor_keyboard(player, subtitles, is_subtitle_enabled):
+def monitor_keyboard(player, subtitle, is_subtitle_enabled, is_using_external_subtitle, subtitle_path):
     """
     Fungsi untuk menangkap input keyboard untuk kontrol video.
     """
@@ -107,11 +108,26 @@ def monitor_keyboard(player, subtitles, is_subtitle_enabled):
                 else:
                     player.video_set_spu(0)  # Enable subtitle
                     print("Subtitles Enabled")
-
-                    # Pastikan subtitle langsung muncul saat diaktifkan
-                    current_time_ms = player.get_time()  # Dapatkan waktu saat ini dalam ms
-                    player.set_time(current_time_ms)  # Reset ke waktu saat ini untuk menyinkronkan ulang subtitle
+                    current_time_ms = player.get_time()
+                    player.set_time(current_time_ms)
                 is_subtitle_enabled[0] = not is_subtitle_enabled[0]
+                time.sleep(0.3)  # Hindari deteksi ganda
+
+            # Toggle external/internal subtitle dengan tombol X
+            if keyboard.is_pressed("x"):
+                if is_using_external_subtitle[0]:
+                    # Kembali ke subtitle default
+                    player.video_set_spu(0)  # Set ke subtitle internal VLC (index 0 default)
+                    print("Switched to Default Subtitle")
+                else:
+                    # Gunakan subtitle eksternal menggunakan URI
+                    uri = Path(subtitle_path).as_uri()
+                    result = player.add_slave(vlc.MediaSlaveType.subtitle, uri, True)
+                    if result == 0:
+                        print(f"Switched to External Subtitle: {subtitle_path}")
+                    else:
+                        print("Failed to switch to External Subtitle.")
+                is_using_external_subtitle[0] = not is_using_external_subtitle[0]
                 time.sleep(0.3)  # Hindari deteksi ganda
     except KeyboardInterrupt:
         print("\nKeyboard monitoring stopped.")
@@ -133,7 +149,7 @@ def play_video_with_subtitles(video_path, subtitle_path):
     # Mainkan video
     player.play()
     time.sleep(1)
-    print("Video started. Press SPACE to play/pause, ARROW RIGHT to skip forward, ARROW LEFT to skip backward, C to enable/disable subtitles. Subtitles will be copied to clipboard...")
+    print("Video started. Press SPACE to play/pause, ARROW RIGHT to skip forward, ARROW LEFT to skip backward, C to enable/disable subtitles, X to switch subtitles. Subtitles will be copied to clipboard...")
 
     is_subtitle_enabled = [True]  # Gunakan list agar mutable dalam thread
 
@@ -141,9 +157,10 @@ def play_video_with_subtitles(video_path, subtitle_path):
     subtitle_thread = threading.Thread(target=monitor_subtitles, args=(subtitles, player, is_subtitle_enabled))
     subtitle_thread.daemon = True
     subtitle_thread.start()
+    is_using_external_subtitle = [False]  # Status apakah menggunakan subtitle eksternal
 
     # Jalankan thread untuk memonitor keyboard
-    keyboard_thread = threading.Thread(target=monitor_keyboard, args=(player, subtitles, is_subtitle_enabled))
+    keyboard_thread = threading.Thread(target=monitor_keyboard, args=(player, subtitles, is_subtitle_enabled, is_using_external_subtitle, subtitle_path))
     keyboard_thread.daemon = True
     keyboard_thread.start()
 
