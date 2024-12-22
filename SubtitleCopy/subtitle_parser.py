@@ -8,6 +8,8 @@ import threading
 import sys
 import keyboard  # Untuk menangkap input keyboard
 from pathlib import Path
+import requests
+from telegram_config import my_bot_token, my_chat_id
 
 # Pastikan encoding terminal UTF-8
 sys.stdout.reconfigure(encoding='utf-8')
@@ -34,7 +36,7 @@ def get_current_subtitle(subtitles, current_time):
             return subtitle.text
     return None
 
-def monitor_subtitles(subtitles, player, is_subtitle_enabled):
+def monitor_subtitles(subtitles, player, is_subtitle_enabled, bot_token, chat_id):
     """
     Fungsi untuk memonitor posisi video dan menyalin subtitle ke clipboard.
     """
@@ -47,6 +49,10 @@ def monitor_subtitles(subtitles, player, is_subtitle_enabled):
                 pyperclip.copy(current_text)
                 print(f"Subtitle copied to clipboard: {current_text}")
                 last_text = current_text
+
+                # Kirim pesan ke grup Telegram
+                send_telegram_message(bot_token, chat_id, current_text)
+
             time.sleep(0.1)  # Periksa setiap 0.1 detik
     except KeyboardInterrupt:
         print("\nStopped.")
@@ -140,6 +146,10 @@ def play_video_with_subtitles(video_path, subtitle_path):
     if not subtitles:
         return
 
+    # Tambahkan token dan chat ID Telegram di sini
+    bot_token = my_bot_token  # Ganti dengan token bot Anda
+    chat_id = my_chat_id  # Ganti dengan chat ID grup Anda
+
     # Instance VLC
     instance = vlc.Instance()
     player = instance.media_player_new()
@@ -154,7 +164,7 @@ def play_video_with_subtitles(video_path, subtitle_path):
     is_subtitle_enabled = [True]  # Gunakan list agar mutable dalam thread
 
     # Jalankan thread untuk memonitor subtitle
-    subtitle_thread = threading.Thread(target=monitor_subtitles, args=(subtitles, player, is_subtitle_enabled))
+    subtitle_thread = threading.Thread(target=monitor_subtitles, args=(subtitles, player, is_subtitle_enabled, bot_token, chat_id))
     subtitle_thread.daemon = True
     subtitle_thread.start()
     is_using_external_subtitle = [False]  # Status apakah menggunakan subtitle eksternal
@@ -170,6 +180,21 @@ def play_video_with_subtitles(video_path, subtitle_path):
     except KeyboardInterrupt:
         print("\nExiting program...")
         player.stop()
+
+def send_telegram_message(bot_token, chat_id, message):
+    """
+    Fungsi untuk mengirim pesan ke grup Telegram.
+    """
+    url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
+    payload = {
+        'chat_id': chat_id,
+        'text': message
+    }
+    response = requests.post(url, data=payload)
+    if response.status_code == 200:
+        print(f"Pesan terkirim ke Telegram: {message}")
+    else:
+        print(f"Error mengirim pesan: {response.status_code}, {response.text}")
 
 # Pilih file video dan subtitle
 print("Select your video file:")

@@ -1,0 +1,16 @@
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+
+# Ignore environment files
+env/
+.env
+
+# Ignore configuration files containing sensitive data
+config.json
+telegram_config.py
+
+# Ignore logs
+*.log
+
+debug.log
