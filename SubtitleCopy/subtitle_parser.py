@@ -11,9 +11,17 @@ from pathlib import Path
 import requests
 from telegram_config import my_bot_token, my_chat_id
 import subprocess
+import logging
 
 # Pastikan encoding terminal UTF-8
 sys.stdout.reconfigure(encoding='utf-8')
+
+# Konfigurasi Logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+# Antrian untuk menyimpan pesan
+message_queue = []
+queue_lock = threading.Lock()
 
 def select_file(file_types):
     root = Tk()
@@ -37,38 +45,62 @@ def get_current_subtitle(subtitles, current_time):
             return subtitle.text
     return None
 
-def monitor_subtitles(subtitles, extracted_subtitles, player, is_subtitle_enabled, bot_token, chat_id):
-    """
-    Fungsi untuk memonitor posisi video dan menyalin subtitle ke clipboard.
-    """
+# Menambahkan Pesan ke Antrian
+def add_message_to_queue(message):
+    with queue_lock:
+        message_queue.append(message)
+    logging.info(f"Message added to queue: {message}")
+
+# Mengirim Batch Pesan ke Telegram
+def send_telegram_message_batch(bot_token, chat_id):
+    global message_queue
+    while True:
+        time.sleep(15)
+        with queue_lock:
+            if not message_queue:
+                continue
+            messages_to_send = list(message_queue)
+            message_queue.clear()
+
+        for message in messages_to_send:
+            url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
+            payload = {
+                'chat_id': chat_id,
+                'text': message
+            }
+            try:
+                response = requests.post(url, data=payload)
+                if response.status_code == 200:
+                    logging.info(f"Message sent: {message}")
+                else:
+                    logging.error(f"Error sending message: {response.status_code}, {response.text}")
+            except requests.exceptions.RequestException as e:
+                logging.error(f"Error sending message: {e}")
+
+# Monitoring Subtitle dan Mengirim ke Antrian
+def monitor_subtitles_with_queue(subtitles, extracted_subtitles, player, bot_token, chat_id):
     last_text = None
     last_extracted_text = None
+    threading.Thread(target=send_telegram_message_batch, args=(bot_token, chat_id), daemon=True).start()
+
     try:
         while True:
-            current_time = timedelta(seconds=player.get_time() / 1000)  # Waktu dalam detik
-            
-            # Subtitle dari file yang dipilih
+            current_time = timedelta(seconds=player.get_time() / 1000)
+
             current_text = get_current_subtitle(subtitles, current_time)
             if current_text and current_text != last_text:
                 pyperclip.copy(current_text)
-                print(f"Subtitle (selected file) copied to clipboard: {current_text}")
                 last_text = current_text
+                add_message_to_queue(current_text)
 
-                # Kirim pesan ke grup Telegram
-                send_telegram_message(bot_token, chat_id, current_text)
-
-            # Subtitle dari file yang diekstrak
             extracted_text = get_current_subtitle(extracted_subtitles, current_time)
             if extracted_text and extracted_text != last_extracted_text:
-                print(f"Subtitle (extracted) detected: {extracted_text}")
                 last_extracted_text = extracted_text
+                add_message_to_queue(extracted_text)
 
-                # Kirim pesan ke grup Telegram
-                send_telegram_message(bot_token, chat_id, extracted_text)
-
-            time.sleep(0.1)  # Periksa setiap 0.1 detik
+            time.sleep(0.1)
     except KeyboardInterrupt:
-        print("\nStopped.")
+        logging.info("Stopped monitoring subtitles.")
 
 def monitor_keyboard(player, subtitle, is_subtitle_enabled, is_using_external_subtitle, subtitle_path):
     """
@@ -158,7 +190,7 @@ def extract_subtitle(video_path):
     try:
         # Buat nama file subtitle berdasarkan nama file video
         video_file = Path(video_path)
-        output_subtitle_path = video_file.with_suffix('.srt')  # Mengganti ekstensi menjadi .srt
+        output_subtitle_path = video_file.with_stem(f"extracted_{video_file.stem}").with_suffix('.srt')  # Mengganti ekstensi menjadi .srt
 
         # Ganti dengan jalur lengkap ke ffmpeg.exe
         ffmpeg_path = r"C:\ffmpeg\bin\ffmpeg.exe"
@@ -194,28 +226,28 @@ def validate_subtitle_file(file_path):
         print(f"Failed to validate subtitle file: {e}")
         return False
 
+# Memutar Video dengan Subtitle
 def play_video_with_subtitles(video_path, subtitle_path=None):
     """
     Memutar video dengan kontrol keyboard dan membaca subtitle di latar belakang.
     """
     extracted_subtitle_path = extract_subtitle(video_path)
     if not extracted_subtitle_path or not validate_subtitle_file(extracted_subtitle_path):
-        print("Failed to validate extracted subtitle. Exiting...")
+        logging.error("Failed to validate extracted subtitle.")
         return
 
     extracted_subtitles = parse_srt_file(extracted_subtitle_path)
     if not extracted_subtitles:
-        print("Failed to parse extracted subtitles. Exiting...")
+        logging.error("Failed to parse extracted subtitles.")
         return
 
     subtitles = parse_srt_file(subtitle_path)
     if not subtitles:
-        print("Failed to parse selected subtitles. Exiting...")
+        logging.error("Failed to parse selected subtitles.")
         return
 
-    # Tambahkan token dan chat ID Telegram di sini
-    bot_token = my_bot_token  # Ganti dengan token bot Anda
-    chat_id = my_chat_id  # Ganti dengan chat ID grup Anda
+    bot_token = my_bot_token
+    chat_id = my_chat_id
 
     # Instance VLC
     instance = vlc.Instance()
@@ -226,26 +258,20 @@ def play_video_with_subtitles(video_path, subtitle_path=None):
     # Mainkan video
     player.play()
     time.sleep(1)
-    print("Video started. Subtitles will be copied to clipboard and sent to Telegram...")
+    logging.info("Video started.")
 
-    is_subtitle_enabled = [True]  # Gunakan list agar mutable dalam thread
+    threading.Thread(target=monitor_subtitles_with_queue, args=(subtitles, extracted_subtitles, player, bot_token, chat_id), daemon=True).start()
 
-    # Jalankan thread untuk memonitor subtitle
-    subtitle_thread = threading.Thread(target=monitor_subtitles, args=(subtitles, extracted_subtitles, player, is_subtitle_enabled, bot_token, chat_id))
-    subtitle_thread.daemon = True
-    subtitle_thread.start()
-    is_using_external_subtitle = [False]  # Status apakah menggunakan subtitle eksternal
+    is_subtitle_enabled = [True]
+    is_using_external_subtitle = [False]
 
-    # Jalankan thread untuk memonitor keyboard
-    keyboard_thread = threading.Thread(target=monitor_keyboard, args=(player, subtitles, is_subtitle_enabled, is_using_external_subtitle, subtitle_path))
-    keyboard_thread.daemon = True
-    keyboard_thread.start()
+    threading.Thread(target=monitor_keyboard, args=(player, subtitles, is_subtitle_enabled, is_using_external_subtitle, subtitle_path), daemon=True).start()
 
     try:
         while True:
-            time.sleep(1)  # Program utama tetap berjalan
+            time.sleep(1)
     except KeyboardInterrupt:
-        print("\nExiting program...")
+        logging.info("Exiting program...")
         player.stop()
 
 def send_telegram_message(bot_token, chat_id, message):
@@ -257,11 +283,14 @@ def send_telegram_message(bot_token, chat_id, message):
         'chat_id': chat_id,
         'text': message
     }
-    response = requests.post(url, data=payload)
-    if response.status_code == 200:
-        print(f"Pesan terkirim ke Telegram: {message}")
-    else:
-        print(f"Error mengirim pesan: {response.status_code}, {response.text}")
+    try:
+        response = requests.post(url, data=payload)
+        if response.status_code == 200:
+            print(f"Pesan terkirim ke Telegram: {message}")
+        else:
+            print(f"Error mengirim pesan: {response.status_code}, {response.text}")
+    except requests.exceptions.RequestException as e:
+        print(f"Error saat mengirim pesan: {e}")
 
 # Pilih file video dan subtitle
 print("Select your video file:")
