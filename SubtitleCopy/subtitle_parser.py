@@ -55,27 +55,29 @@ def add_message_to_queue(message):
 def send_telegram_message_batch(bot_token, chat_id):
     global message_queue
     while True:
-        time.sleep(15)
+        time.sleep(15)  # Tunggu 15 detik sebelum memproses pesan berikutnya
+
+        # Ambil pesan dari antrian
         with queue_lock:
             if not message_queue:
                 continue
-            messages_to_send = list(message_queue)
+            combined_message = "\n\n".join(message_queue)  # Gabungkan pesan dengan newline
             message_queue.clear()
 
-        for message in messages_to_send:
-            url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
-            payload = {
-                'chat_id': chat_id,
-                'text': message
-            }
-            try:
-                response = requests.post(url, data=payload)
-                if response.status_code == 200:
-                    logging.info(f"Message sent: {message}")
-                else:
-                    logging.error(f"Error sending message: {response.status_code}, {response.text}")
-            except requests.exceptions.RequestException as e:
-                logging.error(f"Error sending message: {e}")
+        # Kirim pesan gabungan ke Telegram
+        url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
+        payload = {
+            'chat_id': chat_id,
+            'text': combined_message
+        }
+        try:
+            response = requests.post(url, data=payload)
+            if response.status_code == 200:
+                logging.info(f"Combined message sent:\n{combined_message}")
+            else:
+                logging.error(f"Error sending combined message: {response.status_code}, {response.text}")
+        except requests.exceptions.RequestException as e:
+            logging.error(f"Error sending combined message: {e}")
 
 # Monitoring Subtitle dan Mengirim ke Antrian
 def monitor_subtitles_with_queue(subtitles, extracted_subtitles, player, bot_token, chat_id):
