@@ -60,7 +60,7 @@ def tokenize_japanese_text(input_text):
     Tokenisasi teks Jepang menjadi daftar kata menggunakan Janome.
     """
     tokenizer = Tokenizer()
-    tokens = [token.surface for token in tokenizer.tokenize(input_text)]
+    tokens = [token.surface for token in tokenizer.tokenize(input_text) if token.surface.strip()]
     return tokens
 
 def extract_japanese_text(text):
@@ -96,17 +96,22 @@ def get_bunpou_list(combined_message, bunpou_data, num_bunpou=5):
     """
     matched_bunpou = []
 
-    # Ekstrak hanya karakter Jepang dari combined_message
+    # Ekstrak teks Jepang dari combined_message
     japanese_text = extract_japanese_text(combined_message)
+    logging.info(f"Extracted Japanese Text: {japanese_text}")
 
-    # Cek bunpou yang cocok dengan teks Jepang
+    # Tokenisasi teks Jepang menggunakan Janome
+    tokens = tokenize_japanese_text(japanese_text)
+    logging.info(f"Tokens: {tokens}")
+
+    # Cek bunpou yang cocok di dalam teks atau token
     for level, bunpous in bunpou_data.items():
         for bunpou in bunpous:
-            # Gunakan regex untuk mencocokkan bunpou dalam teks Jepang
-            if re.search(re.escape(bunpou['bunpou']), japanese_text):
+            # Periksa apakah bunpou ada di token atau langsung di teks Jepang
+            if any(bunpou['bunpou'] == token for token in tokens) or bunpou['bunpou'] in japanese_text:
                 matched_bunpou.append({"level": level, **bunpou})
 
-    # Hanya kembalikan bunpou yang cocok, tidak menambahkan secara acak
+    logging.info(f"Matched Bunpou: {matched_bunpou}")
     return matched_bunpou[:num_bunpou]
 
 # Mengirim Batch Pesan ke Telegram
