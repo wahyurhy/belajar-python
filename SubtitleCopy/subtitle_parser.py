@@ -13,7 +13,6 @@ from telegram_config import my_bot_token, my_chat_id
 import subprocess
 import logging
 import json
-import random
 import re
 import os
 from janome.tokenizer import Tokenizer
@@ -68,7 +67,9 @@ def extract_japanese_text(text):
     """
     Ekstrak hanya karakter Jepang (Hiragana, Katakana, Kanji) dari teks.
     """
-    japanese_characters = re.findall(r'[\u3040-\u30FF\u4E00-\u9FFF]', text)
+    if not text:
+        return ""
+    japanese_characters = re.findall(r'[\u3040-\u30FF\u4E00-\u9FFF]+', text)
     return ''.join(japanese_characters)
 
 def load_bunpou(file_path):
@@ -89,21 +90,24 @@ def load_bunpou(file_path):
         logging.error(f"Error loading bunpou file: {e}")
         return {}
 
-def get_bunpou_list(combined_message, bunpou_data):
+def get_bunpou_list(combined_message, bunpou_data, num_bunpou=5):
     """
     Ambil daftar bunpou yang sesuai dari data JSON berdasarkan isi combined_message.
     """
-    tokens = tokenize_japanese_text(combined_message)  # Tokenisasi teks
     matched_bunpou = []
 
-    # Cek bunpou yang cocok
+    # Ekstrak hanya karakter Jepang dari combined_message
+    japanese_text = extract_japanese_text(combined_message)
+
+    # Cek bunpou yang cocok dengan teks Jepang
     for level, bunpous in bunpou_data.items():
         for bunpou in bunpous:
-            if any(bunpou['bunpou'] in token for token in tokens):
-                matched_bunpou.append({"level": level, **bunpou})       
+            # Gunakan regex untuk mencocokkan bunpou dalam teks Jepang
+            if re.search(re.escape(bunpou['bunpou']), japanese_text):
+                matched_bunpou.append({"level": level, **bunpou})
 
-    # Kembalikan hanya bunpou yang cocok
-    return matched_bunpou
+    # Hanya kembalikan bunpou yang cocok, tidak menambahkan secara acak
+    return matched_bunpou[:num_bunpou]
 
 # Mengirim Batch Pesan ke Telegram
 def send_telegram_message_batch(bot_token, chat_id, bunpou_file):
