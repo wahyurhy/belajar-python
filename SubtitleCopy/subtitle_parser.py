@@ -15,6 +15,8 @@ import logging
 import json
 import random
 import re
+import os
+from janome.tokenizer import Tokenizer
 
 # Pastikan encoding terminal UTF-8
 sys.stdout.reconfigure(encoding='utf-8')
@@ -54,6 +56,14 @@ def add_message_to_queue(message):
         message_queue.append(message)
     logging.info(f"Message added to queue: {message}")
 
+def tokenize_japanese_text(input_text):
+    """
+    Tokenisasi teks Jepang menjadi daftar kata menggunakan Janome.
+    """
+    tokenizer = Tokenizer()
+    tokens = [token.surface for token in tokenizer.tokenize(input_text)]
+    return tokens
+
 def extract_japanese_text(text):
     """
     Ekstrak hanya karakter Jepang (Hiragana, Katakana, Kanji) dari teks.
@@ -65,34 +75,35 @@ def load_bunpou(file_path):
     """
     Memuat data bunpou dari file JSON.
     """
+    # Validasi file
+    if not os.path.exists(file_path):
+        logging.error(f"Bunpou file not found at: {file_path}")
+        exit()
+
+    # Load file JSON
     try:
-        with open(file_path, 'r', encoding='utf-8') as file:
+        with open(file_path, "r", encoding="utf-8") as file:
             return json.load(file)
+        logging.info("Bunpou file loaded successfully.")
     except Exception as e:
         logging.error(f"Error loading bunpou file: {e}")
         return {}
 
-def get_bunpou_list(combined_message, bunpou_data, num_bunpou=5):
+def get_bunpou_list(combined_message, bunpou_data):
     """
     Ambil daftar bunpou yang sesuai dari data JSON berdasarkan isi combined_message.
     """
-    extracted_text = extract_japanese_text(combined_message)
+    tokens = tokenize_japanese_text(combined_message)  # Tokenisasi teks
     matched_bunpou = []
 
     # Cek bunpou yang cocok
     for level, bunpous in bunpou_data.items():
         for bunpou in bunpous:
-            if bunpou['bunpou'] in extracted_text:
-                matched_bunpou.append(bunpou)
+            if any(bunpou['bunpou'] in token for token in tokens):
+                matched_bunpou.append({"level": level, **bunpou})       
 
-    # Jika tidak cukup, tambahkan bunpou acak
-    if len(matched_bunpou) < num_bunpou:
-        all_bunpou = [b for level in bunpou_data.values() for b in level]
-        additional_bunpou = list(set(all_bunpou) - set(matched_bunpou))
-        random.shuffle(additional_bunpou)
-        matched_bunpou.extend(additional_bunpou[:num_bunpou - len(matched_bunpou)])
-
-    return matched_bunpou[:num_bunpou]
+    # Kembalikan hanya bunpou yang cocok
+    return matched_bunpou
 
 # Mengirim Batch Pesan ke Telegram
 def send_telegram_message_batch(bot_token, chat_id, bunpou_file):
@@ -110,14 +121,17 @@ def send_telegram_message_batch(bot_token, chat_id, bunpou_file):
             combined_message = "\n\n".join(message_queue)  # Gabungkan pesan dengan newline
             message_queue.clear()
 
-        # Ambil 5 bunpou
+        # Ambil bunpou yang cocok
         bunpou_list = get_bunpou_list(combined_message, bunpou_data)
-        bunpou_text = "\n\nBunpou List:\n" + "\n".join([f"{b['bunpou']} - {b['meaning']} ({b['arti']})" for b in bunpou_list])
+        if bunpou_list:
+            bunpou_text = "\n\nBunpou List:\n" + "\n".join(
+                [f"[{b['level']}] {b['bunpou']} - {b['meaning']} ({b['arti']})" for b in bunpou_list]
+            )
+            full_message = f"{combined_message}\n\n{bunpou_text}"
+        else:
+            full_message = combined_message  # Hanya kirim pesan tanpa Bunpou List
 
-        # Tambahkan ke pesan gabungan
-        full_message = f"{combined_message}\n\n{bunpou_text}"
-
-        # Kirim pesan gabungan ke Telegram
+        # Kirim pesan ke Telegram
         url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
         payload = {
             'chat_id': chat_id,
@@ -147,7 +161,9 @@ def clean_html_tags(text):
 def monitor_subtitles_with_queue(subtitles, extracted_subtitles, player, bot_token, chat_id):
     last_text = None
     last_extracted_text = None
-    bunpou_file_path = "zenbu_bunpou.json"
+    # Path ke file JSON relatif terhadap skrip Python
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    bunpou_file_path = os.path.join(script_dir, "zenbu_bunpou.json")
     threading.Thread(target=send_telegram_message_batch, args=(my_bot_token, my_chat_id, bunpou_file_path), daemon=True).start()
 
     try:

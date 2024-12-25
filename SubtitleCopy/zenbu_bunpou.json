@@ -1118,6 +1118,266 @@
       "bunpou": "を中心に (o chuushin ni)",
       "meaning": "focused on, centered on",
       "arti": "berfokus pada, berpusat pada"
+    },
+    {
+      "bunpou": "をはじめ",
+      "meaning": "for example, starting with",
+      "arti": "contohnya, dimulai dengan"
+    },
+    {
+      "bunpou": "おかげで",
+      "meaning": "thanks to, because of",
+      "arti": "berkat, karena"
+    },
+    {
+      "bunpou": "おそらく",
+      "meaning": "perhaps, likely, probably",
+      "arti": "mungkin, barangkali, kemungkinan besar"
+    },
+    {
+      "bunpou": "っぱなし",
+      "meaning": "leaving something on, leaving something still in use",
+      "arti": "membiarkan sesuatu tetap menyala atau digunakan"
+    },
+    {
+      "bunpou": "っぽい",
+      "meaning": "-ish, -like",
+      "arti": "seperti, terasa seperti"
+    },
+    {
+      "bunpou": "さえ",
+      "meaning": "even",
+      "arti": "bahkan"
+    },
+    {
+      "bunpou": "さえ～ば",
+      "meaning": "if only… then",
+      "arti": "asalkan… maka"
+    },
+    {
+      "bunpou": "最中に",
+      "meaning": "in the middle of",
+      "arti": "di tengah-tengah"
+    },
+    {
+      "bunpou": "せいで",
+      "meaning": "because of",
+      "arti": "karena"
+    },
+    {
+      "bunpou": "しかない",
+      "meaning": "have no choice but",
+      "arti": "tidak punya pilihan selain"
+    },
+    {
+      "bunpou": "その結果",
+      "meaning": "as a result",
+      "arti": "sebagai hasilnya"
+    },
+    {
+      "bunpou": "そうもない",
+      "meaning": "very unlikely to",
+      "arti": "sangat tidak mungkin untuk"
+    },
+    {
+      "bunpou": "たびに",
+      "meaning": "each time, everytime, whenever",
+      "arti": "setiap kali"
+    },
+    {
+      "bunpou": "ために (1)",
+      "meaning": "for, for the sake of, in order to",
+      "arti": "untuk, demi"
+    },
+    {
+      "bunpou": "ために (2)",
+      "meaning": "because of, as a result of",
+      "arti": "karena, sebagai hasil dari"
+    },
+    {
+      "bunpou": "たらいい/といい",
+      "meaning": "it would be nice if, should, I hope",
+      "arti": "akan menyenangkan jika, sebaiknya, saya harap"
+    },
+    {
+      "bunpou": "確かに",
+      "meaning": "surely, certainly",
+      "arti": "tentu saja, pastinya"
+    },
+    {
+      "bunpou": "たとえ～ても",
+      "meaning": "even if… is the case",
+      "arti": "meskipun… terjadi"
+    },
+    {
+      "bunpou": "たとえば",
+      "meaning": "for example",
+      "arti": "contohnya"
+    },
+    {
+      "bunpou": "た結果 / の結果",
+      "meaning": "as a result of",
+      "arti": "sebagai hasil dari"
+    },
+    {
+      "bunpou": "たとたん",
+      "meaning": "just (now, at the moment), as soon as",
+      "arti": "segera setelah"
+    },
+    {
+      "bunpou": "てごらん",
+      "meaning": "(please) try to, (please) look",
+      "arti": "(silakan) coba, (silakan) lihat"
+    },
+    {
+      "bunpou": "てはじめて",
+      "meaning": "not until, only after… did I",
+      "arti": "tidak sampai, hanya setelah… saya"
+    },
+    {
+      "bunpou": "てもかまわない",
+      "meaning": "it doesn’t matter if",
+      "arti": "tidak masalah jika"
+    },
+    {
+      "bunpou": "途中に/途中で",
+      "meaning": "on the way, in the middle of",
+      "arti": "di perjalanan, di tengah-tengah"
+    },
+    {
+      "bunpou": "といっても",
+      "meaning": "although I say, although one might say",
+      "arti": "meskipun saya bilang, meskipun orang mungkin bilang"
+    },
+    {
+      "bunpou": "という",
+      "meaning": "called, named, as much as",
+      "arti": "yang disebut, bernama, sebanyak"
+    },
+    {
+      "bunpou": "ということだ",
+      "meaning": "I’ve heard that, rumour has it that",
+      "arti": "saya dengar bahwa, rumor mengatakan bahwa"
+    },
+    {
+      "bunpou": "というのは",
+      "meaning": "means, is, because",
+      "arti": "berarti, adalah, karena"
+    },
+    {
+      "bunpou": "というと",
+      "meaning": "speaking of, if it were the case that",
+      "arti": "berbicara tentang, jika itu terjadi"
+    },
+    {
+      "bunpou": "というより",
+      "meaning": "rather than",
+      "arti": "daripada"
+    },
+    {
+      "bunpou": "ところで",
+      "meaning": "by the way",
+      "arti": "ngomong-ngomong"
+    },
+    {
+      "bunpou": "ところが",
+      "meaning": "even so, however, even though",
+      "arti": "meskipun begitu, namun, meskipun demikian"
+    },
+    {
+      "bunpou": "とおり",
+      "meaning": "in the way, the same as",
+      "arti": "dengan cara, sama seperti"
+    },
+    {
+      "bunpou": "としたら / とすれば",
+      "meaning": "if it were the case that, if we assume",
+      "arti": "jika itu terjadi, jika kita berasumsi"
+    },
+    {
+      "bunpou": "として",
+      "meaning": "as (i.e. in the role of)",
+      "arti": "sebagai (misalnya dalam peran sebagai)"
+    },
+    {
+      "bunpou": "とは限らない",
+      "meaning": "not necessarily so, is not always true",
+      "arti": "tidak selalu begitu, tidak selalu benar"
+    },
+    {
+      "bunpou": "ついでに",
+      "meaning": "while you are at it, on the occasion",
+      "arti": "sementara Anda sedang melakukannya, pada kesempatan itu"
+    },
+    {
+      "bunpou": "つまり",
+      "meaning": "in other words; that is to say",
+      "arti": "dengan kata lain; yaitu"
+    },
+    {
+      "bunpou": "と共に",
+      "meaning": "together with",
+      "arti": "bersama dengan"
+    },
+    {
+      "bunpou": "うちに",
+      "meaning": "while, before, doing",
+      "arti": "sementara, sebelum, melakukan"
+    },
+    {
+      "bunpou": "わけだ",
+      "meaning": "for that reason, no wonder, as you’d expect",
+      "arti": "oleh karena itu, tidak heran, seperti yang Anda harapkan"
+    },
+    {
+      "bunpou": "わけではない",
+      "meaning": "it doesn’t mean that, it is not the case",
+      "arti": "itu tidak berarti bahwa, itu tidak terjadi"
+    },
+    {
+      "bunpou": "わけがない",
+      "meaning": "there is no way that",
+      "arti": "tidak mungkin bahwa"
+    },
+    {
+      "bunpou": "わけにはいかない",
+      "meaning": "must not, can’t afford to",
+      "arti": "tidak boleh, tidak bisa"
+    },
+    {
+      "bunpou": "わりに",
+      "meaning": "although, rather, unexpectedly",
+      "arti": "meskipun, lebih baik, tidak terduga"
+    },
+    {
+      "bunpou": "ような気がする",
+      "meaning": "have a feeling that, think that",
+      "arti": "punya firasat bahwa, berpikir bahwa"
+    },
+    {
+      "bunpou": "ように",
+      "meaning": "in order to, so that",
+      "arti": "agar, sehingga"
+    },
+    {
+      "bunpou": "ようとする",
+      "meaning": "try to, be about to",
+      "arti": "mencoba, akan segera"
+    },
+    {
+      "bunpou": "ようとしない",
+      "meaning": "not try to, not make an effort to",
+      "arti": "tidak mencoba, tidak berusaha"
+    },
+    {
+      "bunpou": "ずに",
+      "meaning": "without doing",
+      "arti": "tanpa melakukan"
+    },
+    {
+      "bunpou": "ずにはいられない",
+      "meaning": "can’t help but feel, can’t help but do",
+      "arti": "tidak bisa tidak merasakan, tidak bisa tidak melakukan"
     }
   ],
   "N2": [
