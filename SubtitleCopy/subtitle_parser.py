@@ -132,6 +132,17 @@ def send_telegram_message_batch(bot_token, chat_id, bunpou_file):
         except requests.exceptions.RequestException as e:
             logging.error(f"Error sending combined message: {e}")
 
+def clean_html_tags(text):
+    """
+    Membersihkan teks dari tag HTML seperti <font> dan lainnya.
+    Hanya mengembalikan teks di dalamnya.
+    """
+    if not isinstance(text, str):  # Periksa apakah teks adalah string
+        return ""
+    # Menghapus semua tag HTML
+    clean_text = re.sub(r'<[^>]+>', '', text)
+    return clean_text.strip()
+
 # Monitoring Subtitle dan Mengirim ke Antrian
 def monitor_subtitles_with_queue(subtitles, extracted_subtitles, player, bot_token, chat_id):
     last_text = None
@@ -144,15 +155,21 @@ def monitor_subtitles_with_queue(subtitles, extracted_subtitles, player, bot_tok
             current_time = timedelta(seconds=player.get_time() / 1000)
 
             current_text = get_current_subtitle(subtitles, current_time)
-            if current_text and current_text != last_text:
-                pyperclip.copy(current_text)
-                last_text = current_text
-                add_message_to_queue(current_text)
+            if current_text and isinstance(current_text, str):  # Pastikan current_text adalah string
+                # Bersihkan teks dari tag HTML
+                cleaned_text = clean_html_tags(current_text)
+                if cleaned_text and cleaned_text != last_text:
+                    pyperclip.copy(cleaned_text)
+                    last_text = cleaned_text
+                    add_message_to_queue(cleaned_text)
 
             extracted_text = get_current_subtitle(extracted_subtitles, current_time)
-            if extracted_text and extracted_text != last_extracted_text:
-                last_extracted_text = extracted_text
-                add_message_to_queue(extracted_text)
+            if extracted_text and isinstance(extracted_text, str):  # Pastikan extracted_text adalah string
+                # Bersihkan teks dari tag HTML
+                cleaned_extracted_text = clean_html_tags(extracted_text)
+                if cleaned_extracted_text and cleaned_extracted_text != last_extracted_text:
+                    last_extracted_text = cleaned_extracted_text
+                    add_message_to_queue(cleaned_extracted_text)
 
             time.sleep(0.1)
     except KeyboardInterrupt:
