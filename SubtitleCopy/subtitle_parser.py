@@ -14,6 +14,7 @@ import subprocess
 import logging
 import json
 import random
+import re
 
 # Pastikan encoding terminal UTF-8
 sys.stdout.reconfigure(encoding='utf-8')
@@ -53,6 +54,13 @@ def add_message_to_queue(message):
         message_queue.append(message)
     logging.info(f"Message added to queue: {message}")
 
+def extract_japanese_text(text):
+    """
+    Ekstrak hanya karakter Jepang (Hiragana, Katakana, Kanji) dari teks.
+    """
+    japanese_characters = re.findall(r'[\u3040-\u30FF\u4E00-\u9FFF]', text)
+    return ''.join(japanese_characters)
+
 def load_bunpou(file_path):
     """
     Memuat data bunpou dari file JSON.
@@ -64,27 +72,27 @@ def load_bunpou(file_path):
         logging.error(f"Error loading bunpou file: {e}")
         return {}
 
-def get_bunpou_list(combined_message, bunpou_data):
+def get_bunpou_list(combined_message, bunpou_data, num_bunpou=5):
     """
-    Mengambil daftar bunpou berdasarkan isi `combined_message`.
+    Ambil daftar bunpou yang sesuai dari data JSON berdasarkan isi combined_message.
     """
-    selected_bunpou = []
+    extracted_text = extract_japanese_text(combined_message)
+    matched_bunpou = []
 
-    # Gabungkan semua bunpou dari setiap level
-    all_bunpou = [item for level in bunpou_data.values() for item in level]
+    # Cek bunpou yang cocok
+    for level, bunpous in bunpou_data.items():
+        for bunpou in bunpous:
+            if bunpou['bunpou'] in extracted_text:
+                matched_bunpou.append(bunpou)
 
-    # Cari bunpou yang cocok
-    for bunpou in all_bunpou:
-        if bunpou['bunpou'] in combined_message:
-            selected_bunpou.append(bunpou)
+    # Jika tidak cukup, tambahkan bunpou acak
+    if len(matched_bunpou) < num_bunpou:
+        all_bunpou = [b for level in bunpou_data.values() for b in level]
+        additional_bunpou = list(set(all_bunpou) - set(matched_bunpou))
+        random.shuffle(additional_bunpou)
+        matched_bunpou.extend(additional_bunpou[:num_bunpou - len(matched_bunpou)])
 
-    # Jika kurang dari 5, tambahkan bunpou secara acak
-    if len(selected_bunpou) < 5:
-        remaining_bunpou = [b for b in all_bunpou if b not in selected_bunpou]
-        selected_bunpou.extend(random.sample(remaining_bunpou, min(5 - len(selected_bunpou), len(remaining_bunpou))))
-
-    # Batasi hanya 5 bunpou
-    return selected_bunpou[:5]
+    return matched_bunpou[:num_bunpou]
 
 # Mengirim Batch Pesan ke Telegram
 def send_telegram_message_batch(bot_token, chat_id, bunpou_file):
