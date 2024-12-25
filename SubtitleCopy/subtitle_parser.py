@@ -12,6 +12,8 @@ import requests
 from telegram_config import my_bot_token, my_chat_id
 import subprocess
 import logging
+import json
+import random
 
 # Pastikan encoding terminal UTF-8
 sys.stdout.reconfigure(encoding='utf-8')
@@ -51,9 +53,45 @@ def add_message_to_queue(message):
         message_queue.append(message)
     logging.info(f"Message added to queue: {message}")
 
+def load_bunpou(file_path):
+    """
+    Memuat data bunpou dari file JSON.
+    """
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            return json.load(file)
+    except Exception as e:
+        logging.error(f"Error loading bunpou file: {e}")
+        return {}
+
+def get_bunpou_list(combined_message, bunpou_data):
+    """
+    Mengambil daftar bunpou berdasarkan isi `combined_message`.
+    """
+    selected_bunpou = []
+
+    # Gabungkan semua bunpou dari setiap level
+    all_bunpou = [item for level in bunpou_data.values() for item in level]
+
+    # Cari bunpou yang cocok
+    for bunpou in all_bunpou:
+        if bunpou['bunpou'] in combined_message:
+            selected_bunpou.append(bunpou)
+
+    # Jika kurang dari 5, tambahkan bunpou secara acak
+    if len(selected_bunpou) < 5:
+        remaining_bunpou = [b for b in all_bunpou if b not in selected_bunpou]
+        selected_bunpou.extend(random.sample(remaining_bunpou, min(5 - len(selected_bunpou), len(remaining_bunpou))))
+
+    # Batasi hanya 5 bunpou
+    return selected_bunpou[:5]
+
 # Mengirim Batch Pesan ke Telegram
-def send_telegram_message_batch(bot_token, chat_id):
+def send_telegram_message_batch(bot_token, chat_id, bunpou_file):
     global message_queue
+
+    bunpou_data = load_bunpou(bunpou_file)
+
     while True:
         time.sleep(15)  # Tunggu 15 detik sebelum memproses pesan berikutnya
 
@@ -64,16 +102,23 @@ def send_telegram_message_batch(bot_token, chat_id):
             combined_message = "\n\n".join(message_queue)  # Gabungkan pesan dengan newline
             message_queue.clear()
 
+        # Ambil 5 bunpou
+        bunpou_list = get_bunpou_list(combined_message, bunpou_data)
+        bunpou_text = "\n\nBunpou List:\n" + "\n".join([f"{b['bunpou']} - {b['meaning']} ({b['arti']})" for b in bunpou_list])
+
+        # Tambahkan ke pesan gabungan
+        full_message = f"{combined_message}\n\n{bunpou_text}"
+
         # Kirim pesan gabungan ke Telegram
         url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
         payload = {
             'chat_id': chat_id,
-            'text': combined_message
+            'text': full_message
         }
         try:
             response = requests.post(url, data=payload)
             if response.status_code == 200:
-                logging.info(f"Combined message sent:\n{combined_message}")
+                logging.info(f"Combined message sent:\n{full_message}")
             else:
                 logging.error(f"Error sending combined message: {response.status_code}, {response.text}")
         except requests.exceptions.RequestException as e:
@@ -83,7 +128,8 @@ def send_telegram_message_batch(bot_token, chat_id):
 def monitor_subtitles_with_queue(subtitles, extracted_subtitles, player, bot_token, chat_id):
     last_text = None
     last_extracted_text = None
-    threading.Thread(target=send_telegram_message_batch, args=(bot_token, chat_id), daemon=True).start()
+    bunpou_file_path = "zenbu_bunpou.json"
+    threading.Thread(target=send_telegram_message_batch, args=(my_bot_token, my_chat_id, bunpou_file_path), daemon=True).start()
 
     try:
         while True:
