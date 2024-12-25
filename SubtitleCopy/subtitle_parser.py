@@ -20,8 +20,21 @@ from janome.tokenizer import Tokenizer
 # Pastikan encoding terminal UTF-8
 sys.stdout.reconfigure(encoding='utf-8')
 
-# Konfigurasi Logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+class UnicodeStreamHandler(logging.StreamHandler):
+    def emit(self, record):
+        try:
+            msg = self.format(record)
+            stream = self.stream
+            if isinstance(msg, str):
+                stream.write(f"{msg}\n")
+            else:
+                stream.write(msg)
+            self.flush()
+        except Exception:
+            self.handleError(record)
+
+# Ganti konfigurasi logging
+logging.basicConfig(handlers=[UnicodeStreamHandler(sys.stdout)], level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Antrian untuk menyimpan pesan
 message_queue = []
@@ -111,7 +124,9 @@ def get_bunpou_list(combined_message, bunpou_data, num_bunpou=5):
             if any(bunpou['bunpou'] == token for token in tokens) or bunpou['bunpou'] in japanese_text:
                 matched_bunpou.append({"level": level, **bunpou})
 
+    # Log matched bunpou
     logging.info(f"Matched Bunpou: {matched_bunpou}")
+
     return matched_bunpou[:num_bunpou]
 
 # Mengirim Batch Pesan ke Telegram

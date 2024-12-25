@@ -1,1121 +1,1121 @@
 {
   "N5": [
     {
-      "bunpou": "だ / です (da / desu)",
+      "bunpou": "だ / です",
       "meaning": "to be (copula)",
       "arti": "adalah (kopula)"
     },
     {
-      "bunpou": "だけ (dake)",
+      "bunpou": "だけ",
       "meaning": "only, just",
       "arti": "hanya, saja"
     },
     {
-      "bunpou": "だろう (darou)",
+      "bunpou": "だろう",
       "meaning": "probably",
       "arti": "mungkin"
     },
     {
-      "bunpou": "で (de) – 1",
+      "bunpou": "で",
       "meaning": "at, in",
       "arti": "di, dalam"
     },
     {
-      "bunpou": "で (de) – 2",
+      "bunpou": "で",
       "meaning": "with, by",
       "arti": "dengan, oleh"
     },
     {
-      "bunpou": "でしょう (deshou)",
+      "bunpou": "でしょう",
       "meaning": "I think, probably",
       "arti": "saya pikir, mungkin"
     },
     {
-      "bunpou": "が (ga) – 1",
+      "bunpou": "が",
       "meaning": "subject marker",
       "arti": "penanda subjek"
     },
     {
-      "bunpou": "が (ga) – 2",
+      "bunpou": "が",
       "meaning": "but, however",
       "arti": "tetapi, namun"
     },
     {
-      "bunpou": "がある (gaaru)",
+      "bunpou": "がある",
       "meaning": "there is (used for non-living things)",
       "arti": "ada (digunakan untuk benda mati)"
     },
     {
-      "bunpou": "がいる (gairu)",
+      "bunpou": "がいる",
       "meaning": "there is (used for living things)",
       "arti": "ada (digunakan untuk makhluk hidup)"
     },
     {
-      "bunpou": "ほうがいい (hou ga ii) – 1",
+      "bunpou": "ほうがいい",
       "meaning": "it’d be better to",
       "arti": "akan lebih baik untuk"
     },
     {
-      "bunpou": "ほうがいい (hou ga ii) – 2",
+      "bunpou": "ほうがいい",
       "meaning": "it’d be better to not",
       "arti": "akan lebih baik untuk tidak"
     },
     {
-      "bunpou": "いちばん (ichiban)",
+      "bunpou": "いちばん",
       "meaning": "the most",
       "arti": "yang paling"
     },
     {
-      "bunpou": "か (ka) – 1",
+      "bunpou": "か",
       "meaning": "or (A or B, choice between 2 objects)",
       "arti": "atau (A atau B, pilihan antara 2 objek)"
     },
     {
-      "bunpou": "か (ka) – 2",
+      "bunpou": "か",
       "meaning": "question particle",
       "arti": "partikel tanya"
     },
     {
-      "bunpou": "から (kara) – 1",
+      "bunpou": "から",
       "meaning": "because, since",
       "arti": "karena, sejak"
     },
     {
-      "bunpou": "から (kara) – 2",
+      "bunpou": "から",
       "meaning": "from",
       "arti": "dari"
     },
     {
-      "bunpou": "けれども (keredomo)",
+      "bunpou": "けれども",
       "meaning": "but, although",
       "arti": "tetapi, meskipun"
     },
     {
-      "bunpou": "くらい (kurai)",
+      "bunpou": "くらい",
       "meaning": "about, approximately",
       "arti": "sekitar, kira-kira"
     },
     {
-      "bunpou": "まだ (mada)",
+      "bunpou": "まだ",
       "meaning": "still, not yet",
       "arti": "masih, belum"
     },
     {
-      "bunpou": "まで (made)",
+      "bunpou": "まで",
       "meaning": "until, till, to, even",
       "arti": "hingga, sampai, bahkan"
     },
     {
-      "bunpou": "まえに (mae ni)",
+      "bunpou": "まえに",
       "meaning": "before",
       "arti": "sebelum"
     },
     {
-      "bunpou": "ませんか (masen ka)",
+      "bunpou": "ませんか",
       "meaning": "let’s, won’t you",
       "arti": "ayo, apakah Anda tidak ingin"
     },
     {
-      "bunpou": "ましょう (mashou)",
+      "bunpou": "ましょう",
       "meaning": "let’s, shall we",
       "arti": "ayo, apakah kita akan"
     },
     {
-      "bunpou": "も (mo)",
+      "bunpou": "も",
       "meaning": "also, too, as well",
       "arti": "juga"
     },
     {
-      "bunpou": "もう (mo)",
+      "bunpou": "もう",
       "meaning": "already, anymore",
       "arti": "sudah, lagi"
     },
     {
-      "bunpou": "な (na)",
+      "bunpou": "な",
       "meaning": "don’t do",
       "arti": "jangan lakukan"
     },
     {
-      "bunpou": "ないでください (naidekudasai)",
+      "bunpou": "ないでください",
       "meaning": "please don’t",
       "arti": "tolong jangan"
     },
     {
-      "bunpou": "なる (naru)",
+      "bunpou": "なる",
       "meaning": "to become",
       "arti": "menjadi"
     },
     {
-      "bunpou": "に (ni)",
+      "bunpou": "に",
       "meaning": "in, at, to, for",
       "arti": "di, pada, ke, untuk"
     },
     {
-      "bunpou": "に/へ (ni/e)",
+      "bunpou": "に/へ",
       "meaning": "to",
       "arti": "ke"
     },
     {
-      "bunpou": "にいく (ni iku)",
+      "bunpou": "にいく",
       "meaning": "to go in order to",
       "arti": "pergi untuk"
     },
     {
-      "bunpou": "にする (nisuru)",
+      "bunpou": "にする",
       "meaning": "to decide on",
       "arti": "memutuskan untuk"
     },
     {
-      "bunpou": "の (no) – 1",
+      "bunpou": "の",
       "meaning": "of (indicates possessive)",
       "arti": "dari (menunjukkan kepemilikan)"
     },
     {
-      "bunpou": "の (no) – 2",
+      "bunpou": "の",
       "meaning": "Verb nominalizer",
       "arti": "mengubah kata kerja menjadi kata benda"
     },
     {
-      "bunpou": "ので (node)",
+      "bunpou": "ので",
       "meaning": "because of, the reason is that",
       "arti": "karena, alasannya adalah"
     },
     {
-      "bunpou": "のがじょうず (no ga jouzu)",
+      "bunpou": "のがじょうず",
       "meaning": "to be good at",
       "arti": "pandai dalam"
     },
     {
-      "bunpou": "のがすき (no ga suki)",
+      "bunpou": "のがすき",
       "meaning": "like / love doing",
       "arti": "suka / cinta melakukan"
     },
     {
-      "bunpou": "のがへた (no ga heta)",
+      "bunpou": "のがへた",
       "meaning": "to be bad at",
       "arti": "tidak pandai dalam"
     },
     {
-      "bunpou": "たい (tai)",
+      "bunpou": "たい",
       "meaning": "want to",
       "arti": "ingin"
     },
     {
-      "bunpou": "たことがある (takotogaaru)",
+      "bunpou": "たことがある",
       "meaning": "have done before",
       "arti": "pernah melakukan sebelumnya"
     },
     {
-      "bunpou": "ている (teiru)",
+      "bunpou": "ている",
       "meaning": "is/are/am doing",
       "arti": "sedang melakukan"
     },
     {
-      "bunpou": "てください (tekudasai)",
+      "bunpou": "てください",
       "meaning": "please do…",
       "arti": "silakan lakukan"
     },
     {
-      "bunpou": "てもいい (temo ii)",
+      "bunpou": "てもいい",
       "meaning": "is okay, is alright to, can",
       "arti": "boleh, tidak apa-apa untuk, dapat"
     },
     {
-      "bunpou": "てから (tekara)",
+      "bunpou": "てから",
       "meaning": "after doing",
       "arti": "setelah melakukan"
     },
     {
-      "bunpou": "てはいけない (tewaikenai)",
+      "bunpou": "てはいけない",
       "meaning": "must not, may not",
       "arti": "tidak boleh"
     },
     {
-      "bunpou": "と (to)",
+      "bunpou": "と",
       "meaning": "and, with",
       "arti": "dan, dengan"
     },
     {
-      "bunpou": "つもりだ (tsumori da)",
+      "bunpou": "つもりだ",
       "meaning": "plan to, intend to",
       "arti": "berencana untuk, berniat untuk"
     },
     {
-      "bunpou": "や (ya)",
+      "bunpou": "や",
       "meaning": "and",
       "arti": "dan"
     },
     {
-      "bunpou": "より ~ のほうが ~ (yori ~ nohouga ~)",
+      "bunpou": "より ~ のほうが ~",
       "meaning": "is more ~ than",
       "arti": "lebih ~ daripada"
     }
   ],
   "N4": [
     {
-      "bunpou": "あまり～ない (amari~nai)",
+      "bunpou": "あまり～ない",
       "meaning": "not very, not much",
       "arti": "tidak terlalu, tidak banyak"
     },
     {
-      "bunpou": "あとで (ato de)",
+      "bunpou": "あとで",
       "meaning": "after, later",
       "arti": "setelah, nanti"
     },
     {
-      "bunpou": "ば (ba)",
+      "bunpou": "ば",
       "meaning": "if… then",
       "arti": "jika… maka"
     },
     {
-      "bunpou": "場合は (baai wa)",
+      "bunpou": "場合は",
       "meaning": "in the event of",
       "arti": "dalam hal, jika terjadi"
     },
     {
-      "bunpou": "ばかり (bakari)",
+      "bunpou": "ばかり",
       "meaning": "only, nothing but",
       "arti": "hanya, tidak lain kecuali"
     },
     {
-      "bunpou": "だけで (dake de)",
+      "bunpou": "だけで",
       "meaning": "just by",
       "arti": "hanya dengan"
     },
     {
-      "bunpou": "だす (dasu)",
+      "bunpou": "だす",
       "meaning": "to suddenly begin, to suddenly appear",
       "arti": "tiba-tiba mulai, tiba-tiba muncul"
     },
     {
-      "bunpou": "でも (demo)",
+      "bunpou": "でも",
       "meaning": "or something",
       "arti": "atau sesuatu"
     },
     {
-      "bunpou": "でございます (de gozaimasu)",
+      "bunpou": "でございます",
       "meaning": "to be (honorific)",
       "arti": "adalah (kehormatan)"
     },
     {
-      "bunpou": "がる (garu)",
+      "bunpou": "がる",
       "meaning": "to show signs of, to feel, to think",
       "arti": "menunjukkan tanda-tanda, merasa, berpikir"
     },
     {
-      "bunpou": "がする (ga suru)",
+      "bunpou": "がする",
       "meaning": "smell, hear, taste",
       "arti": "mencium, mendengar, merasakan"
     },
     {
-      "bunpou": "ごろ (goro)",
+      "bunpou": "ごろ",
       "meaning": "around, about",
       "arti": "sekitar"
     },
     {
-      "bunpou": "ございます (gozaimasu)",
+      "bunpou": "ございます",
       "meaning": "to be, to exist (honorific)",
       "arti": "ada, eksis (kehormatan)"
     },
     {
-      "bunpou": "はじめる (hajimeru)",
+      "bunpou": "はじめる",
       "meaning": "to start, to begin to",
       "arti": "mulai, memulai"
     },
     {
-      "bunpou": "はずだ (hazu da)",
+      "bunpou": "はずだ",
       "meaning": "it must be, it should be",
       "arti": "pasti, seharusnya"
     },
     {
-      "bunpou": "はずがない (hazu ga nai)",
+      "bunpou": "はずがない",
       "meaning": "cannot be",
       "arti": "tidak mungkin"
     },
     {
-      "bunpou": "ひつよう (hitsuyou)",
+      "bunpou": "ひつよう",
       "meaning": "need, necessary",
       "arti": "perlu, penting"
     },
     {
-      "bunpou": "ひつようがある (hitsuyou ga aru)",
+      "bunpou": "ひつようがある",
       "meaning": "it is necessary to",
       "arti": "penting untuk"
     },
     {
-      "bunpou": "ほしい (hoshii)",
+      "bunpou": "ほしい",
       "meaning": "to want something, to be in need of",
       "arti": "menginginkan sesuatu, membutuhkan"
     },
     {
-      "bunpou": "いらっしゃる (irassharu)",
+      "bunpou": "いらっしゃる",
       "meaning": "to be, to come, to go",
       "arti": "ada, datang, pergi (kehormatan)"
     },
     {
-      "bunpou": "いたす (itasu)",
+      "bunpou": "いたす",
       "meaning": "to do (honorific)",
       "arti": "melakukan (kehormatan)"
     },
     {
-      "bunpou": "じゃないか (janai ka)",
+      "bunpou": "じゃないか",
       "meaning": "isn’t it",
       "arti": "bukankah begitu"
     },
     {
-      "bunpou": "かどうか (ka dou ka)",
+      "bunpou": "かどうか",
       "meaning": "whether or not",
       "arti": "apakah atau tidak"
     },
     {
-      "bunpou": "かい (kai)",
+      "bunpou": "かい",
       "meaning": "(turns a sentence into a yes/no question)",
       "arti": "mengubah kalimat menjadi pertanyaan ya/tidak"
     },
     {
-      "bunpou": "かもしれない (kamoshirenai)",
+      "bunpou": "かもしれない",
       "meaning": "might, maybe",
       "arti": "mungkin, barangkali"
     },
     {
-      "bunpou": "かな (kana)",
+      "bunpou": "かな",
       "meaning": "I wonder",
       "arti": "saya bertanya-tanya"
     },
     {
-      "bunpou": "かた (kata)",
+      "bunpou": "かた",
       "meaning": "how to",
       "arti": "cara untuk"
     },
     {
-      "bunpou": "かしら (kashira)",
+      "bunpou": "かしら",
       "meaning": "I wonder",
       "arti": "saya bertanya-tanya"
     },
     {
-      "bunpou": "こと (koto)",
+      "bunpou": "こと",
       "meaning": "Verb nominalizer",
       "arti": "mengubah kata kerja menjadi kata benda"
     },
     {
-      "bunpou": "ことができる (koto ga dekiru)",
+      "bunpou": "ことができる",
       "meaning": "can, be able to",
       "arti": "bisa, mampu"
     },
     {
-      "bunpou": "ことになる (koto ni naru)",
+      "bunpou": "ことになる",
       "meaning": "it has been decided that",
       "arti": "telah diputuskan bahwa"
     },
     {
-      "bunpou": "ことにする (koto ni suru)",
+      "bunpou": "ことにする",
       "meaning": "to decide on",
       "arti": "memutuskan"
     },
     {
-      "bunpou": "までに (made ni)",
+      "bunpou": "までに",
       "meaning": "by, by the time",
       "arti": "sebelum, pada waktu"
     },
     {
-      "bunpou": "みたい (mitai)",
+      "bunpou": "みたい",
       "meaning": "like, similar to, resembling",
       "arti": "seperti, mirip"
     },
     {
-      "bunpou": "みたいに/みたいな (mitai ni/mitai na)",
+      "bunpou": "みたいに/みたいな",
       "meaning": "like, similar to",
       "arti": "seperti, mirip"
     },
     {
-      "bunpou": "など (nado)",
+      "bunpou": "など",
       "meaning": "such as, things like",
       "arti": "seperti, hal-hal seperti"
     },
     {
-      "bunpou": "ながら (nagara)",
+      "bunpou": "ながら",
       "meaning": "while, during, as",
       "arti": "sambil, selama"
     },
     {
-      "bunpou": "ないで (naide)",
+      "bunpou": "ないで",
       "meaning": "without doing, don’t",
       "arti": "tanpa melakukan, jangan"
     },
     {
-      "bunpou": "なければいけない/なければならない (nakereba ikenai/nakereba naranai)",
+      "bunpou": "なければいけない/なければならない",
       "meaning": "must do, have to do",
       "arti": "harus dilakukan"
     },
     {
-      "bunpou": "なくてはいけない/なくてはならない (nakutewa ikenai/nakutewa naranai)",
+      "bunpou": "なくてはいけない/なくてはならない",
       "meaning": "must do, have to do",
       "arti": "harus dilakukan"
     },
     {
-      "bunpou": "なくてもいい (nakute mo ii)",
+      "bunpou": "なくてもいい",
       "meaning": "don’t have to",
       "arti": "tidak harus"
     },
     {
-      "bunpou": "なら (nara)",
+      "bunpou": "なら",
       "meaning": "if, in case, as for",
       "arti": "jika, dalam hal"
     },
     {
-      "bunpou": "なさい (nasai)",
+      "bunpou": "なさい",
       "meaning": "command (order somebody to do something)",
       "arti": "perintah (meminta seseorang melakukan sesuatu)"
     },
     {
-      "bunpou": "なさる (nasaru)",
+      "bunpou": "なさる",
       "meaning": "to do (honorific)",
       "arti": "melakukan (kehormatan)"
     },
     {
-      "bunpou": "にくい (nikui)",
+      "bunpou": "にくい",
       "meaning": "difficult to, hard to",
       "arti": "sulit untuk"
     },
     {
-      "bunpou": "のなかで (no naka de)",
+      "bunpou": "のなかで",
       "meaning": "in, among",
       "arti": "di dalam, di antara"
     },
     {
-      "bunpou": "のに (noni) – 1",
+      "bunpou": "のに",
       "meaning": "in order to",
       "arti": "untuk"
     },
     {
-      "bunpou": "のに (noni) – 2",
+      "bunpou": "のに",
       "meaning": "although, in spite of, even though",
       "arti": "walaupun, meskipun"
     },
     {
-      "bunpou": "のように / のような (no you ni/no you na)",
+      "bunpou": "のように / のような",
       "meaning": "like, similar to",
       "arti": "seperti, mirip"
     },
     {
-      "bunpou": "お～ください (o~kudasai)",
+      "bunpou": "お～ください",
       "meaning": "please do (honorific)",
       "arti": "tolong lakukan (kehormatan)"
     },
     {
-      "bunpou": "お～になる (o~ni naru)",
+      "bunpou": "お～になる",
       "meaning": "to do (honorific)",
       "arti": "melakukan (kehormatan)"
     },
     {
-      "bunpou": "おきに (oki ni)",
+      "bunpou": "おきに",
       "meaning": "repeated at intervals, every",
       "arti": "berulang pada interval, setiap"
     },
     {
-      "bunpou": "おわる (owaru)",
+      "bunpou": "おわる",
       "meaning": "to finish, to end",
       "arti": "menyelesaikan, mengakhiri"
     },
     {
-      "bunpou": "られる (rareru) – 1",
+      "bunpou": "られる",
       "meaning": "to be able to do something",
       "arti": "dapat melakukan sesuatu"
     },
     {
-      "bunpou": "られる (rareru) – 2",
+      "bunpou": "られる",
       "meaning": "(passive voice)",
       "arti": "bentuk pasif"
     },
     {
-      "bunpou": "らしい (rashii)",
+      "bunpou": "らしい",
       "meaning": "seems like",
       "arti": "sepertinya"
     },
     {
-      "bunpou": "さ (sa)",
+      "bunpou": "さ",
       "meaning": "(nominalizer for adjectives)",
       "arti": "mengubah kata sifat menjadi kata benda"
     },
     {
-      "bunpou": "させる (saseru)",
+      "bunpou": "させる",
       "meaning": "to make/let somebody do something",
       "arti": "membuat/membiarkan seseorang melakukan sesuatu"
     },
     {
-      "bunpou": "させられる (saserareru)",
+      "bunpou": "させられる",
       "meaning": "to be made to do something",
       "arti": "dipaksa untuk melakukan sesuatu"
     },
     {
-      "bunpou": "し (shi)",
+      "bunpou": "し",
       "meaning": "and",
       "arti": "dan"
     },
     {
-      "bunpou": "しか～ない (shika~nai)",
+      "bunpou": "しか～ない",
       "meaning": "only, nothing but",
       "arti": "hanya, tidak lebih dari"
     },
     {
-      "bunpou": "そんなに (sonna ni)",
+      "bunpou": "そんなに",
       "meaning": "so, so much, like that",
       "arti": "begitu, begitu banyak, seperti itu"
     },
     {
-      "bunpou": "それでも (sore demo)",
+      "bunpou": "それでも",
       "meaning": "but still, and yet",
       "arti": "tetapi tetap, meskipun begitu"
     },
     {
-      "bunpou": "そうに/そうな (sou ni/sou na)",
+      "bunpou": "そうに/そうな",
       "meaning": "seem, look like",
       "arti": "terlihat seperti, tampaknya"
     },
     {
-      "bunpou": "そうだ (sou da) – 1",
+      "bunpou": "そうだ",
       "meaning": "I heard that, it is said that",
       "arti": "saya dengar, dikatakan bahwa"
     },
     {
-      "bunpou": "そうだ (sou da) – 2",
+      "bunpou": "そうだ",
       "meaning": "look like, appear, seem",
       "arti": "terlihat seperti, tampak, tampaknya"
     },
     {
-      "bunpou": "すぎる (sugiru)",
+      "bunpou": "すぎる",
       "meaning": "too much",
       "arti": "terlalu banyak"
     },
     {
-      "bunpou": "たばかり (ta bakari)",
+      "bunpou": "たばかり",
       "meaning": "just did, something just happened",
       "arti": "baru saja dilakukan, sesuatu baru saja terjadi"
     },
     {
-      "bunpou": "たがる (tagaru)",
+      "bunpou": "たがる",
       "meaning": "to want to",
       "arti": "ingin"
     },
     {
-      "bunpou": "たら (tara)",
+      "bunpou": "たら",
       "meaning": "if, after, when",
       "arti": "jika, setelah, kapan"
     },
     {
-      "bunpou": "たらどう (tara dou)",
+      "bunpou": "たらどう",
       "meaning": "why don’t you",
       "arti": "kenapa tidak"
     },
     {
-      "bunpou": "たり～たり (tari~tari)",
+      "bunpou": "たり～たり",
       "meaning": "do such things like",
       "arti": "melakukan hal-hal seperti"
     },
     {
-      "bunpou": "たところ (ta tokoro)",
+      "bunpou": "たところ",
       "meaning": "just finished doing, was just doing",
       "arti": "baru saja selesai melakukan, baru saja melakukan"
     },
     {
-      "bunpou": "てあげる (te ageru)",
+      "bunpou": "てあげる",
       "meaning": "to do something for someone",
       "arti": "melakukan sesuatu untuk seseorang"
     },
     {
-      "bunpou": "てある (te aru)",
+      "bunpou": "てある",
       "meaning": "something is/has been done",
       "arti": "sesuatu sudah dilakukan"
     },
     {
-      "bunpou": "てほしい (te hoshii)",
+      "bunpou": "てほしい",
       "meaning": "I need you to",
       "arti": "saya butuh kamu untuk"
     },
     {
-      "bunpou": "ていく (te iku)",
+      "bunpou": "ていく",
       "meaning": "to go on, to start",
       "arti": "melanjutkan, memulai"
     },
     {
-      "bunpou": "ているところ (teiru tokoro)",
+      "bunpou": "ているところ",
       "meaning": "in the process of doing",
       "arti": "dalam proses melakukan"
     },
     {
-      "bunpou": "ていただけませんか (te itadakemasen ka)",
+      "bunpou": "ていただけませんか",
       "meaning": "could you please",
       "arti": "bisakah Anda"
     },
     {
-      "bunpou": "てくれる (te kureru)",
+      "bunpou": "てくれる",
       "meaning": "to do something for someone",
       "arti": "melakukan sesuatu untuk seseorang"
     },
     {
-      "bunpou": "てくる (te kuru)",
+      "bunpou": "てくる",
       "meaning": "to come to, to become, to continue",
       "arti": "datang untuk, menjadi, melanjutkan"
     },
     {
-      "bunpou": "てみる (te miru)",
+      "bunpou": "てみる",
       "meaning": "to try to",
       "arti": "mencoba untuk"
     },
     {
-      "bunpou": "ても (temo)",
+      "bunpou": "ても",
       "meaning": "even if, even though",
       "arti": "meskipun, walaupun"
     },
     {
-      "bunpou": "てもらう (te morau)",
+      "bunpou": "てもらう",
       "meaning": "to get somebody to do something",
       "arti": "meminta seseorang melakukan sesuatu"
     },
     {
-      "bunpou": "ておく (te oku)",
+      "bunpou": "ておく",
       "meaning": "to do something in advance",
       "arti": "melakukan sesuatu sebelumnya"
     },
     {
-      "bunpou": "てしまう (te shimau)",
+      "bunpou": "てしまう",
       "meaning": "to do something by accident, to finish completely",
       "arti": "melakukan sesuatu secara tidak sengaja, menyelesaikan sepenuhnya"
     },
     {
-      "bunpou": "てすみません (te sumimasen)",
+      "bunpou": "てすみません",
       "meaning": "I’m sorry for",
       "arti": "saya minta maaf untuk"
     },
     {
-      "bunpou": "てよかった (te yokatta)",
+      "bunpou": "てよかった",
       "meaning": "I’m glad that",
       "arti": "saya senang bahwa"
     },
     {
-      "bunpou": "と (to)",
+      "bunpou": "と",
       "meaning": "if, when, and",
       "arti": "jika, kapan, dan"
     },
     {
-      "bunpou": "ということ (to iu koto)",
+      "bunpou": "ということ",
       "meaning": "changes a sentence or phrase into a noun",
       "arti": "mengubah kalimat atau frasa menjadi kata benda"
     },
     {
-      "bunpou": "とか～とか (toka ~ toka)",
+      "bunpou": "とか～とか",
       "meaning": "among other things, such as",
       "arti": "di antara hal-hal lain, seperti"
     },
     {
-      "bunpou": "とき (toki)",
+      "bunpou": "とき",
       "meaning": "when, at the time",
       "arti": "kapan, pada saat"
     },
     {
-      "bunpou": "ところ (tokoro)",
+      "bunpou": "ところ",
       "meaning": "about to, on the verge of",
       "arti": "akan, di ambang"
     },
     {
-      "bunpou": "とおもう (to omou)",
+      "bunpou": "とおもう",
       "meaning": "I think, you think",
       "arti": "saya pikir, kamu pikir"
     },
     {
-      "bunpou": "つづける (tsuzukeru)",
+      "bunpou": "つづける",
       "meaning": "to continue",
       "arti": "melanjutkan"
     },
     {
-      "bunpou": "やすい (yasui)",
+      "bunpou": "やすい",
       "meaning": "easy to, likely to",
       "arti": "mudah untuk, mungkin untuk"
     },
     {
-      "bunpou": "より (yori)",
+      "bunpou": "より",
       "meaning": "than",
       "arti": "daripada"
     },
     {
-      "bunpou": "よていだ (yotei da)",
+      "bunpou": "よていだ",
       "meaning": "plan to, intend to",
       "arti": "berencana untuk, berniat untuk"
     },
     {
-      "bunpou": "ようだ (you da)",
+      "bunpou": "ようだ",
       "meaning": "it seems that, it appears that, it looks like",
       "arti": "kelihatannya, tampaknya"
     },
     {
-      "bunpou": "ように/ような (you ni/you na)",
+      "bunpou": "ように/ような",
       "meaning": "as, like, just like",
       "arti": "seperti, persis seperti"
     },
     {
-      "bunpou": "ようになる (you ni naru)",
+      "bunpou": "ようになる",
       "meaning": "to reach the point that",
       "arti": "mencapai titik itu"
     },
     {
-      "bunpou": "ようにする (you ni suru)",
+      "bunpou": "ようにする",
       "meaning": "to try to, to make sure that",
       "arti": "mencoba untuk, memastikan bahwa"
     },
     {
-      "bunpou": "ようとおもう (you to omou)",
+      "bunpou": "ようとおもう",
       "meaning": "I think I will",
       "arti": "saya pikir saya akan"
     },
     {
-      "bunpou": "ぜんぜん (zenzen)",
+      "bunpou": "ぜんぜん",
       "meaning": "(not) at all",
       "arti": "sama sekali (tidak)"
     }
   ],
   "N3": [
     {
-      "bunpou": "あまり (amari)",
+      "bunpou": "あまり",
       "meaning": "so much… that",
       "arti": "terlalu… sehingga"
     },
     {
-      "bunpou": "あまりに (amari ni)",
+      "bunpou": "あまりに",
       "meaning": "so much… that, too…",
       "arti": "terlalu… sehingga, terlalu…"
     },
     {
-      "bunpou": "ば～ほど (ba ~ hodo)",
+      "bunpou": "ば～ほど",
       "meaning": "the more… the more",
       "arti": "semakin… semakin"
     },
     {
-      "bunpou": "ばいい (ba ii)",
+      "bunpou": "ばいい",
       "meaning": "should, can, it’d be good if",
       "arti": "seharusnya, bisa, akan baik jika"
     },
     {
-      "bunpou": "ばかりでなく (bakari denaku)",
+      "bunpou": "ばかりでなく",
       "meaning": "not only… but also, as well as",
       "arti": "tidak hanya… tetapi juga, serta"
     },
     {
-      "bunpou": "ばよかった (ba yokatta)",
+      "bunpou": "ばよかった",
       "meaning": "should have, it would have been better if",
       "arti": "seharusnya, akan lebih baik jika"
     },
     {
-      "bunpou": "べき (beki)",
+      "bunpou": "べき",
       "meaning": "must do, should do",
       "arti": "harus dilakukan, sebaiknya dilakukan"
     },
     {
-      "bunpou": "べきではない (beki dewa nai)",
+      "bunpou": "べきではない",
       "meaning": "must not do, should not do",
       "arti": "tidak boleh dilakukan, sebaiknya tidak dilakukan"
     },
     {
-      "bunpou": "べつに～ない (betsu ni ~ nai)",
+      "bunpou": "べつに～ない",
       "meaning": "not really, not particularly",
       "arti": "tidak benar-benar, tidak terlalu"
     },
     {
-      "bunpou": "中 (chuu/juu)",
+      "bunpou": "中",
       "meaning": "during, throughout",
       "arti": "selama, sepanjang"
     },
     {
-      "bunpou": "だけ (dake) – 2",
+      "bunpou": "だけ",
       "meaning": "as much as",
       "arti": "sebanyak"
     },
     {
-      "bunpou": "だらけ (darake)",
+      "bunpou": "だらけ",
       "meaning": "covered all over in, full of",
       "arti": "dipenuhi dengan, penuh dengan"
     },
     {
-      "bunpou": "どころか (dokoro ka)",
+      "bunpou": "どころか",
       "meaning": "far from, anything but",
       "arti": "jauh dari, sama sekali bukan"
     },
     {
-      "bunpou": "どんなに～ても (donna ni ~ temo)",
+      "bunpou": "どんなに～ても",
       "meaning": "no matter how",
       "arti": "tidak peduli seberapa"
     },
     {
-      "bunpou": "ふりをする (furi o suru)",
+      "bunpou": "ふりをする",
       "meaning": "to pretend, to act as if",
       "arti": "berpura-pura, bertindak seolah-olah"
     },
     {
-      "bunpou": "ふと (futo)",
+      "bunpou": "ふと",
       "meaning": "accidentally, unexpectedly",
       "arti": "tidak sengaja, tiba-tiba"
     },
     {
-      "bunpou": "がち (gachi)",
+      "bunpou": "がち",
       "meaning": "apt to do, tend to do",
       "arti": "cenderung untuk"
     },
     {
-      "bunpou": "がたい (gatai)",
+      "bunpou": "がたい",
       "meaning": "hard to, difficult to",
       "arti": "sulit untuk"
     },
     {
-      "bunpou": "ぎみ (gimi)",
+      "bunpou": "ぎみ",
       "meaning": "-like, -looking",
       "arti": "bernuansa, tampak seperti"
     },
     {
-      "bunpou": "ほど (hodo)",
+      "bunpou": "ほど",
       "meaning": "the more, to the extent that, so much… that",
       "arti": "semakin, sejauh itu, begitu… sehingga"
     },
     {
-      "bunpou": "ほど～ない (hodo ~ nai)",
+      "bunpou": "ほど～ない",
       "meaning": "is not as… as",
       "arti": "tidak se… seperti"
     },
     {
-      "bunpou": "いくら～ても (ikura ~ temo)",
+      "bunpou": "いくら～ても",
       "meaning": "no matter how",
       "arti": "tidak peduli seberapa"
     },
     {
-      "bunpou": "一方だ (ippou da)",
+      "bunpou": "一方だ",
       "meaning": "more and more, continue to",
       "arti": "semakin lama semakin, terus"
     },
     {
-      "bunpou": "一方で (ippou de)",
+      "bunpou": "一方で",
       "meaning": "on one hand, on the other hand",
       "arti": "di satu sisi, di sisi lain"
     },
     {
-      "bunpou": "かけ (kake)",
+      "bunpou": "かけ",
       "meaning": "half-, not yet finished",
       "arti": "setengah, belum selesai"
     },
     {
-      "bunpou": "代わりに (kawari ni)",
+      "bunpou": "代わりに",
       "meaning": "instead of, in exchange for",
       "arti": "sebagai pengganti, sebagai ganti"
     },
     {
-      "bunpou": "っけ (kke)",
+      "bunpou": "っけ",
       "meaning": "what is… again?",
       "arti": "apa… lagi?"
     },
     {
-      "bunpou": "決して～ない (kesshite ~ nai)",
+      "bunpou": "決して～ない",
       "meaning": "never, by no means",
       "arti": "tidak pernah, sama sekali tidak"
     },
     {
-      "bunpou": "切る (kiru)",
+      "bunpou": "切る",
       "meaning": "to do something completely to the end",
       "arti": "melakukan sesuatu hingga selesai"
     },
     {
-      "bunpou": "切れない (kirenai)",
+      "bunpou": "切れない",
       "meaning": "being too much to finish or complete",
       "arti": "terlalu banyak untuk diselesaikan"
     },
     {
-      "bunpou": "きり (kiri)",
+      "bunpou": "きり",
       "meaning": "only, just",
       "arti": "hanya, cuma"
     },
     {
-      "bunpou": "こそ (koso)",
+      "bunpou": "こそ",
       "meaning": "for sure (emphasize preceding word)",
       "arti": "pasti (menekankan kata sebelumnya)"
     },
     {
-      "bunpou": "こと (koto)",
+      "bunpou": "こと",
       "meaning": "(must) do",
       "arti": "(harus) dilakukan"
     },
     {
-      "bunpou": "ことだ (koto da)",
+      "bunpou": "ことだ",
       "meaning": "should",
       "arti": "seharusnya"
     },
     {
-      "bunpou": "ことがある (koto ga aru)",
+      "bunpou": "ことがある",
       "meaning": "there are times when",
       "arti": "ada kalanya"
     },
     {
-      "bunpou": "ことか (koto ka)",
+      "bunpou": "ことか",
       "meaning": "how…! what…!",
       "arti": "betapa…!"
     },
     {
-      "bunpou": "ことに (koto ni)",
+      "bunpou": "ことに",
       "meaning": "unusually, especially",
       "arti": "tidak biasa, terutama"
     },
     {
-      "bunpou": "ことはない (koto wa nai)",
+      "bunpou": "ことはない",
       "meaning": "there is no need to, never happens",
       "arti": "tidak perlu, tidak pernah terjadi"
     },
     {
-      "bunpou": "くらい (kurai)",
+      "bunpou": "くらい",
       "meaning": "to the extent that, so… that",
       "arti": "hingga sejauh itu, begitu… sehingga"
     },
     {
-      "bunpou": "くせに (kuse ni)",
+      "bunpou": "くせに",
       "meaning": "even though, and yet, despite",
       "arti": "meskipun, namun demikian, walaupun"
     },
     {
-      "bunpou": "まま (mama)",
+      "bunpou": "まま",
       "meaning": "as it is",
       "arti": "sebagaimana adanya"
     },
     {
-      "bunpou": "まるで (maru de)",
+      "bunpou": "まるで",
       "meaning": "as if, as though",
       "arti": "seolah-olah, seperti"
     },
     {
-      "bunpou": "めったに～ない (metta ni ~ nai)",
+      "bunpou": "めったに～ない",
       "meaning": "hardly, rarely, seldom",
       "arti": "hampir tidak pernah, jarang"
     },
     {
-      "bunpou": "もの (mono)",
+      "bunpou": "もの",
       "meaning": "because (indicate reason or excuse)",
       "arti": "karena (menunjukkan alasan atau pembenaran)"
     },
     {
-      "bunpou": "ものだ (mono da)",
+      "bunpou": "ものだ",
       "meaning": "used to do something, should do something",
       "arti": "biasa dilakukan, seharusnya dilakukan"
     },
     {
-      "bunpou": "もしかしたら (moshikashitara)",
+      "bunpou": "もしかしたら",
       "meaning": "perhaps, maybe",
       "arti": "mungkin, barangkali"
     },
     {
-      "bunpou": "向き (muki)",
+      "bunpou": "向き",
       "meaning": "suitable for",
       "arti": "cocok untuk"
     },
     {
-      "bunpou": "向け (muke)",
+      "bunpou": "向け",
       "meaning": "intended for, aimed at",
       "arti": "ditujukan untuk"
     },
     {
-      "bunpou": "ながらも (nagara mo)",
+      "bunpou": "ながらも",
       "meaning": "but, although, despite",
       "arti": "tetapi, meskipun, walaupun"
     },
     {
-      "bunpou": "ないことはない (nai koto wa nai)",
+      "bunpou": "ないことはない",
       "meaning": "can, is not impossible",
       "arti": "bisa, tidak mustahil"
     },
     {
-      "bunpou": "なんか / なんて (nanka / nante)",
+      "bunpou": "なんか / なんて",
       "meaning": "such as, things like",
       "arti": "seperti, hal-hal seperti"
     },
     {
-      "bunpou": "なるべく (narubeku)",
+      "bunpou": "なるべく",
       "meaning": "as much as possible",
       "arti": "sebisa mungkin"
     },
     {
-      "bunpou": "なぜなら (nazenara)",
+      "bunpou": "なぜなら",
       "meaning": "because, the reason is",
       "arti": "karena, alasannya adalah"
     },
     {
-      "bunpou": "に違いない (ni chigai nai)",
+      "bunpou": "に違いない",
       "meaning": "I’m sure, no doubt that",
       "arti": "saya yakin, tidak diragukan lagi"
     },
     {
-      "bunpou": "にかけて (ni kakete)",
+      "bunpou": "にかけて",
       "meaning": "over (a period), through, concerning",
       "arti": "selama (periode), melalui, mengenai"
     },
     {
-      "bunpou": "に関する / に関して (ni kansu ru / ni kanshite)",
+      "bunpou": "に関する / に関して",
       "meaning": "related to",
       "arti": "terkait dengan"
     },
     {
-      "bunpou": "にかわって (ni kawatte)",
+      "bunpou": "にかわって",
       "meaning": "instead of, on behalf of",
       "arti": "sebagai pengganti, atas nama"
     },
     {
-      "bunpou": "に比べて (ni kurabete)",
+      "bunpou": "に比べて",
       "meaning": "compared to",
       "arti": "dibandingkan dengan"
     },
     {
-      "bunpou": "において/ における (ni oite / ni okeru)",
+      "bunpou": "において/ における",
       "meaning": "in, on, at, as for, regarding",
       "arti": "di, pada, mengenai"
     },
     {
-      "bunpou": "にしては (ni shite wa)",
+      "bunpou": "にしては",
       "meaning": "for, considering it’s",
       "arti": "untuk, mengingat itu"
     },
     {
-      "bunpou": "にしても (ni shite mo)",
+      "bunpou": "にしても",
       "meaning": "even if",
       "arti": "meskipun"
     },
     {
-      "bunpou": "に対して (ni taishite)",
+      "bunpou": "に対して",
       "meaning": "in contrast to, while, in regard to",
       "arti": "berbeda dengan, sementara, mengenai"
     },
     {
-      "bunpou": "にとって (ni totte)",
+      "bunpou": "にとって",
       "meaning": "to, for, concerning",
       "arti": "untuk, bagi, mengenai"
     },
     {
-      "bunpou": "について (ni tsuite)",
+      "bunpou": "について",
       "meaning": "concerning, regarding",
       "arti": "tentang, mengenai"
     },
     {
-      "bunpou": "につれて (ni tsurete)",
+      "bunpou": "につれて",
       "meaning": "as… then",
       "arti": "seiring dengan… maka"
     },
     {
-      "bunpou": "によると / によれば (ni yoru to / ni yoreba)",
+      "bunpou": "によると / によれば",
       "meaning": "according to",
       "arti": "menurut"
     },
     {
-      "bunpou": "によって / による (ni yotte / ni yoru)",
+      "bunpou": "によって / による",
       "meaning": "by means of, due to",
       "arti": "melalui, karena"
     },
     {
-      "bunpou": "の間に (no aida ni)",
+      "bunpou": "の間に",
       "meaning": "while, during",
       "arti": "sementara, selama"
     },
     {
-      "bunpou": "を中心に (o chuushin ni)",
+      "bunpou": "を中心に",
       "meaning": "focused on, centered on",
       "arti": "berfokus pada, berpusat pada"
     },
@@ -1185,12 +1185,12 @@
       "arti": "setiap kali"
     },
     {
-      "bunpou": "ために (1)",
+      "bunpou": "ために",
       "meaning": "for, for the sake of, in order to",
       "arti": "untuk, demi"
     },
     {
-      "bunpou": "ために (2)",
+      "bunpou": "ために",
       "meaning": "because of, as a result of",
       "arti": "karena, sebagai hasil dari"
     },
@@ -1382,17 +1382,17 @@
   ],
   "N2": [
     {
-      "bunpou": "上 (jou)",
+      "bunpou": "上",
       "meaning": "from the standpoint of",
       "arti": "dari sudut pandang"
     },
     {
-      "bunpou": "か～ないかのうちに (ka~nai ka no uchi ni)",
+      "bunpou": "か～ないかのうちに",
       "meaning": "right after, as soon as",
       "arti": "tepat setelah, segera setelah"
     },
     {
-      "bunpou": "かえって (kaette)",
+      "bunpou": "かえって",
       "meaning": "on the contrary, rather, surprisingly",
       "arti": "sebaliknya, malah, mengejutkan"
     },
@@ -1402,1909 +1402,1909 @@
       "arti": "layak melakukan sesuatu"
     },
     {
-      "bunpou": "か何か (ka nanika)",
+      "bunpou": "か何か",
       "meaning": "or something",
       "arti": "atau sesuatu"
     },
     {
-      "bunpou": "かねない (kanenai)",
+      "bunpou": "かねない",
       "meaning": "might happen, might do something",
       "arti": "mungkin terjadi, mungkin melakukan sesuatu"
     },
     {
-      "bunpou": "かねる (kaneru)",
+      "bunpou": "かねる",
       "meaning": "unable to do something",
       "arti": "tidak dapat melakukan sesuatu"
     },
     {
-      "bunpou": "かのよう (ka no you)",
+      "bunpou": "かのよう",
       "meaning": "as if, just like",
       "arti": "seolah-olah, seperti"
     },
     {
-      "bunpou": "から言うと (kara iu to)",
+      "bunpou": "から言うと",
       "meaning": "in terms of, from the point of view of",
       "arti": "dalam hal, dari sudut pandang"
     },
     {
-      "bunpou": "からこそ (kara koso)",
+      "bunpou": "からこそ",
       "meaning": "precisely because",
       "arti": "justru karena"
     },
     {
-      "bunpou": "から見ると (kara miru to)",
+      "bunpou": "から見ると",
       "meaning": "from the point of view of, by the look of",
       "arti": "dari sudut pandang, berdasarkan tampilan"
     },
     {
-      "bunpou": "からには (kara niwa)",
+      "bunpou": "からには",
       "meaning": "now that, since, so long as",
       "arti": "sekarang setelah, karena, selama"
     },
     {
-      "bunpou": "からして (kara shite)",
+      "bunpou": "からして",
       "meaning": "judging from, based on",
       "arti": "menilai dari, berdasarkan"
     },
     {
-      "bunpou": "からすると / からすれば (kara suru to/kara sureba)",
+      "bunpou": "からすると / からすれば",
       "meaning": "judging from, considering",
       "arti": "menilai dari, mempertimbangkan"
     },
     {
-      "bunpou": "からといって (kara to itte)",
+      "bunpou": "からといって",
       "meaning": "just because",
       "arti": "hanya karena"
     },
     {
-      "bunpou": "かと思ったら / かと思うと (ka to omottara/ka to omou to)",
+      "bunpou": "かと思ったら / かと思うと",
       "meaning": "then again, just when, no sooner than",
       "arti": "tepat ketika, belum lagi"
     },
     {
-      "bunpou": "限り (kagiri)",
+      "bunpou": "限り",
       "meaning": "as long as, while… is the case",
       "arti": "selama, selama hal ini terjadi"
     },
     {
-      "bunpou": "気 (ki)",
+      "bunpou": "気",
       "meaning": "feel like",
       "arti": "merasa seperti"
     },
     {
-      "bunpou": "っこない (kkonai)",
+      "bunpou": "っこない",
       "meaning": "no chance of, … is definitely not possible",
       "arti": "tidak ada kemungkinan, … pasti tidak mungkin"
     },
     {
-      "bunpou": "ことだから (koto dakara)",
+      "bunpou": "ことだから",
       "meaning": "it is exactly because",
       "arti": "tepatnya karena"
     },
     {
-      "bunpou": "ことから (koto kara)",
+      "bunpou": "ことから",
       "meaning": "from the fact that",
       "arti": "dari fakta bahwa"
     },
     {
-      "bunpou": "ことなく (koto naku)",
+      "bunpou": "ことなく",
       "meaning": "without doing something even once",
       "arti": "tanpa melakukan sesuatu sekalipun"
     },
     {
-      "bunpou": "ことになっている (koto ni natte iru)",
+      "bunpou": "ことになっている",
       "meaning": "to be expected to, to be scheduled to",
       "arti": "diharapkan, dijadwalkan"
     },
     {
-      "bunpou": "ことにはならない (koto niwa naranai)",
+      "bunpou": "ことにはならない",
       "meaning": "just because… doesn’t mean…",
       "arti": "hanya karena… tidak berarti…"
     },
     {
-      "bunpou": "ことは～が (koto wa~ga)",
+      "bunpou": "ことは～が",
       "meaning": "although, but",
       "arti": "meskipun, tetapi"
     },
     {
-      "bunpou": "まい (mai)",
+      "bunpou": "まい",
       "meaning": "won’t, intend not to",
       "arti": "tidak akan, berniat untuk tidak"
     },
     {
-      "bunpou": "まったく～ない (mattaku~nai)",
+      "bunpou": "まったく～ない",
       "meaning": "not~at all",
       "arti": "sama sekali tidak"
     },
     {
-      "bunpou": "も～ば～も (mo~ba~mo)",
+      "bunpou": "も～ば～も",
       "meaning": "…and…",
       "arti": "…dan…"
     },
     {
-      "bunpou": "もかまわず (mo kamawazu)",
+      "bunpou": "もかまわず",
       "meaning": "without worrying about",
       "arti": "tanpa mempedulikan"
     },
     {
-      "bunpou": "ものだから (mono dakara)",
+      "bunpou": "ものだから",
       "meaning": "because, the reason is",
       "arti": "karena, alasannya adalah"
     },
     {
-      "bunpou": "ものではない (mono dewa nai)",
+      "bunpou": "ものではない",
       "meaning": "shouldn’t do something, it’s impossible to do something",
       "arti": "tidak seharusnya melakukan sesuatu, tidak mungkin melakukan sesuatu"
     },
     {
-      "bunpou": "ものがある (mono ga aru)",
+      "bunpou": "ものがある",
       "meaning": "[sentence-ending expression of strong judgement]",
       "arti": "[ekspresi akhir kalimat untuk penilaian kuat]"
     },
     {
-      "bunpou": "ものか (mono ka)",
+      "bunpou": "ものか",
       "meaning": "as if",
       "arti": "seolah-olah"
     },
     {
-      "bunpou": "ものなら (mono nara)",
+      "bunpou": "ものなら",
       "meaning": "if one can do something",
       "arti": "jika seseorang bisa melakukan sesuatu"
     },
     {
-      "bunpou": "ものの (mono no)",
+      "bunpou": "ものの",
       "meaning": "but, although",
       "arti": "tetapi, meskipun"
     },
     {
-      "bunpou": "もっとも (motto mo)",
+      "bunpou": "もっとも",
       "meaning": "but then, although",
       "arti": "tetapi kemudian, meskipun"
     },
     {
-      "bunpou": "もう少しで (mou sukoshi de)",
+      "bunpou": "もう少しで",
       "meaning": "almost, nearly",
       "arti": "hampir, mendekati"
     },
     {
-      "bunpou": "むしろ (mushiro)",
+      "bunpou": "むしろ",
       "meaning": "rather, instead",
       "arti": "lebih baik, sebaliknya"
     },
     {
-      "bunpou": "んだって (ndatte)",
+      "bunpou": "んだって",
       "meaning": "I heard that",
       "arti": "saya dengar bahwa"
     },
     {
-      "bunpou": "中を (naka o)",
+      "bunpou": "中を",
       "meaning": "in, on",
       "arti": "di dalam, di atas"
     },
     {
-      "bunpou": "なお (nao)",
+      "bunpou": "なお",
       "meaning": "furthermore, still, yet [used to add more information to the sentence]",
       "arti": "selanjutnya, masih, namun [digunakan untuk menambahkan informasi lebih lanjut dalam kalimat]"
     },
     {
-      "bunpou": "ないではいられない (nai dewa irarenai)",
+      "bunpou": "ないではいられない",
       "meaning": "can’t help but feel, can’t help but do",
       "arti": "tidak bisa tidak merasakan, tidak bisa tidak melakukan"
     },
     {
-      "bunpou": "ないことには～ない (nai koto niwa~nai)",
+      "bunpou": "ないことには～ない",
       "meaning": "unless you do something",
       "arti": "kecuali kamu melakukan sesuatu"
     },
     {
-      "bunpou": "なくはない (naku wa nai)",
+      "bunpou": "なくはない",
       "meaning": "it’s not that…, can, may be",
       "arti": "bukan berarti…, bisa, mungkin"
     },
     {
-      "bunpou": "なにも～ない (nani mo~nai)",
+      "bunpou": "なにも～ない",
       "meaning": "no need to",
       "arti": "tidak perlu"
     },
     {
-      "bunpou": "ねばならない (neba naranai)",
+      "bunpou": "ねばならない",
       "meaning": "have to, must",
       "arti": "harus, wajib"
     },
     {
-      "bunpou": "にあたり (ni atari)",
+      "bunpou": "にあたり",
       "meaning": "at the time, on the occasion of",
       "arti": "pada saat, dalam kesempatan"
     },
     {
-      "bunpou": "に反して (ni han shite)",
+      "bunpou": "に反して",
       "meaning": "against, contrary to",
       "arti": "melawan, bertentangan dengan"
     },
     {
-      "bunpou": "にほかならない (ni hoka naranai)",
+      "bunpou": "にほかならない",
       "meaning": "nothing but, none other than",
       "arti": "tidak lain kecuali"
     },
     {
-      "bunpou": "に限って (ni kagitte)",
+      "bunpou": "に限って",
       "meaning": "only, particularly when",
       "arti": "hanya, terutama ketika"
     },
     {
-      "bunpou": "に限らず (ni kagirazu)",
+      "bunpou": "に限らず",
       "meaning": "not just, not only… but also",
       "arti": "tidak hanya… tetapi juga"
     },
     {
-      "bunpou": "に限る (ni kagiru)",
+      "bunpou": "に限る",
       "meaning": "nothing better than, there’s nothing like",
       "arti": "tidak ada yang lebih baik dari, tidak ada yang seperti itu"
     },
     {
-      "bunpou": "にかかわる (ni kakawaru)",
+      "bunpou": "にかかわる",
       "meaning": "to relate to, to have to do with",
       "arti": "berkaitan dengan, berhubungan dengan"
     },
     {
-      "bunpou": "にかかわらず (ni kakawarazu)",
+      "bunpou": "にかかわらず",
       "meaning": "regardless of",
       "arti": "tanpa mempedulikan"
     },
     {
-      "bunpou": "に決まっている (ni kimatte iru)",
+      "bunpou": "に決まっている",
       "meaning": "I’m sure that…",
       "arti": "saya yakin bahwa…"
     },
     {
-      "bunpou": "に越したことはない (ni koshita koto wa nai)",
+      "bunpou": "に越したことはない",
       "meaning": "it’s best that, there’s nothing better than",
       "arti": "yang terbaik adalah, tidak ada yang lebih baik dari"
     },
     {
-      "bunpou": "に応えて (ni kotaete)",
+      "bunpou": "に応えて",
       "meaning": "in response to",
       "arti": "sebagai tanggapan terhadap"
     },
     {
-      "bunpou": "に加えて (ni kuwaete)",
+      "bunpou": "に加えて",
       "meaning": "in addition to",
       "arti": "selain itu"
     },
     {
-      "bunpou": "に基づいて (ni motozuite)",
+      "bunpou": "に基づいて",
       "meaning": "based on",
       "arti": "berdasarkan"
     },
     {
-      "bunpou": "にもかかわらず (nimo kakawarazu)",
+      "bunpou": "にもかかわらず",
       "meaning": "despite, in spite of, although",
       "arti": "meskipun, walaupun"
     },
     {
-      "bunpou": "に向かって (ni mukatte)",
+      "bunpou": "に向かって",
       "meaning": "towards, to face, to head to",
       "arti": "menuju, menghadapi"
     },
     {
-      "bunpou": "に応じて (ni oujite)",
+      "bunpou": "に応じて",
       "meaning": "depending on, in accordance with",
       "arti": "tergantung pada, sesuai dengan"
     },
     {
-      "bunpou": "に際して (ni sai shite)",
+      "bunpou": "に際して",
       "meaning": "on the occasion of, at the time of",
       "arti": "pada saat, dalam kesempatan"
     },
     {
-      "bunpou": "に先立ち (ni sakidachi)",
+      "bunpou": "に先立ち",
       "meaning": "before, prior to",
       "arti": "sebelum, sebelumnya"
     },
     {
-      "bunpou": "にしろ / にせよ (ni shiro/ni seyo)",
+      "bunpou": "にしろ / にせよ",
       "meaning": "though, even if, whether… or",
       "arti": "meskipun, walaupun, baik… maupun"
     },
     {
-      "bunpou": "にしろ～にしろ (ni shiro~ni shiro)",
+      "bunpou": "にしろ～にしろ",
       "meaning": "whether… or",
       "arti": "baik… maupun"
     },
     {
-      "bunpou": "に従って (ni shitagatte)",
+      "bunpou": "に従って",
       "meaning": "as, therefore",
       "arti": "seiring dengan, oleh karena itu"
     },
     {
-      "bunpou": "にしたら (ni shitara)",
+      "bunpou": "にしたら",
       "meaning": "from the point of view of",
       "arti": "dari sudut pandang"
     },
     {
-      "bunpou": "にしても～にしても (ni shite mo~ni shite mo)",
+      "bunpou": "にしても～にしても",
       "meaning": "regardless of whether",
       "arti": "tidak peduli apakah"
     },
     {
-      "bunpou": "に相違ない (ni soui nai)",
+      "bunpou": "に相違ない",
       "meaning": "without a doubt, certain, sure",
       "arti": "tanpa keraguan, pasti, yakin"
     },
     {
-      "bunpou": "に沿って (ni sotte)",
+      "bunpou": "に沿って",
       "meaning": "along with, in accordance with",
       "arti": "bersama, sesuai dengan"
     },
     {
-      "bunpou": "に過ぎない (ni suginai)",
+      "bunpou": "に過ぎない",
       "meaning": "no more than, just, merely",
       "arti": "tidak lebih dari, hanya, semata-mata"
     },
     {
-      "bunpou": "にて (nite)",
+      "bunpou": "にて",
       "meaning": "in, at",
       "arti": "di, pada"
     },
     {
-      "bunpou": "に伴って (ni tomonatte)",
+      "bunpou": "に伴って",
       "meaning": "as, due to",
       "arti": "seiring dengan, karena"
     },
     {
-      "bunpou": "につけ (ni tsuke)",
+      "bunpou": "につけ",
       "meaning": "both… and…, every time something happens",
       "arti": "baik… maupun…, setiap kali sesuatu terjadi"
     },
     {
-      "bunpou": "につき (ni tsuki)",
+      "bunpou": "につき",
       "meaning": "due to, because, per, each",
       "arti": "karena, per, masing-masing"
     },
     {
-      "bunpou": "には (niwa)",
+      "bunpou": "には",
       "meaning": "in order to, for",
       "arti": "untuk"
     },
     {
-      "bunpou": "にわたって (ni watatte)",
+      "bunpou": "にわたって",
       "meaning": "throughout, over (a period of time)",
       "arti": "melalui, selama"
     },
     {
-      "bunpou": "のももっともだ (no mo mottomo da)",
+      "bunpou": "のももっともだ",
       "meaning": "no wonder, … is only natural",
       "arti": "tidak heran, … adalah hal yang wajar"
     },
     {
-      "bunpou": "のも当然だ (no mo touzen da)",
+      "bunpou": "のも当然だ",
       "meaning": "it’s only natural that, no wonder",
       "arti": "hanya wajar bahwa, tidak heran"
     },
     {
-      "bunpou": "のもとで (no moto de)",
+      "bunpou": "のもとで",
       "meaning": "under",
       "arti": "di bawah"
     },
     {
-      "bunpou": "のみならず (nominarazu)",
+      "bunpou": "のみならず",
       "meaning": "not only, besides, as well",
       "arti": "tidak hanya, selain itu"
     },
     {
-      "bunpou": "抜きで/抜きにして (nuki de/nuki ni shite)",
+      "bunpou": "抜きで/抜きにして",
       "meaning": "leaving out, cutting out",
       "arti": "menghilangkan, tanpa menyertakan"
     },
     {
-      "bunpou": "抜く (nuku)",
+      "bunpou": "抜く",
       "meaning": "to do something to the end",
       "arti": "melakukan sesuatu sampai selesai"
     },
     {
-      "bunpou": "お～願う (o~negau)",
+      "bunpou": "お～願う",
       "meaning": "could you please",
       "arti": "bisakah Anda tolong"
     },
     {
-      "bunpou": "を～として (o~to shite)",
+      "bunpou": "を～として",
       "meaning": "as",
       "arti": "sebagai"
     },
     {
-      "bunpou": "をこめて (o komete)",
+      "bunpou": "をこめて",
       "meaning": "filled with",
       "arti": "dengan penuh"
     },
     {
-      "bunpou": "をきっかけに (o kikkake ni)",
+      "bunpou": "をきっかけに",
       "meaning": "with… as a start, as a result of",
       "arti": "dengan… sebagai awal, sebagai hasil dari"
     },
     {
-      "bunpou": "を契機に (o keiki ni)",
+      "bunpou": "を契機に",
       "meaning": "as a good opportunity to, as a result of",
       "arti": "sebagai kesempatan baik untuk, sebagai hasil dari"
     },
     {
-      "bunpou": "をめぐって (o megutte)",
+      "bunpou": "をめぐって",
       "meaning": "concerning, in regard to",
       "arti": "mengenai, sehubungan dengan"
     },
     {
-      "bunpou": "をもとに (o moto ni)",
+      "bunpou": "をもとに",
       "meaning": "based on, from",
       "arti": "berdasarkan, dari"
     },
     {
-      "bunpou": "を除いて (o nozoite)",
+      "bunpou": "を除いて",
       "meaning": "except, with the exception of",
       "arti": "kecuali, dengan pengecualian"
     },
     {
-      "bunpou": "を問わず (o towazu)",
+      "bunpou": "を問わず",
       "meaning": "regardless of",
       "arti": "tanpa memandang"
     },
     {
-      "bunpou": "を通じて/ を通して (o tsuujite/o tooshite)",
+      "bunpou": "を通じて/ を通して",
       "meaning": "via, through",
       "arti": "melalui"
     },
     {
-      "bunpou": "おまけに (omake ni)",
+      "bunpou": "おまけに",
       "meaning": "to make matters worse",
       "arti": "untuk membuat keadaan lebih buruk"
     },
     {
-      "bunpou": "恐れがある (osore ga aru)",
+      "bunpou": "恐れがある",
       "meaning": "there are fears that",
       "arti": "ada kekhawatiran bahwa"
     },
     {
-      "bunpou": "ろくに～ない (roku ni~nai)",
+      "bunpou": "ろくに～ない",
       "meaning": "not doing something properly",
       "arti": "tidak melakukan sesuatu dengan baik"
     },
     {
-      "bunpou": "際に (sai ni)",
+      "bunpou": "際に",
       "meaning": "at the time, in case of",
       "arti": "pada saat, dalam hal"
     },
     {
-      "bunpou": "幸い (saiwai)",
+      "bunpou": "幸い",
       "meaning": "luckily, fortunately",
       "arti": "untungnya, secara beruntung"
     },
     {
-      "bunpou": "さらに (sara ni)",
+      "bunpou": "さらに",
       "meaning": "furthermore, again, more and more",
       "arti": "lebih jauh lagi, sekali lagi, semakin banyak"
     },
     {
-      "bunpou": "せいぜい (seizei)",
+      "bunpou": "せいぜい",
       "meaning": "at the most, at best",
       "arti": "paling banyak, paling baik"
     },
     {
-      "bunpou": "せめて (semete)",
+      "bunpou": "せめて",
       "meaning": "at least, at most",
       "arti": "setidaknya, paling banyak"
     },
     {
-      "bunpou": "次第 (shidai)",
+      "bunpou": "次第",
       "meaning": "as soon as",
       "arti": "segera setelah"
     },
     {
-      "bunpou": "次第だ/ 次第で (shidai da/shidai de)",
+      "bunpou": "次第だ/ 次第で",
       "meaning": "depending on, so",
       "arti": "tergantung pada, jadi"
     },
     {
-      "bunpou": "しかも (shikamo)",
+      "bunpou": "しかも",
       "meaning": "moreover, furthermore",
       "arti": "selain itu, lebih jauh lagi"
     },
     {
-      "bunpou": "したがって (shitagatte)",
+      "bunpou": "したがって",
       "meaning": "therefore, accordingly",
       "arti": "oleh karena itu, dengan demikian"
     },
     {
-      "bunpou": "その上 (sono ue)",
+      "bunpou": "その上",
       "meaning": "besides, in addition, furthermore",
       "arti": "selain itu, sebagai tambahan, lebih jauh lagi"
     },
     {
-      "bunpou": "それなのに (sore na noni)",
+      "bunpou": "それなのに",
       "meaning": "and yet, despite this",
       "arti": "namun demikian, meskipun demikian"
     },
     {
-      "bunpou": "それなら (sore nara)",
+      "bunpou": "それなら",
       "meaning": "then, if that’s the case",
       "arti": "lalu, jika itu masalahnya"
     },
     {
-      "bunpou": "それにしても (sore ni shite mo)",
+      "bunpou": "それにしても",
       "meaning": "nevertheless, even so",
       "arti": "namun demikian, walaupun begitu"
     },
     {
-      "bunpou": "それとも (sore tomo)",
+      "bunpou": "それとも",
       "meaning": "or, or else",
       "arti": "atau, atau sebaliknya"
     },
     {
-      "bunpou": "そういえば (sou ieba)",
+      "bunpou": "そういえば",
       "meaning": "come to think of it",
       "arti": "kalau dipikir-pikir"
     },
     {
-      "bunpou": "そうにない (sou ni nai)",
+      "bunpou": "そうにない",
       "meaning": "extremely unlikely to, showing no signs of",
       "arti": "sangat tidak mungkin, tidak menunjukkan tanda-tanda"
     },
     {
-      "bunpou": "そうすると (sou suru to)",
+      "bunpou": "そうすると",
       "meaning": "having done that",
       "arti": "setelah melakukan itu"
     },
     {
-      "bunpou": "少しも～ない (sukoshi mo~nai)",
+      "bunpou": "少しも～ない",
       "meaning": "not one bit, not even a little",
       "arti": "sedikit pun tidak"
     },
     {
-      "bunpou": "すなわち (sunawachi)",
+      "bunpou": "すなわち",
       "meaning": "in other words",
       "arti": "dengan kata lain"
     },
     {
-      "bunpou": "たあげく (ta ageku)",
+      "bunpou": "たあげく",
       "meaning": "to end up, finally",
       "arti": "berakhir, akhirnya"
     },
     {
-      "bunpou": "直ちに (tadachi ni)",
+      "bunpou": "直ちに",
       "meaning": "at once, immediately",
       "arti": "segera, langsung"
     },
     {
-      "bunpou": "たまえ (tamae)",
+      "bunpou": "たまえ",
       "meaning": "[order somebody to do something]",
       "arti": "[perintah untuk seseorang melakukan sesuatu]"
     },
     {
-      "bunpou": "た末 / の末 (ta sue/no sue)",
+      "bunpou": "た末 / の末",
       "meaning": "as a conclusion of",
       "arti": "sebagai kesimpulan dari"
     },
     {
-      "bunpou": "たって (tatte)",
+      "bunpou": "たって",
       "meaning": "even if, even though, no matter how",
       "arti": "meskipun, walaupun, tidak peduli bagaimana"
     },
     {
-      "bunpou": "てばかりはいられない (te bakari wa irarenai)",
+      "bunpou": "てばかりはいられない",
       "meaning": "can’t keep doing something",
       "arti": "tidak bisa terus melakukan sesuatu"
     },
     {
-      "bunpou": "てでも (te demo)",
+      "bunpou": "てでも",
       "meaning": "even if one has to, by all means",
       "arti": "meskipun harus, dengan segala cara"
     },
     {
-      "bunpou": "て以来 (te irai)",
+      "bunpou": "て以来",
       "meaning": "since",
       "arti": "sejak"
     },
     {
-      "bunpou": "ていては (te ite wa)",
+      "bunpou": "ていては",
       "meaning": "if one keeps doing something",
       "arti": "jika seseorang terus melakukan sesuatu"
     },
     {
-      "bunpou": "てからでないと (te kara denai to)",
+      "bunpou": "てからでないと",
       "meaning": "unless, until",
       "arti": "kecuali, sampai"
     },
     {
-      "bunpou": "てこそ (te koso)",
+      "bunpou": "てこそ",
       "meaning": "now that, since",
       "arti": "sekarang setelah, karena"
     },
     {
-      "bunpou": "手前 (temae)",
+      "bunpou": "手前",
       "meaning": "before, in front of, from one’s standpoint",
       "arti": "sebelum, di depan, dari sudut pandang seseorang"
     },
     {
-      "bunpou": "てならない (te naranai)",
+      "bunpou": "てならない",
       "meaning": "very, extremely",
       "arti": "sangat, luar biasa"
     },
     {
-      "bunpou": "てしょうがない (te shou ga nai)",
+      "bunpou": "てしょうがない",
       "meaning": "very, extremely",
       "arti": "sangat, luar biasa"
     },
     {
-      "bunpou": "てたまらない (te tamaranai)",
+      "bunpou": "てたまらない",
       "meaning": "very, extremely, can’t help but do",
       "arti": "sangat, luar biasa, tidak bisa tidak melakukan"
     },
     {
-      "bunpou": "て当然だ (te touzen da)",
+      "bunpou": "て当然だ",
       "meaning": "natural, as a matter of course",
       "arti": "alami, sewajarnya"
     },
     {
-      "bunpou": "ては (tewa)",
+      "bunpou": "ては",
       "meaning": "if, since, one after another",
       "arti": "jika, sejak, satu demi satu"
     },
     {
-      "bunpou": "てはいられない (tewa irarenai)",
+      "bunpou": "てはいられない",
       "meaning": "can’t afford to, unable to",
       "arti": "tidak mampu, tidak bisa"
     },
     {
-      "bunpou": "てはならない (tewa naranai)",
+      "bunpou": "てはならない",
       "meaning": "must not, cannot, should not",
       "arti": "tidak boleh, tidak bisa, seharusnya tidak"
     },
     {
-      "bunpou": "と同時に (to douji ni)",
+      "bunpou": "と同時に",
       "meaning": "at the same time as",
       "arti": "pada saat yang sama dengan"
     },
     {
-      "bunpou": "というふうに (to iu fuu ni)",
+      "bunpou": "というふうに",
       "meaning": "in such a way that",
       "arti": "dengan cara seperti itu"
     },
     {
-      "bunpou": "ということは (to iu koto wa)",
+      "bunpou": "ということは",
       "meaning": "that is to say",
       "arti": "dengan kata lain"
     },
     {
-      "bunpou": "というものだ (to iu mono da)",
+      "bunpou": "というものだ",
       "meaning": "something like…, something called…",
       "arti": "sesuatu seperti…, sesuatu yang disebut…"
     },
     {
-      "bunpou": "というものでもない (to iu mono demo nai)",
+      "bunpou": "というものでもない",
       "meaning": "there is no guarantee that…, not necessarily",
       "arti": "tidak ada jaminan bahwa…, tidak harus"
     },
     {
-      "bunpou": "といった (to itta)",
+      "bunpou": "といった",
       "meaning": "such… as",
       "arti": "seperti…"
     },
     {
-      "bunpou": "とか (toka)",
+      "bunpou": "とか",
       "meaning": "I heard that…",
       "arti": "saya dengar bahwa…"
     },
     {
-      "bunpou": "と考えられる (to kangaerareru)",
+      "bunpou": "と考えられる",
       "meaning": "one can think that…",
       "arti": "seseorang dapat berpikir bahwa…"
     },
     {
-      "bunpou": "ところだった (tokoro datta)",
+      "bunpou": "ところだった",
       "meaning": "was just about to do something",
       "arti": "hampir saja melakukan sesuatu"
     },
     {
-      "bunpou": "ところに/ところへ (tokoro ni/tokoro e)",
+      "bunpou": "ところに/ところへ",
       "meaning": "at the time",
       "arti": "pada waktu"
     },
     {
-      "bunpou": "ところを見ると (tokoro o miru to)",
+      "bunpou": "ところを見ると",
       "meaning": "judging from, seeing that",
       "arti": "menilai dari, melihat bahwa"
     },
     {
-      "bunpou": "とっくに (tokku ni)",
+      "bunpou": "とっくに",
       "meaning": "already, long ago",
       "arti": "sudah, lama sekali"
     },
     {
-      "bunpou": "とも (tomo)",
+      "bunpou": "とも",
       "meaning": "even if, no matter",
       "arti": "meskipun, tidak peduli"
     },
     {
-      "bunpou": "としても (to shite mo)",
+      "bunpou": "としても",
       "meaning": "assuming, even if",
       "arti": "mengasumsikan, meskipun"
     },
     {
-      "bunpou": "としては (toshite wa)",
+      "bunpou": "としては",
       "meaning": "as for",
       "arti": "adapun"
     },
     {
-      "bunpou": "つもりで (tsumori de)",
+      "bunpou": "つもりで",
       "meaning": "with the intention of doing",
       "arti": "dengan niat untuk melakukan"
     },
     {
-      "bunpou": "つつ (tsutsu)",
+      "bunpou": "つつ",
       "meaning": "while, although",
       "arti": "sambil, meskipun"
     },
     {
-      "bunpou": "つつある (tsutsu aru)",
+      "bunpou": "つつある",
       "meaning": "to be doing",
       "arti": "sedang melakukan"
     },
     {
-      "bunpou": "上で (ue de)",
+      "bunpou": "上で",
       "meaning": "after",
       "arti": "setelah"
     },
     {
-      "bunpou": "上に (ue ni)",
+      "bunpou": "上に",
       "meaning": "as well, besides, in addition to",
       "arti": "juga, selain itu, sebagai tambahan"
     },
     {
-      "bunpou": "上は (ue wa)",
+      "bunpou": "上は",
       "meaning": "now that, since",
       "arti": "sekarang setelah, sejak"
     },
     {
-      "bunpou": "は別として (wa betsu to shite)",
+      "bunpou": "は別として",
       "meaning": "aside from",
       "arti": "selain"
     },
     {
-      "bunpou": "はもとより (wa moto yori)",
+      "bunpou": "はもとより",
       "meaning": "also, let alone",
       "arti": "juga, apalagi"
     },
     {
-      "bunpou": "はともかく (wa tomokaku)",
+      "bunpou": "はともかく",
       "meaning": "whether or not",
       "arti": "entah itu"
     },
     {
-      "bunpou": "わずかに (wazuka ni)",
+      "bunpou": "わずかに",
       "meaning": "slightly",
       "arti": "sedikit"
     },
     {
-      "bunpou": "やがて (yagate)",
+      "bunpou": "やがて",
       "meaning": "soon, before long, eventually",
       "arti": "segera, tidak lama lagi, akhirnya"
     },
     {
-      "bunpou": "やら～やら (yara~yara)",
+      "bunpou": "やら～やら",
       "meaning": "such things as",
       "arti": "hal-hal seperti"
     },
     {
-      "bunpou": "よりほかない (yori hoka nai)",
+      "bunpou": "よりほかない",
       "meaning": "to have no choice but",
       "arti": "tidak ada pilihan selain"
     },
     {
-      "bunpou": "ようでは (you dewa)",
+      "bunpou": "ようでは",
       "meaning": "if",
       "arti": "jika"
     },
     {
-      "bunpou": "ようがない/ようもない (you ga nai/you mo nai)",
+      "bunpou": "ようがない/ようもない",
       "meaning": "there’s no way to, it’s impossible to",
       "arti": "tidak ada cara untuk, mustahil untuk"
     },
     {
-      "bunpou": "要するに (you suru ni)",
+      "bunpou": "要するに",
       "meaning": "the point is",
       "arti": "intinya"
     },
     {
-      "bunpou": "ざるを得ない (zaru o enai)",
+      "bunpou": "ざるを得ない",
       "meaning": "can’t help doing, have no choice but",
       "arti": "tidak bisa tidak melakukan, tidak ada pilihan selain"
     },
     {
-      "bunpou": "ずに済む (zu ni sumu)",
+      "bunpou": "ずに済む",
       "meaning": "get by without doing something",
       "arti": "berhasil tanpa melakukan sesuatu"
     }
   ],
   "N1": [
     {
-      "bunpou": "あえて (aete)",
+      "bunpou": "あえて",
       "meaning": "dare to",
       "arti": "berani untuk"
     },
     {
-      "bunpou": "あくまでも (akumade mo)",
+      "bunpou": "あくまでも",
       "meaning": "to the end, to the utmost degree",
       "arti": "sampai akhir, sampai tingkat tertinggi"
     },
     {
-      "bunpou": "案の定 (an no jou)",
+      "bunpou": "案の定",
       "meaning": "just as one thought",
       "arti": "seperti yang diduga"
     },
     {
-      "bunpou": "あらかじめ (arakajime)",
+      "bunpou": "あらかじめ",
       "meaning": "beforehand, in advance",
       "arti": "sebelumnya, terlebih dahulu"
     },
     {
-      "bunpou": "あっての (atte no)",
+      "bunpou": "あっての",
       "meaning": "to owe everything to",
       "arti": "berhutang segalanya pada"
     },
     {
-      "bunpou": "場合によっては (baai ni yotte wa)",
+      "bunpou": "場合によっては",
       "meaning": "depending on the situation",
       "arti": "tergantung pada situasi"
     },
     {
-      "bunpou": "ばこそ (ba koso)",
+      "bunpou": "ばこそ",
       "meaning": "only because",
       "arti": "hanya karena"
     },
     {
-      "bunpou": "ばそれまでだ (ba sore made da)",
+      "bunpou": "ばそれまでだ",
       "meaning": "if… then it’s over",
       "arti": "jika… maka selesai"
     },
     {
-      "bunpou": "べからず (bekarazu)",
+      "bunpou": "べからず",
       "meaning": "must not, should not",
       "arti": "tidak boleh, seharusnya tidak"
     },
     {
-      "bunpou": "べく (beku)",
+      "bunpou": "べく",
       "meaning": "in order to, should",
       "arti": "untuk, seharusnya"
     },
     {
-      "bunpou": "べくもない (beku mo nai)",
+      "bunpou": "べくもない",
       "meaning": "can’t",
       "arti": "tidak bisa"
     },
     {
-      "bunpou": "びる (biru)",
+      "bunpou": "びる",
       "meaning": "seeming to be",
       "arti": "tampaknya menjadi"
     },
     {
-      "bunpou": "ぶり (buri)",
+      "bunpou": "ぶり",
       "meaning": "style, manner",
       "arti": "gaya, cara"
     },
     {
-      "bunpou": "ぶる (buru)",
+      "bunpou": "ぶる",
       "meaning": "behaving like",
       "arti": "berperilaku seperti"
     },
     {
-      "bunpou": "だに (dani)",
+      "bunpou": "だに",
       "meaning": "even",
       "arti": "bahkan"
     },
     {
-      "bunpou": "だの～だの (dano~dano)",
+      "bunpou": "だの～だの",
       "meaning": "and, and so forth",
       "arti": "dan, dan sebagainya"
     },
     {
-      "bunpou": "であれ～であれ (de are~de are)",
+      "bunpou": "であれ～であれ",
       "meaning": "whether A or B",
       "arti": "baik A atau B"
     },
     {
-      "bunpou": "であれ/であろうと (de are/de arou to)",
+      "bunpou": "であれ/であろうと",
       "meaning": "whoever/whatever/however",
       "arti": "siapa pun/apapun/bagaimanapun"
     },
     {
-      "bunpou": "でも何でもない (demo nan demo nai)",
+      "bunpou": "でも何でもない",
       "meaning": "not in the least",
       "arti": "sama sekali bukan"
     },
     {
-      "bunpou": "でなくてなんだろう (denakute nan darou)",
+      "bunpou": "でなくてなんだろう",
       "meaning": "must be, is definitely",
       "arti": "pasti, pasti itu"
     },
     {
-      "bunpou": "ではあるまいか (dewa aru mai ka)",
+      "bunpou": "ではあるまいか",
       "meaning": "I wonder if it’s not",
       "arti": "saya bertanya-tanya apakah itu bukan"
     },
     {
-      "bunpou": "ではあるまいし (dewa aru mai shi)",
+      "bunpou": "ではあるまいし",
       "meaning": "it’s not like, it isn’t as if",
       "arti": "tidak seperti, tidak seolah-olah"
     },
     {
-      "bunpou": "ではすまない (dewa sumanai)",
+      "bunpou": "ではすまない",
       "meaning": "it doesn’t end with just",
       "arti": "tidak berakhir hanya dengan"
     },
     {
-      "bunpou": "どうにも～ない (dou nimo~nai)",
+      "bunpou": "どうにも～ない",
       "meaning": "not … by any means",
       "arti": "tidak... dengan cara apa pun"
     },
     {
-      "bunpou": "がてら (gatera)",
+      "bunpou": "がてら",
       "meaning": "on the same occasion",
       "arti": "pada kesempatan yang sama"
     },
     {
-      "bunpou": "が早いか (ga hayai ka)",
+      "bunpou": "が早いか",
       "meaning": "as soon as",
       "arti": "segera setelah"
     },
     {
-      "bunpou": "が最後 (ga saigo)",
+      "bunpou": "が最後",
       "meaning": "once something occurs, something else happens",
       "arti": "setelah sesuatu terjadi, sesuatu yang lain terjadi"
     },
     {
-      "bunpou": "ごとき/ごとく (gotoki/gotoku)",
+      "bunpou": "ごとき/ごとく",
       "meaning": "like, as if",
       "arti": "seperti, seolah-olah"
     },
     {
-      "bunpou": "ぐるみ (gurumi)",
+      "bunpou": "ぐるみ",
       "meaning": "together with",
       "arti": "bersama dengan"
     },
     {
-      "bunpou": "羽目になる (hame ni naru)",
+      "bunpou": "羽目になる",
       "meaning": "to end up with (something unpleasant)",
       "arti": "berakhir dengan (sesuatu yang tidak menyenangkan)"
     },
     {
-      "bunpou": "ひとつ (hitotsu)",
+      "bunpou": "ひとつ",
       "meaning": "to give something a try",
       "arti": "mencoba sesuatu"
     },
     {
-      "bunpou": "ほどのことはない (hodo no koto wa nai)",
+      "bunpou": "ほどのことはない",
       "meaning": "not worth, no need to",
       "arti": "tidak berharga, tidak perlu"
     },
     {
-      "bunpou": "ほかに～ない (hoka ni~nai)",
+      "bunpou": "ほかに～ない",
       "meaning": "no other",
       "arti": "tidak ada yang lain"
     },
     {
-      "bunpou": "ほうがましだ (hou ga mashi da)",
+      "bunpou": "ほうがましだ",
       "meaning": "I would rather",
       "arti": "saya lebih memilih"
     },
     {
-      "bunpou": "いかなる (ikanaru)",
+      "bunpou": "いかなる",
       "meaning": "any kind of",
       "arti": "jenis apa pun"
     },
     {
-      "bunpou": "いかんでは/いかんによっては (ikan dewa/ikan ni yotte wa)",
+      "bunpou": "いかんでは/いかんによっては",
       "meaning": "depending on",
       "arti": "tergantung pada"
     },
     {
-      "bunpou": "いかんによらず (ikan ni yorazu)",
+      "bunpou": "いかんによらず",
       "meaning": "regardless of",
       "arti": "terlepas dari, tanpa memandang"
     },
     {
-      "bunpou": "いかに (ikani)",
+      "bunpou": "いかに",
       "meaning": "how",
       "arti": "bagaimana"
     },
     {
-      "bunpou": "いかにも (ikanimo)",
+      "bunpou": "いかにも",
       "meaning": "indeed, really",
       "arti": "sungguh, benar-benar"
     },
     {
-      "bunpou": "いまだに (ima da ni)",
+      "bunpou": "いまだに",
       "meaning": "still, even now",
       "arti": "masih, bahkan sekarang"
     },
     {
-      "bunpou": "いずれにせよ (izure nise yo)",
+      "bunpou": "いずれにせよ",
       "meaning": "at any rate, in any case",
       "arti": "bagaimanapun juga"
     },
     {
-      "bunpou": "じみた (jimita)",
+      "bunpou": "じみた",
       "meaning": "to look like",
       "arti": "terlihat seperti"
     },
     {
-      "bunpou": "限りだ (kagiri da)",
+      "bunpou": "限りだ",
       "meaning": "I feel so",
       "arti": "saya sangat merasa"
     },
     {
-      "bunpou": "かいもなく (kai mo naku)",
+      "bunpou": "かいもなく",
       "meaning": "even though",
       "arti": "meskipun"
     },
     {
-      "bunpou": "か否か (ka ina ka)",
+      "bunpou": "か否か",
       "meaning": "whether or not",
       "arti": "apakah atau tidak"
     },
     {
-      "bunpou": "可能性がある (kanousei ga aru)",
+      "bunpou": "可能性がある",
       "meaning": "there’s a possibility",
       "arti": "ada kemungkinan"
     },
     {
-      "bunpou": "からある (kara aru)",
+      "bunpou": "からある",
       "meaning": "as much as, as many as",
       "arti": "sebanyak, setinggi"
     },
     {
-      "bunpou": "かれ～かれ (kare~kare)",
+      "bunpou": "かれ～かれ",
       "meaning": "or",
       "arti": "atau"
     },
     {
-      "bunpou": "かたがた (katagata)",
+      "bunpou": "かたがた",
       "meaning": "while, for the purpose of",
       "arti": "sambil, untuk tujuan"
     },
     {
-      "bunpou": "かたわら (katawara)",
+      "bunpou": "かたわら",
       "meaning": "while, at the same time",
       "arti": "sambil, pada waktu yang sama"
     },
     {
-      "bunpou": "かつて (katsute)",
+      "bunpou": "かつて",
       "meaning": "once, before",
       "arti": "pernah, sebelumnya"
     },
     {
-      "bunpou": "嫌いがある (kirai ga aru)",
+      "bunpou": "嫌いがある",
       "meaning": "to have a tendency to",
       "arti": "memiliki kecenderungan untuk"
     },
     {
-      "bunpou": "きっての (kitte no)",
+      "bunpou": "きっての",
       "meaning": "the most … of all",
       "arti": "yang paling … dari semua"
     },
     {
-      "bunpou": "きりがない (kiri ga nai)",
+      "bunpou": "きりがない",
       "meaning": "there’s no end to",
       "arti": "tidak ada akhirnya"
     },
     {
-      "bunpou": "極まる/極まりない (kiwamaru/kiwamarinai)",
+      "bunpou": "極まる/極まりない",
       "meaning": "extremely",
       "arti": "sangat, luar biasa"
     },
     {
-      "bunpou": "極めて (kiwamete)",
+      "bunpou": "極めて",
       "meaning": "extremely, exceedingly",
       "arti": "sangat, amat sangat"
     },
     {
-      "bunpou": "ことだし (koto dashi)",
+      "bunpou": "ことだし",
       "meaning": "because, since",
       "arti": "karena, sejak"
     },
     {
-      "bunpou": "ことごとく (koto gotoku)",
+      "bunpou": "ことごとく",
       "meaning": "altogether, entirely",
       "arti": "sepenuhnya, seluruhnya"
     },
     {
-      "bunpou": "ことなしに (koto nashi ni)",
+      "bunpou": "ことなしに",
       "meaning": "without doing something",
       "arti": "tanpa melakukan sesuatu"
     },
     {
-      "bunpou": "ことのないよう (koto no nai you)",
+      "bunpou": "ことのないよう",
       "meaning": "so as not to",
       "arti": "agar tidak"
     },
     {
-      "bunpou": "こととて (kototote)",
+      "bunpou": "こととて",
       "meaning": "because, since",
       "arti": "karena, sebab"
     },
     {
-      "bunpou": "くらいなら (kurai nara)",
+      "bunpou": "くらいなら",
       "meaning": "rather than",
       "arti": "daripada"
     },
     {
-      "bunpou": "くらいのものだ (kurai no mono da)",
+      "bunpou": "くらいのものだ",
       "meaning": "only",
       "arti": "hanya"
     },
     {
-      "bunpou": "までだ (made da)",
+      "bunpou": "までだ",
       "meaning": "only",
       "arti": "hanya"
     },
     {
-      "bunpou": "までもない (made mo nai)",
+      "bunpou": "までもない",
       "meaning": "it’s not necessary to",
       "arti": "tidak perlu"
     },
     {
-      "bunpou": "まじき (majiki)",
+      "bunpou": "まじき",
       "meaning": "should not, must not",
       "arti": "tidak boleh, seharusnya tidak"
     },
     {
-      "bunpou": "ままに (mama ni)",
+      "bunpou": "ままに",
       "meaning": "to do as",
       "arti": "melakukan sesuai"
     },
     {
-      "bunpou": "まみれ (mamire)",
+      "bunpou": "まみれ",
       "meaning": "to be covered in",
       "arti": "terbungkus dalam, penuh dengan"
     },
     {
-      "bunpou": "まるっきり (marukkiri)",
+      "bunpou": "まるっきり",
       "meaning": "totally, completely",
       "arti": "sepenuhnya, benar-benar"
     },
     {
-      "bunpou": "めく (meku)",
+      "bunpou": "めく",
       "meaning": "to show signs of",
       "arti": "menunjukkan tanda-tanda"
     },
     {
-      "bunpou": "もはや (mohaya)",
+      "bunpou": "もはや",
       "meaning": "already, no longer",
       "arti": "sudah, tidak lagi"
     },
     {
-      "bunpou": "も顧みず/を顧みず (mo kaerimizu/o kaerimizu)",
+      "bunpou": "も顧みず/を顧みず",
       "meaning": "regardless of, despite",
       "arti": "tanpa mempedulikan, meskipun"
     },
     {
-      "bunpou": "もしないで (mo shinaide)",
+      "bunpou": "もしないで",
       "meaning": "without even doing",
       "arti": "tanpa bahkan melakukan"
     },
     {
-      "bunpou": "もので (mono de)",
+      "bunpou": "もので",
       "meaning": "because, for that reason",
       "arti": "karena, oleh sebab itu"
     },
     {
-      "bunpou": "ものを (mono o)",
+      "bunpou": "ものを",
       "meaning": "I wish, if only",
       "arti": "saya berharap, andai saja"
     },
     {
-      "bunpou": "ものと思われる (mono to omowareru)",
+      "bunpou": "ものと思われる",
       "meaning": "to think, to suppose",
       "arti": "berpikir, menduga"
     },
     {
-      "bunpou": "ものとして (mono toshite)",
+      "bunpou": "ものとして",
       "meaning": "to assume, to suppose",
       "arti": "menganggap, mengira"
     },
     {
-      "bunpou": "もさることながら (mo saru koto nagara)",
+      "bunpou": "もさることながら",
       "meaning": "not only… but also",
       "arti": "tidak hanya... tetapi juga"
     },
     {
-      "bunpou": "もしくは (moshikuwa)",
+      "bunpou": "もしくは",
       "meaning": "or, otherwise",
       "arti": "atau, sebaliknya"
     },
     {
-      "bunpou": "ながらに/ながらの (nagara ni/nagara no)",
+      "bunpou": "ながらに/ながらの",
       "meaning": "while, during",
       "arti": "sambil, selama"
     },
     {
-      "bunpou": "ないではおかない/ずにはおかない (nai dewa okanai/zu niwa okanai)",
+      "bunpou": "ないではおかない/ずにはおかない",
       "meaning": "will definitely, cannot not",
       "arti": "pasti, tidak dapat tidak"
     },
     {
-      "bunpou": "ないではすまない/ずにはすまない (nai dewa sumanai/zu niwa sumanai)",
+      "bunpou": "ないではすまない/ずにはすまない",
       "meaning": "must",
       "arti": "harus"
     },
     {
-      "bunpou": "ないまでも (nai made mo)",
+      "bunpou": "ないまでも",
       "meaning": "even if something isn’t done",
       "arti": "meskipun sesuatu tidak dilakukan"
     },
     {
-      "bunpou": "ないものか (nai mono ka)",
+      "bunpou": "ないものか",
       "meaning": "can’t we…?, can’t I…?",
       "arti": "tidakkah kita bisa...? tidakkah saya bisa...?"
     },
     {
-      "bunpou": "ないものでもない (nai mono demo nai)",
+      "bunpou": "ないものでもない",
       "meaning": "(something) is not entirely impossible",
       "arti": "(sesuatu) tidak sepenuhnya mustahil"
     },
     {
-      "bunpou": "ないとも限らない (nai tomo kagiranai)",
+      "bunpou": "ないとも限らない",
       "meaning": "might",
       "arti": "mungkin"
     },
     {
-      "bunpou": "なくして (nakushite)",
+      "bunpou": "なくして",
       "meaning": "without",
       "arti": "tanpa"
     },
     {
-      "bunpou": "何しろ (nani shiro)",
+      "bunpou": "何しろ",
       "meaning": "in any case, as you know",
       "arti": "bagaimanapun juga, seperti yang Anda tahu"
     },
     {
-      "bunpou": "なしに (nashi ni)",
+      "bunpou": "なしに",
       "meaning": "without",
       "arti": "tanpa"
     },
     {
-      "bunpou": "ならでは (nara dewa)",
+      "bunpou": "ならでは",
       "meaning": "uniquely applying to",
       "arti": "secara unik berlaku untuk"
     },
     {
-      "bunpou": "ならいざしらず (nara iza shirazu)",
+      "bunpou": "ならいざしらず",
       "meaning": "I don’t know about A, but B",
       "arti": "saya tidak tahu tentang A, tetapi B"
     },
     {
-      "bunpou": "なり (nari)",
+      "bunpou": "なり",
       "meaning": "as soon as",
       "arti": "segera setelah"
     },
     {
-      "bunpou": "なり～なり (nari~nari)",
+      "bunpou": "なり～なり",
       "meaning": "or",
       "arti": "atau"
     },
     {
-      "bunpou": "なりに/なりの (nari ni/nari no)",
+      "bunpou": "なりに/なりの",
       "meaning": "in one’s own way or style",
       "arti": "dengan cara atau gaya sendiri"
     },
     {
-      "bunpou": "なりとも (naritomo)",
+      "bunpou": "なりとも",
       "meaning": "even a little, at least",
       "arti": "sedikit saja, setidaknya"
     },
     {
-      "bunpou": "に値する (ni atai suru)",
+      "bunpou": "に値する",
       "meaning": "to be worth, to deserve",
       "arti": "berharga, pantas untuk"
     },
     {
-      "bunpou": "にあたらない (ni ataranai)",
+      "bunpou": "にあたらない",
       "meaning": "it’s not worth, there’s no need to",
       "arti": "tidak perlu, tidak sepadan"
     },
     {
-      "bunpou": "にあって (ni atte)",
+      "bunpou": "にあって",
       "meaning": "at, during, in the condition of",
       "arti": "pada saat, selama, dalam kondisi"
     },
     {
-      "bunpou": "にひきかえ (ni hikikae)",
+      "bunpou": "にひきかえ",
       "meaning": "in contrast to",
       "arti": "sebagai perbandingan"
     },
     {
-      "bunpou": "に至るまで (ni itaru made)",
+      "bunpou": "に至るまで",
       "meaning": "until, as far as",
       "arti": "sampai, sejauh"
     },
     {
-      "bunpou": "に至っては (ni itatte wa)",
+      "bunpou": "に至っては",
       "meaning": "as for, when it comes to",
       "arti": "adapun, ketika menyangkut"
     },
     {
-      "bunpou": "に言わせれば (ni iwasereba)",
+      "bunpou": "に言わせれば",
       "meaning": "if you ask, if one may say",
       "arti": "jika Anda bertanya, jika boleh dikatakan"
     },
     {
-      "bunpou": "にかかっている (ni kakatte iru)",
+      "bunpou": "にかかっている",
       "meaning": "to depend on",
       "arti": "bergantung pada"
     },
     {
-      "bunpou": "にかたくない (ni katakunai)",
+      "bunpou": "にかたくない",
       "meaning": "it’s not hard to",
       "arti": "tidak sulit untuk"
     },
     {
-      "bunpou": "にまつわる (ni matsuwaru)",
+      "bunpou": "にまつわる",
       "meaning": "to be related to",
       "arti": "berhubungan dengan"
     },
     {
-      "bunpou": "にもほどがある (nimo hodo ga aru)",
+      "bunpou": "にもほどがある",
       "meaning": "to have a limit, to go too far",
       "arti": "ada batasnya, keterlaluan"
     },
     {
-      "bunpou": "にもまして (ni momashite)",
+      "bunpou": "にもまして",
       "meaning": "more than, above",
       "arti": "lebih dari, di atas"
     },
     {
-      "bunpou": "に則って (ni nottotte)",
+      "bunpou": "に則って",
       "meaning": "in accordance with",
       "arti": "sesuai dengan"
     },
     {
-      "bunpou": "に先駆けて (ni saki gakete)",
+      "bunpou": "に先駆けて",
       "meaning": "to be the first",
       "arti": "menjadi yang pertama"
     },
     {
-      "bunpou": "にしたって (ni shitatte)",
+      "bunpou": "にしたって",
       "meaning": "even, even if",
       "arti": "bahkan, meskipun"
     },
     {
-      "bunpou": "にして (ni shite)",
+      "bunpou": "にして",
       "meaning": "only, in (time span)",
       "arti": "hanya, dalam (rentang waktu)"
     },
     {
-      "bunpou": "に即して (ni sokushite)",
+      "bunpou": "に即して",
       "meaning": "in keeping with",
       "arti": "sesuai dengan"
     },
     {
-      "bunpou": "にたえる/にたえない (ni taeru/ni taenai)",
+      "bunpou": "にたえる/にたえない",
       "meaning": "can/can’t do something",
       "arti": "bisa/tidak bisa melakukan sesuatu"
     },
     {
-      "bunpou": "に足る/に足りる (ni taru/ni tariru)",
+      "bunpou": "に足る/に足りる",
       "meaning": "to be enough, to be worthy of",
       "arti": "cukup, pantas untuk"
     },
     {
-      "bunpou": "に足りない (ni tarinai)",
+      "bunpou": "に足りない",
       "meaning": "to be not worth",
       "arti": "tidak layak untuk"
     },
     {
-      "bunpou": "に照らして (ni terashite)",
+      "bunpou": "に照らして",
       "meaning": "in comparison with, according to",
       "arti": "sebagai perbandingan, sesuai dengan"
     },
     {
-      "bunpou": "にとどまらず (ni todomarazu)",
+      "bunpou": "にとどまらず",
       "meaning": "not limited to",
       "arti": "tidak terbatas pada"
     },
     {
-      "bunpou": "には及ばない (niwa oyobanai)",
+      "bunpou": "には及ばない",
       "meaning": "there’s no need to",
       "arti": "tidak perlu"
     },
     {
-      "bunpou": "によらず (ni yorazu)",
+      "bunpou": "によらず",
       "meaning": "regardless of",
       "arti": "terlepas dari"
     },
     {
-      "bunpou": "んばかりに (n bakari ni)",
+      "bunpou": "んばかりに",
       "meaning": "as if, as though",
       "arti": "seolah-olah, seperti"
     },
     {
-      "bunpou": "んがため (n ga tame)",
+      "bunpou": "んがため",
       "meaning": "in order to",
       "arti": "agar, untuk"
     },
     {
-      "bunpou": "の至り (no itari)",
+      "bunpou": "の至り",
       "meaning": "utmost",
       "arti": "puncak, paling tinggi"
     },
     {
-      "bunpou": "の極み (no kiwami)",
+      "bunpou": "の極み",
       "meaning": "utmost",
       "arti": "puncak, paling tinggi"
     },
     {
-      "bunpou": "のみか (nomika)",
+      "bunpou": "のみか",
       "meaning": "not only… but also",
       "arti": "tidak hanya… tetapi juga"
     },
     {
-      "bunpou": "のなんのって (no nan no tte)",
+      "bunpou": "のなんのって",
       "meaning": "extremely",
       "arti": "sangat, luar biasa"
     },
     {
-      "bunpou": "を踏まえて (o fumaete)",
+      "bunpou": "を踏まえて",
       "meaning": "based on",
       "arti": "berdasarkan"
     },
     {
-      "bunpou": "を経て (o hete)",
+      "bunpou": "を経て",
       "meaning": "through, after, via",
       "arti": "melalui, setelah, via"
     },
     {
-      "bunpou": "をいいことに (o ii koto ni)",
+      "bunpou": "をいいことに",
       "meaning": "to take advantage of",
       "arti": "memanfaatkan"
     },
     {
-      "bunpou": "を限りに (o kagiri ni)",
+      "bunpou": "を限りに",
       "meaning": "starting from",
       "arti": "mulai dari"
     },
     {
-      "bunpou": "を兼ねて (o kanete)",
+      "bunpou": "を兼ねて",
       "meaning": "also for the purpose of",
       "arti": "juga untuk tujuan"
     },
     {
-      "bunpou": "を皮切りに (o kawakiri ni)",
+      "bunpou": "を皮切りに",
       "meaning": "starting with",
       "arti": "dimulai dengan"
     },
     {
-      "bunpou": "を機に (o ki ni)",
+      "bunpou": "を機に",
       "meaning": "as an opportunity to",
       "arti": "sebagai kesempatan untuk"
     },
     {
-      "bunpou": "を禁じえない (o kinjienai)",
+      "bunpou": "を禁じえない",
       "meaning": "can’t help but",
       "arti": "tidak bisa tidak"
     },
     {
-      "bunpou": "をものともせず (o monotomo sezu)",
+      "bunpou": "をものともせず",
       "meaning": "in defiance of",
       "arti": "tanpa memedulikan"
     },
     {
-      "bunpou": "をもって (o motte) – 1",
+      "bunpou": "をもって",
       "meaning": "by means of",
       "arti": "dengan, melalui"
     },
     {
-      "bunpou": "をもって (o motte) – 2",
+      "bunpou": "をもって",
       "meaning": "at the time",
       "arti": "pada saat"
     },
     {
-      "bunpou": "をおいて (o oite)",
+      "bunpou": "をおいて",
       "meaning": "other than, without",
       "arti": "selain, tanpa"
     },
     {
-      "bunpou": "を余儀なくされる (o yogi naku sareru)",
+      "bunpou": "を余儀なくされる",
       "meaning": "to be forced to do something",
       "arti": "terpaksa melakukan sesuatu"
     },
     {
-      "bunpou": "をよそに (o yoso ni)",
+      "bunpou": "をよそに",
       "meaning": "despite",
       "arti": "meskipun"
     },
     {
-      "bunpou": "思いをする (omoi o suru)",
+      "bunpou": "思いをする",
       "meaning": "to feel",
       "arti": "merasakan"
     },
     {
-      "bunpou": "折に (ori ni)",
+      "bunpou": "折に",
       "meaning": "when, on the occasion",
       "arti": "ketika, pada kesempatan"
     },
     {
-      "bunpou": "およそ (oyoso)",
+      "bunpou": "およそ",
       "meaning": "totally, (not) at all",
       "arti": "sepenuhnya, sama sekali tidak"
     },
     {
-      "bunpou": "さもないと (samonaito)",
+      "bunpou": "さもないと",
       "meaning": "otherwise, else, if not so",
       "arti": "jika tidak, sebaliknya"
     },
     {
-      "bunpou": "さぞ (sazo)",
+      "bunpou": "さぞ",
       "meaning": "I’m sure, I’m certain",
       "arti": "saya yakin, pasti"
     },
     {
-      "bunpou": "始末だ (shimatsu da)",
+      "bunpou": "始末だ",
       "meaning": "end up, in the end",
       "arti": "akhirnya, pada akhirnya"
     },
     {
-      "bunpou": "そばから (soba kara)",
+      "bunpou": "そばから",
       "meaning": "as soon as",
       "arti": "segera setelah"
     },
     {
-      "bunpou": "さも (samo)",
+      "bunpou": "さも",
       "meaning": "truly, really",
       "arti": "sungguh, benar-benar"
     },
     {
-      "bunpou": "それなりに (sore nari ni)",
+      "bunpou": "それなりに",
       "meaning": "as it is, in its own way",
       "arti": "seperti itu, dengan caranya sendiri"
     },
     {
-      "bunpou": "そうにもない (sou nimo nai)",
+      "bunpou": "そうにもない",
       "meaning": "impossible, unlikely",
       "arti": "tidak mungkin, kecil kemungkinan"
     },
     {
-      "bunpou": "ただ～のみだ (tada~nomi da)",
+      "bunpou": "ただ～のみだ",
       "meaning": "can do nothing but",
       "arti": "tidak bisa melakukan apa-apa kecuali"
     },
     {
-      "bunpou": "た拍子に (ta hyoushi ni)",
+      "bunpou": "た拍子に",
       "meaning": "the instant",
       "arti": "seketika"
     },
     {
-      "bunpou": "ためしがない (tameshi ga nai)",
+      "bunpou": "ためしがない",
       "meaning": "(something) is never the case",
       "arti": "tidak pernah terjadi"
     },
     {
-      "bunpou": "たりとも (taritomo)",
+      "bunpou": "たりとも",
       "meaning": "(not) even, (not) any",
       "arti": "(tidak) bahkan, (tidak) ada"
     },
     {
-      "bunpou": "た瞬間に (ta shunkan ni)",
+      "bunpou": "た瞬間に",
       "meaning": "the moment",
       "arti": "pada saat itu"
     },
     {
-      "bunpou": "てっきり (tekkiri)",
+      "bunpou": "てっきり",
       "meaning": "surely, certainly",
       "arti": "pasti, dengan yakin"
     },
     {
-      "bunpou": "たところで (ta tokoro de)",
+      "bunpou": "たところで",
       "meaning": "even if one does something",
       "arti": "meskipun seseorang melakukan sesuatu"
     },
     {
-      "bunpou": "てからというもの (te kara to iu mono)",
+      "bunpou": "てからというもの",
       "meaning": "after, since",
       "arti": "setelah, sejak"
     },
     {
-      "bunpou": "てかなわない (te kanawanai)",
+      "bunpou": "てかなわない",
       "meaning": "can’t stand, unable to",
       "arti": "tidak tahan, tidak mampu"
     },
     {
-      "bunpou": "てまで (te made)",
+      "bunpou": "てまで",
       "meaning": "even",
       "arti": "bahkan"
     },
     {
-      "bunpou": "てみせる (te miseru)",
+      "bunpou": "てみせる",
       "meaning": "I’ll definitely",
       "arti": "saya pasti akan"
     },
     {
-      "bunpou": "てもどうにもならない (temo dou nimo naranai)",
+      "bunpou": "てもどうにもならない",
       "meaning": "it’s no use",
       "arti": "tidak ada gunanya"
     },
     {
-      "bunpou": "ても始まらない (temo hajimaranai)",
+      "bunpou": "ても始まらない",
       "meaning": "it’s no use",
       "arti": "tidak ada gunanya"
     },
     {
-      "bunpou": "ても差し支えない (temo sashitsukaenai)",
+      "bunpou": "ても差し支えない",
       "meaning": "can, it’s okay if",
       "arti": "boleh, tidak apa-apa jika"
     },
     {
-      "bunpou": "てしかるべきだ (te shikaru beki da)",
+      "bunpou": "てしかるべきだ",
       "meaning": "should",
       "arti": "seharusnya"
     },
     {
-      "bunpou": "ってば (tteba)",
+      "bunpou": "ってば",
       "meaning": "I said, I told you to",
       "arti": "saya bilang, saya katakan"
     },
     {
-      "bunpou": "てやまない (te yamanai)",
+      "bunpou": "てやまない",
       "meaning": "always, never stop",
       "arti": "selalu, tidak pernah berhenti"
     },
     {
-      "bunpou": "と相まって (to aimatte)",
+      "bunpou": "と相まって",
       "meaning": "together with",
       "arti": "bersama dengan"
     },
     {
-      "bunpou": "とあれば (to areba)",
+      "bunpou": "とあれば",
       "meaning": "if, if it’s the case that",
       "arti": "jika, jika memang itu kasusnya"
     },
     {
-      "bunpou": "とあって (to atte)",
+      "bunpou": "とあって",
       "meaning": "because of",
       "arti": "karena"
     },
     {
-      "bunpou": "とばかりに (to bakari ni)",
+      "bunpou": "とばかりに",
       "meaning": "as if, as though",
       "arti": "seolah-olah"
     },
     {
-      "bunpou": "といえども (to ie domo)",
+      "bunpou": "といえども",
       "meaning": "even, even if",
       "arti": "bahkan, meskipun"
     },
     {
-      "bunpou": "といい～といい (to ii~to ii)",
+      "bunpou": "といい～といい",
       "meaning": "and, or",
       "arti": "dan, atau"
     },
     {
-      "bunpou": "といったらない (to ittara nai)",
+      "bunpou": "といったらない",
       "meaning": "very, extremely",
       "arti": "sangat, luar biasa"
     },
     {
-      "bunpou": "という (to iu)",
+      "bunpou": "という",
       "meaning": "all, every",
       "arti": "semua, setiap"
     },
     {
-      "bunpou": "というか (to iu ka)",
+      "bunpou": "というか",
       "meaning": "or, or more precisely",
       "arti": "atau, lebih tepatnya"
     },
     {
-      "bunpou": "というか～というか (to iu ka~to iu ka)",
+      "bunpou": "というか～というか",
       "meaning": "(I’m not sure if it’s) A or B",
       "arti": "saya tidak yakin apakah itu A atau B"
     },
     {
-      "bunpou": "というところだ/といったところだ (to iu tokoro da/to itta tokoro da)",
+      "bunpou": "というところだ/といったところだ",
       "meaning": "approximately, about",
       "arti": "sekitar, tentang"
     },
     {
-      "bunpou": "というもの (to iu mono)",
+      "bunpou": "というもの",
       "meaning": "during a period of time",
       "arti": "selama periode waktu"
     },
     {
-      "bunpou": "というわけだ (to iu wake da)",
+      "bunpou": "というわけだ",
       "meaning": "this means",
       "arti": "ini berarti"
     },
     {
-      "bunpou": "というわけではない (to iu wake dewa nai)",
+      "bunpou": "というわけではない",
       "meaning": "it’s not that, it doesn’t mean that",
       "arti": "bukan berarti itu, tidak berarti itu"
     },
     {
-      "bunpou": "といわず (to iwazu)",
+      "bunpou": "といわず",
       "meaning": "not just, both",
       "arti": "tidak hanya, keduanya"
     },
     {
-      "bunpou": "ときたら (tokitara)",
+      "bunpou": "ときたら",
       "meaning": "when it comes to, concerning",
       "arti": "jika menyangkut, mengenai"
     },
     {
-      "bunpou": "ときている (to kite iru)",
+      "bunpou": "ときている",
       "meaning": "because",
       "arti": "karena"
     },
     {
-      "bunpou": "ところがある (tokoro ga aru)",
+      "bunpou": "ところがある",
       "meaning": "there is",
       "arti": "ada"
     },
     {
-      "bunpou": "ところから (tokoro kara)",
+      "bunpou": "ところから",
       "meaning": "from the fact that",
       "arti": "berdasarkan fakta bahwa"
     },
     {
-      "bunpou": "とみられる (to mirareru)",
+      "bunpou": "とみられる",
       "meaning": "to be regarded as, to be expected to",
       "arti": "dianggap sebagai, diharapkan"
     },
     {
-      "bunpou": "とみるや (to miru ya)",
+      "bunpou": "とみるや",
       "meaning": "at the sight of, upon seeing",
       "arti": "ketika melihat"
     },
     {
-      "bunpou": "ともなく (tomonaku)",
+      "bunpou": "ともなく",
       "meaning": "to do something without thinking about it",
       "arti": "melakukan sesuatu tanpa memikirkannya"
     },
     {
-      "bunpou": "ともなると/ともなれば (tomo naru to/tomo nareba)",
+      "bunpou": "ともなると/ともなれば",
       "meaning": "when, once (something happens)",
       "arti": "ketika, setelah (sesuatu terjadi)"
     },
     {
-      "bunpou": "ともすれば (tomo sureba)",
+      "bunpou": "ともすれば",
       "meaning": "apt to, prone to",
       "arti": "cenderung, rawan"
     },
     {
-      "bunpou": "と思いきや (to omoikiya)",
+      "bunpou": "と思いきや",
       "meaning": "I thought",
       "arti": "saya pikir"
     },
     {
-      "bunpou": "とりわけ (toriwake)",
+      "bunpou": "とりわけ",
       "meaning": "especially",
       "arti": "terutama"
     },
     {
-      "bunpou": "とされる (to sareru)",
+      "bunpou": "とされる",
       "meaning": "is considered",
       "arti": "dianggap sebagai"
     },
     {
-      "bunpou": "とっさに (tossa ni)",
+      "bunpou": "とっさに",
       "meaning": "at once, right away",
       "arti": "segera, langsung"
     },
     {
-      "bunpou": "としたって/としたところで (to shitatte/to shita tokoro de)",
+      "bunpou": "としたって/としたところで",
       "meaning": "even if",
       "arti": "meskipun"
     },
     {
-      "bunpou": "として～ない (toshite~nai)",
+      "bunpou": "として～ない",
       "meaning": "not even one",
       "arti": "bahkan tidak satu pun"
     },
     {
-      "bunpou": "とて (tote)",
+      "bunpou": "とて",
       "meaning": "even if, even though",
       "arti": "meskipun"
     },
     {
-      "bunpou": "とても～ない (totemo~nai)",
+      "bunpou": "とても～ない",
       "meaning": "cannot possibly",
       "arti": "tidak mungkin"
     },
     {
-      "bunpou": "とは (towa)",
+      "bunpou": "とは",
       "meaning": "[indicates word or phrase being defined]",
       "arti": "[menunjukkan kata atau frasa yang didefinisikan]"
     },
     {
-      "bunpou": "とはいえ (towaie)",
+      "bunpou": "とはいえ",
       "meaning": "nonetheless, although",
       "arti": "meskipun demikian, walaupun"
     },
     {
-      "bunpou": "とはいうものの (towa iu mono no)",
+      "bunpou": "とはいうものの",
       "meaning": "having said that, be that as it may",
       "arti": "setelah mengatakan itu, walaupun demikian"
     },
     {
-      "bunpou": "つ～つ (tsu~tsu)",
+      "bunpou": "つ～つ",
       "meaning": "[indicates two contrasting actions]",
       "arti": "[menunjukkan dua tindakan yang bertentangan]"
     },
     {
-      "bunpou": "はおろか (wa oroka)",
+      "bunpou": "はおろか",
       "meaning": "let alone, not to mention",
       "arti": "apalagi, belum lagi"
     },
     {
-      "bunpou": "はさておき (wa sateoki)",
+      "bunpou": "はさておき",
       "meaning": "setting aside",
       "arti": "menyingkirkan"
     },
     {
-      "bunpou": "や否や (ya ina ya)",
+      "bunpou": "や否や",
       "meaning": "the moment that, as soon as",
       "arti": "pada saat, segera setelah"
     },
     {
-      "bunpou": "やしない (yashinai)",
+      "bunpou": "やしない",
       "meaning": "not (emphatic negative)",
       "arti": "tidak (negasi tegas)"
     },
     {
-      "bunpou": "(よ)うが/(よ)うと (you ga/you to)",
+      "bunpou": "(よ)うが/(よ)うと",
       "meaning": "no matter how/what",
       "arti": "tidak peduli bagaimana/apa"
     },
     {
-      "bunpou": "(よ)うが～まいが/(よ)うと～まいと (you ga~mai ga/you to~mai to)",
+      "bunpou": "(よ)うが～まいが/(よ)うと～まいと",
       "meaning": "whether or not",
       "arti": "apakah atau tidak"
     },
     {
-      "bunpou": "(よ)うか～まいか (you ka~mai ka)",
+      "bunpou": "(よ)うか～まいか",
       "meaning": "whether or not",
       "arti": "apakah atau tidak"
     },
     {
-      "bunpou": "(よ)うものなら (you mono nara)",
+      "bunpou": "(よ)うものなら",
       "meaning": "if one chooses to",
       "arti": "jika seseorang memilih untuk"
     },
     {
-      "bunpou": "(よ)うにも～ない (you nimo~nai)",
+      "bunpou": "(よ)うにも～ない",
       "meaning": "even if one tries to do something, it can’t be done",
       "arti": "bahkan jika seseorang mencoba melakukan sesuatu, itu tidak bisa dilakukan"
     },
     {
-      "bunpou": "ようによっては (you ni yotte wa)",
+      "bunpou": "ようによっては",
       "meaning": "depending on",
       "arti": "tergantung pada"
     },
     {
-      "bunpou": "ゆえに (yue ni)",
+      "bunpou": "ゆえに",
       "meaning": "therefore, consequently",
       "arti": "karena itu, akibatnya"
     },
     {
-      "bunpou": "ざる (zaru)",
+      "bunpou": "ざる",
       "meaning": "not, -un",
       "arti": "tidak, -un"
     },
     {
-      "bunpou": "ずじまい (zu jimai)",
+      "bunpou": "ずじまい",
       "meaning": "never",
       "arti": "tidak pernah"
     },
     {
-      "bunpou": "ずくめ (zukume)",
+      "bunpou": "ずくめ",
       "meaning": "entirely, completely",
       "arti": "sepenuhnya, sepenuhnya"
     },
     {
-      "bunpou": "ずとも (zu tomo)",
+      "bunpou": "ずとも",
       "meaning": "even without doing",
       "arti": "bahkan tanpa melakukan"
     }
