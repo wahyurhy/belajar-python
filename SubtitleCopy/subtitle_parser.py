@@ -134,6 +134,7 @@ def send_telegram_message_batch(bot_token, chat_id, bunpou_file):
     global message_queue
 
     bunpou_data = load_bunpou(bunpou_file)
+    level_order = ["N1", "N2", "N3", "N4", "N5"]  # Urutan level kesulitan
 
     while True:
         time.sleep(15)  # Tunggu 15 detik sebelum memproses pesan berikutnya
@@ -147,9 +148,14 @@ def send_telegram_message_batch(bot_token, chat_id, bunpou_file):
 
         # Ambil semua bunpou yang cocok
         bunpou_list = get_bunpou_list(combined_message, bunpou_data)
+
         if bunpou_list:
+            # Urutkan bunpou berdasarkan level
+            sorted_bunpou = sorted(bunpou_list, key=lambda b: level_order.index(b["level"]))
+
+            # Format teks untuk daftar bunpou
             bunpou_text = "\n\nBunpou List:\n" + "\n".join(
-                [f"[{b['level']}] {b['bunpou']} - {b['meaning']} ({b['arti']})" for b in bunpou_list]
+                [f"[{b['level']}] {b['bunpou']} - {b['meaning']} ({b['arti']})" for b in sorted_bunpou]
             )
             full_message = f"{combined_message}\n\n{bunpou_text}"
         else:
