@@ -15,7 +15,7 @@ import logging
 import json
 import re
 import os
-from janome.tokenizer import Tokenizer
+import MeCab
 
 # Pastikan encoding terminal UTF-8
 sys.stdout.reconfigure(encoding='utf-8')
@@ -68,14 +68,6 @@ def add_message_to_queue(message):
         message_queue.append(message)
     logging.info(f"Message added to queue: {message}")
 
-def tokenize_japanese_text(input_text):
-    """
-    Tokenisasi teks Jepang menjadi daftar kata menggunakan Janome.
-    """
-    tokenizer = Tokenizer()
-    tokens = [token.surface for token in tokenizer.tokenize(input_text) if token.surface.strip()]
-    return tokens
-
 def extract_japanese_text(text):
     """
     Ekstrak hanya karakter Jepang (Hiragana, Katakana, Kanji) dari teks.
@@ -103,31 +95,33 @@ def load_bunpou(file_path):
         logging.error(f"Error loading bunpou file: {e}")
         return {}
 
-def get_bunpou_list(combined_message, bunpou_data, num_bunpou=5):
-    """
-    Ambil semua bunpou yang sesuai dari data JSON berdasarkan isi combined_message.
-    """
-    matched_bunpou = []
+def tokenize_with_mecab(input_text):
+    tokenizer = MeCab.Tagger("-Owakati")  # Tokenisasi berbasis kata
+    tokens = tokenizer.parse(input_text).strip().split()
+    return tokens
 
-    # Ekstrak teks Jepang dari combined_message
+def generate_ngrams(tokens, n):
+    return [''.join(tokens[i:i+n]) for i in range(len(tokens)-n+1)]
+
+def get_bunpou_with_ngrams(combined_message, bunpou_data):
     japanese_text = extract_japanese_text(combined_message)
-    logging.info(f"Extracted Japanese Text: {japanese_text}")
-
-    # Tokenisasi teks Jepang menggunakan Janome
-    tokens = tokenize_japanese_text(japanese_text)
+    tokens = tokenize_with_mecab(japanese_text)
     logging.info(f"Tokens: {tokens}")
-
-    # Cek bunpou yang cocok di dalam teks atau token
+    
+    matched_bunpou = []
+    
+    # Looping untuk semua bunpou
     for level, bunpous in bunpou_data.items():
         for bunpou in bunpous:
-            # Periksa apakah bunpou ada di token atau langsung di teks Jepang
-            if any(bunpou['bunpou'] == token for token in tokens) or bunpou['bunpou'] in japanese_text:
-                matched_bunpou.append({"level": level, **bunpou})
+            # Cek menggunakan N-gram untuk mendeteksi pola panjang
+            for n in range(1, 5):  # Cek hingga 4-gram
+                ngrams = generate_ngrams(tokens, n)
+                if bunpou['bunpou'] in ngrams:
+                    matched_bunpou.append({"level": level, **bunpou})
+                    break  # Jika cocok, lanjutkan ke bunpou berikutnya
 
-    # Log semua bunpou yang cocok
-    logging.info(f"Matched Bunpou: {matched_bunpou}")
-
-    return matched_bunpou[:num_bunpou]
+    logging.info(f"Matched Bunpou with N-grams: {matched_bunpou}")
+    return matched_bunpou
 
 # Mengirim Batch Pesan ke Telegram
 def send_telegram_message_batch(bot_token, chat_id, bunpou_file):
@@ -147,7 +141,7 @@ def send_telegram_message_batch(bot_token, chat_id, bunpou_file):
             message_queue.clear()
 
         # Ambil semua bunpou yang cocok
-        bunpou_list = get_bunpou_list(combined_message, bunpou_data)
+        bunpou_list = get_bunpou_with_ngrams(combined_message, bunpou_data)
 
         if bunpou_list:
             # Urutkan bunpou berdasarkan level
