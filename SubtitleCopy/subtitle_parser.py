@@ -123,12 +123,50 @@ def get_bunpou_with_ngrams(combined_message, bunpou_data):
     logging.info(f"Matched Bunpou with N-grams: {matched_bunpou}")
     return matched_bunpou
 
+def load_kotoba(file_path):
+    """
+    Memuat data kotoba dari file JSON.
+    """
+    if not os.path.exists(file_path):
+        logging.error(f"Kotoba file not found at: {file_path}")
+        exit()
+
+    try:
+        with open(file_path, "r", encoding="utf-8") as file:
+            return json.load(file)
+        logging.info("Kotoba file loaded successfully.")
+    except Exception as e:
+        logging.error(f"Error loading kotoba file: {e}")
+        return {}
+
+def get_kotoba_list(combined_message, kotoba_data):
+    """
+    Ambil daftar kotoba yang sesuai dari data JSON berdasarkan isi combined_message.
+    """
+    japanese_text = extract_japanese_text(combined_message)
+    tokens = tokenize_with_mecab(japanese_text)
+    logging.info(f"Kotoba Tokens: {tokens}")
+
+    matched_kotoba = []
+
+    for kotoba in kotoba_data:
+        # Cek apakah kotoba ada dalam tokens
+        if kotoba['kotoba'] in tokens:
+            matched_kotoba.append(kotoba)
+
+    logging.info(f"Matched Kotoba: {matched_kotoba}")
+    return matched_kotoba
+
 # Mengirim Batch Pesan ke Telegram
-def send_telegram_message_batch(bot_token, chat_id, bunpou_file):
+def send_telegram_message_batch(bot_token, chat_id, bunpou_file, kotoba_file):
+    """
+    Mengirim pesan gabungan ke Telegram dengan Bunpou dan Kotoba List.
+    """
     global message_queue
 
     bunpou_data = load_bunpou(bunpou_file)
-    level_order = ["N1", "N2", "N3", "N4", "N5"]  # Urutan level kesulitan
+    kotoba_data = load_kotoba(kotoba_file)
+    level_order = ["N1", "N2", "N3", "N4", "N5"]
 
     while True:
         time.sleep(15)  # Tunggu 15 detik sebelum memproses pesan berikutnya
@@ -137,30 +175,34 @@ def send_telegram_message_batch(bot_token, chat_id, bunpou_file):
         with queue_lock:
             if not message_queue:
                 continue
-            combined_message = "\n\n".join(message_queue)  # Gabungkan pesan dengan newline
+            combined_message = "\n\n".join(message_queue)
             message_queue.clear()
 
-        # Ambil semua bunpou yang cocok
+        # Proses Bunpou
         bunpou_list = get_bunpou_with_ngrams(combined_message, bunpou_data)
-
         if bunpou_list:
-            # Urutkan bunpou berdasarkan level
             sorted_bunpou = sorted(bunpou_list, key=lambda b: level_order.index(b["level"]))
-
-            # Format teks untuk daftar bunpou
             bunpou_text = "\n\nBunpou List:\n" + "\n".join(
                 [f"[{b['level']}] {b['bunpou']} - {b['meaning']} ({b['arti']})" for b in sorted_bunpou]
             )
-            full_message = f"{combined_message}\n\n{bunpou_text}"
         else:
-            full_message = combined_message  # Hanya kirim pesan tanpa Bunpou List
+            bunpou_text = "\n\nBunpou List:\nTidak ada bunpou yang cocok."
 
-        # Kirim pesan ke Telegram
+        # Proses Kotoba
+        kotoba_list = get_kotoba_list(combined_message, kotoba_data)
+        if kotoba_list:
+            kotoba_text = "\n\nKotoba List:\n" + "\n".join(
+                [f"{k['kotoba']} ({k['yomikata']}) - {k['imi']}" for k in kotoba_list]
+            )
+        else:
+            kotoba_text = "\n\nKotoba List:\nTidak ada kotoba yang cocok."
+
+        # Gabungkan pesan
+        full_message = f"{combined_message}{bunpou_text}{kotoba_text}"
+
+        # Kirim ke Telegram
         url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
-        payload = {
-            'chat_id': chat_id,
-            'text': full_message
-        }
+        payload = {'chat_id': chat_id, 'text': full_message}
         try:
             response = requests.post(url, data=payload)
             if response.status_code == 200:
@@ -183,20 +225,24 @@ def clean_html_tags(text):
 
 # Monitoring Subtitle dan Mengirim ke Antrian
 def monitor_subtitles_with_queue(subtitles, extracted_subtitles, player, bot_token, chat_id):
+    """
+    Monitoring subtitle untuk mengirim ke Telegram dengan Bunpou dan Kotoba List.
+    """
     last_text = None
     last_extracted_text = None
-    # Path ke file JSON relatif terhadap skrip Python
+
     script_dir = os.path.dirname(os.path.abspath(__file__))
     bunpou_file_path = os.path.join(script_dir, "zenbu_bunpou.json")
-    threading.Thread(target=send_telegram_message_batch, args=(my_bot_token, my_chat_id, bunpou_file_path), daemon=True).start()
+    kotoba_file_path = os.path.join(script_dir, "zenbu_kotoba.json")
+
+    threading.Thread(target=send_telegram_message_batch, args=(bot_token, chat_id, bunpou_file_path, kotoba_file_path), daemon=True).start()
 
     try:
         while True:
             current_time = timedelta(seconds=player.get_time() / 1000)
 
             current_text = get_current_subtitle(subtitles, current_time)
-            if current_text and isinstance(current_text, str):  # Pastikan current_text adalah string
-                # Bersihkan teks dari tag HTML
+            if current_text and isinstance(current_text, str):
                 cleaned_text = clean_html_tags(current_text)
                 if cleaned_text and cleaned_text != last_text:
                     pyperclip.copy(cleaned_text)
@@ -204,8 +250,7 @@ def monitor_subtitles_with_queue(subtitles, extracted_subtitles, player, bot_tok
                     add_message_to_queue(cleaned_text)
 
             extracted_text = get_current_subtitle(extracted_subtitles, current_time)
-            if extracted_text and isinstance(extracted_text, str):  # Pastikan extracted_text adalah string
-                # Bersihkan teks dari tag HTML
+            if extracted_text and isinstance(extracted_text, str):
                 cleaned_extracted_text = clean_html_tags(extracted_text)
                 if cleaned_extracted_text and cleaned_extracted_text != last_extracted_text:
                     last_extracted_text = cleaned_extracted_text
