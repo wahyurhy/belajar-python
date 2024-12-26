@@ -103,7 +103,7 @@ def load_bunpou(file_path):
         logging.error(f"Error loading bunpou file: {e}")
         return {}
 
-def get_bunpou_list(combined_message, bunpou_data):
+def get_bunpou_list(combined_message, bunpou_data, num_bunpou=5):
     """
     Ambil semua bunpou yang sesuai dari data JSON berdasarkan isi combined_message.
     """
@@ -127,7 +127,7 @@ def get_bunpou_list(combined_message, bunpou_data):
     # Log semua bunpou yang cocok
     logging.info(f"Matched Bunpou: {matched_bunpou}")
 
-    return matched_bunpou
+    return matched_bunpou[:num_bunpou]
 
 # Mengirim Batch Pesan ke Telegram
 def send_telegram_message_batch(bot_token, chat_id, bunpou_file):
