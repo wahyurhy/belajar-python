@@ -9,6 +9,7 @@ env/
 # Ignore configuration files containing sensitive data
 config.json
 telegram_config.py
+JMdict_e.xml
 
 # Ignore logs
 *.log
