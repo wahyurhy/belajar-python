@@ -16,6 +16,7 @@ import json
 import re
 import os
 import MeCab
+import xml.etree.ElementTree as ET
 
 # Pastikan encoding terminal UTF-8
 sys.stdout.reconfigure(encoding='utf-8')
@@ -139,9 +140,54 @@ def load_kotoba(file_path):
         logging.error(f"Error loading kotoba file: {e}")
         return {}
 
-def get_kotoba_list(combined_message, kotoba_data):
+def load_jmdict(file_path):
     """
-    Ambil daftar kotoba yang sesuai dari data JSON berdasarkan isi combined_message.
+    Memuat data dari JMdict_e.xml.
+    """
+    if not os.path.exists(file_path):
+        logging.error(f"JMdict file not found at: {file_path}")
+        exit()
+
+    vocabulary = []
+    try:
+        tree = ET.parse(file_path)
+        root = tree.getroot()
+
+        for entry in root.findall("entry"):
+            # Ambil kata dasar (kanji/kana)
+            kanji_elem = entry.find("k_ele")
+            kana_elem = entry.find("r_ele")
+
+            if kanji_elem is not None:
+                kanji = kanji_elem.find("keb").text
+            else:
+                kanji = None
+
+            if kana_elem is not None:
+                kana = kana_elem.find("reb").text
+            else:
+                kana = None
+
+            # Ambil arti (gloss)
+            gloss_list = entry.findall("sense/gloss")
+            meanings = [gloss.text for gloss in gloss_list]
+
+            vocabulary.append({
+                "kotoba": kanji or kana,  # Gunakan kanji jika ada, jika tidak gunakan kana
+                "yomikata": kana or kanji,  # Gunakan kana jika ada, jika tidak gunakan kanji
+                "imi": "; ".join(meanings)
+            })
+
+        logging.info(f"JMdict loaded successfully with {len(vocabulary)} entries.")
+        return vocabulary
+
+    except Exception as e:
+        logging.error(f"Error loading JMdict: {e}")
+        return []
+    
+def get_combined_kotoba_list(combined_message, kotoba_data, jmdict_data):
+    """
+    Ambil daftar kotoba dari JSON dan JMdict yang cocok dengan combined_message.
     """
     japanese_text = extract_japanese_text(combined_message)
     tokens = tokenize_with_mecab(japanese_text)
@@ -149,23 +195,29 @@ def get_kotoba_list(combined_message, kotoba_data):
 
     matched_kotoba = []
 
+    # Cek kecocokan dari zenbu_kotoba.json
     for kotoba in kotoba_data:
-        # Cek apakah kotoba ada dalam tokens
         if kotoba['kotoba'] in tokens:
             matched_kotoba.append(kotoba)
 
-    logging.info(f"Matched Kotoba: {matched_kotoba}")
+    # Cek kecocokan dari JMdict_e.xml
+    for entry in jmdict_data:
+        if entry['kotoba'] in tokens:
+            matched_kotoba.append(entry)
+
+    logging.info(f"Matched Kotoba (combined): {matched_kotoba}")
     return matched_kotoba
 
 # Mengirim Batch Pesan ke Telegram
-def send_telegram_message_batch(bot_token, chat_id, bunpou_file, kotoba_file):
+def send_telegram_message_batch(bot_token, chat_id, bunpou_file, kotoba_file, jmdict_file):
     """
-    Mengirim pesan gabungan ke Telegram dengan Bunpou dan Kotoba List.
+    Mengirim pesan gabungan ke Telegram dengan Bunpou, Kotoba dari JSON, dan JMdict.
     """
     global message_queue
 
     bunpou_data = load_bunpou(bunpou_file)
     kotoba_data = load_kotoba(kotoba_file)
+    jmdict_data = load_jmdict(jmdict_file)
     level_order = ["N1", "N2", "N3", "N4", "N5"]
 
     while True:
@@ -189,7 +241,7 @@ def send_telegram_message_batch(bot_token, chat_id, bunpou_file, kotoba_file):
             bunpou_text = "\n\nBunpou List:\nTidak ada bunpou yang cocok."
 
         # Proses Kotoba
-        kotoba_list = get_kotoba_list(combined_message, kotoba_data)
+        kotoba_list = get_combined_kotoba_list(combined_message, kotoba_data, jmdict_data)
         if kotoba_list:
             kotoba_text = "\n\nKotoba List:\n" + "\n".join(
                 [f"{k['kotoba']} ({k['yomikata']}) - {k['imi']}" for k in kotoba_list]
@@ -234,8 +286,9 @@ def monitor_subtitles_with_queue(subtitles, extracted_subtitles, player, bot_tok
     script_dir = os.path.dirname(os.path.abspath(__file__))
     bunpou_file_path = os.path.join(script_dir, "zenbu_bunpou.json")
     kotoba_file_path = os.path.join(script_dir, "zenbu_kotoba.json")
+    jm_dict_file_path = os.path.join(script_dir, "JMdict_e.xml")
 
-    threading.Thread(target=send_telegram_message_batch, args=(bot_token, chat_id, bunpou_file_path, kotoba_file_path), daemon=True).start()
+    threading.Thread(target=send_telegram_message_batch, args=(bot_token, chat_id, bunpou_file_path, kotoba_file_path, jm_dict_file_path), daemon=True).start()
 
     try:
         while True:
