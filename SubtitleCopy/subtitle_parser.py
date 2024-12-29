@@ -275,6 +275,29 @@ def clean_html_tags(text):
     clean_text = re.sub(r'<[^>]+>', '', text)
     return clean_text.strip()
 
+def add_reading_to_kanji(message, jmdict_data):
+    """
+    Tambahkan cara baca (reading) ke setiap kanji dalam pesan.
+    """
+    def find_reading(kanji):
+        for entry in jmdict_data:
+            if entry['kotoba'] == kanji and entry['yomikata']:
+                return entry['yomikata']
+        return None
+
+    def replace_with_reading(match):
+        kanji = match.group(1)
+        if '(' in match.group(0):  # Jika sudah ada tanda kurung, abaikan
+            return match.group(0)
+        reading = find_reading(kanji)
+        if reading:
+            return f"{kanji}({reading})"
+        return kanji
+
+    # Regex untuk mencocokkan kanji
+    kanji_pattern = r'([\u4E00-\u9FFF]+)(?![\(])'  # Kanji tanpa tanda kurung diikuti
+    return re.sub(kanji_pattern, replace_with_reading, message)
+
 # Monitoring Subtitle dan Mengirim ke Antrian
 def monitor_subtitles_with_queue(subtitles, extracted_subtitles, player, bot_token, chat_id):
     """
@@ -288,6 +311,9 @@ def monitor_subtitles_with_queue(subtitles, extracted_subtitles, player, bot_tok
     kotoba_file_path = os.path.join(script_dir, "zenbu_kotoba.json")
     jm_dict_file_path = os.path.join(script_dir, "JMdict_e.xml")
 
+    # Load JMdict data
+    jmdict_data = load_jmdict(jm_dict_file_path)
+
     threading.Thread(target=send_telegram_message_batch, args=(bot_token, chat_id, bunpou_file_path, kotoba_file_path, jm_dict_file_path), daemon=True).start()
 
     try:
@@ -298,16 +324,18 @@ def monitor_subtitles_with_queue(subtitles, extracted_subtitles, player, bot_tok
             if current_text and isinstance(current_text, str):
                 cleaned_text = clean_html_tags(current_text)
                 if cleaned_text and cleaned_text != last_text:
-                    pyperclip.copy(cleaned_text)
-                    last_text = cleaned_text
-                    add_message_to_queue(cleaned_text)
+                    cleaned_text_with_reading = add_reading_to_kanji(cleaned_text, jmdict_data)
+                    pyperclip.copy(cleaned_text_with_reading)
+                    last_text = cleaned_text_with_reading
+                    add_message_to_queue(cleaned_text_with_reading)
 
             extracted_text = get_current_subtitle(extracted_subtitles, current_time)
             if extracted_text and isinstance(extracted_text, str):
                 cleaned_extracted_text = clean_html_tags(extracted_text)
                 if cleaned_extracted_text and cleaned_extracted_text != last_extracted_text:
-                    last_extracted_text = cleaned_extracted_text
-                    add_message_to_queue(cleaned_extracted_text)
+                    cleaned_extracted_text_with_reading = add_reading_to_kanji(cleaned_extracted_text, jmdict_data)
+                    last_extracted_text = cleaned_extracted_text_with_reading
+                    add_message_to_queue(cleaned_extracted_text_with_reading)
 
             time.sleep(0.1)
     except KeyboardInterrupt:
